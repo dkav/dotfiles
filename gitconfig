@@ -1,0 +1,15 @@
+[user]
+	name = Darren Kavanagh
+	email = dkav@users.noreply.github.com
+[core]
+	excludesfile = ~/.gitignore_global
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false

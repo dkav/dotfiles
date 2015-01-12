@@ -1,0 +1,4 @@
+# Custom Bash Key Bindings #
+# ======================== #
+# Ignore case
+set completion-ignore-case on
