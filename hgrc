@@ -1,0 +1,4 @@
+[ui]
+username = Darren Kavanagh <dkav@users.noreply.github.com>
+editor = vim
+ssh = ssh -C
