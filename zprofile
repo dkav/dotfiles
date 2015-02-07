@@ -8,7 +8,7 @@ path=(/usr/local/bin
       /sbin)
 
 # Paths to additional binaries
-path+=(/Applications/Postgres.app/Contents/Versions/9.3/bin)
+path+=(/Applications/Postgres.app/Contents/Versions/9.4/bin)
 export PATH
 
 # DEVELOPEMENT

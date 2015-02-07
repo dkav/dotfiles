@@ -4,7 +4,7 @@
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Paths to additional binaries
-PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 export PATH
 
