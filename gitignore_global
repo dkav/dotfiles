@@ -57,3 +57,14 @@ iDerivedData
 # ---------------- #
 # Temporary data
 .ipynb_checkpoints/
+
+# R and R Studio #
+# ---------------#
+# Workspace
+.RData
+
+# History files
+.Rhistory
+
+# RStudio files
+.Rproj.user
