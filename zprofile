@@ -27,7 +27,7 @@ fi
 
 # Node nvm
 if [ -f $(brew --prefix nvm)/nvm.sh ]; then
-  export NVM_DIR=/usr/local/nvm
+  export NVM_DIR=/usr/local/var/nvm
   source "$(brew --prefix nvm)/nvm.sh"
 fi
 
