@@ -22,7 +22,14 @@ if which rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
 
+# Node nvm
+if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+  export NVM_DIR=/usr/local/nvm
+  source $(brew --prefix nvm)/nvm.sh
+fi
+
 # Load in .bashrc
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
+

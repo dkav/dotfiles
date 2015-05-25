@@ -24,3 +24,10 @@ if which -p rbenv > /dev/null; then
     export RBENV_ROOT=/usr/local/var/rbenv
     eval "$(rbenv init -)"
 fi
+
+# Node nvm
+if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+  export NVM_DIR=/usr/local/nvm
+  source "$(brew --prefix nvm)/nvm.sh"
+fi
+
