@@ -16,6 +16,7 @@ alias cls="clear"
 alias dir="ls"
 
 # Development Aliases
-alias dev="cd /Users/Darren/Documents/Development"
+alias ddd="cd /Users/Darren/Documents/Development"
 alias pws="python -m SimpleHTTPServer &"
 alias ipn="ipython notebook"
+
