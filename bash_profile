@@ -11,22 +11,29 @@ export PATH
 # DEVELOPEMENT
 # ------------
 # Python pyenv & pyenv virtualenv
-if which pyenv > /dev/null; then
-    export PYENV_ROOT=/usr/local/opt/pyenv
-    eval "$(pyenv init -)"
-fi
+pydev() {
+        if which pyenv > /dev/null; then
+            export PYENV_ROOT=/usr/local/opt/pyenv
+            eval "$(pyenv init -)"
+            eval "$(pyenv virtualenv-init -)"
+        fi
+    }
 
 # Ruby rbenv
-if which rbenv > /dev/null; then
-    export RBENV_ROOT=/usr/local/var/rbenv
-    eval "$(rbenv init -)"
-fi
+rbdev() {
+        if which rbenv > /dev/null; then
+            export RBENV_ROOT=/usr/local/var/rbenv
+            eval "$(rbenv init -)"
+        fi
+    }
 
 # Node nvm
-if [ -f $(brew --prefix nvm)/nvm.sh ]; then
-  export NVM_DIR=/usr/local/var/nvm
-  source $(brew --prefix nvm)/nvm.sh
-fi
+nodev() {
+        if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+            export NVM_DIR=/usr/local/var/nvm
+            source $(brew --prefix nvm)/nvm.sh
+        fi
+    }
 
 # Load in .bashrc
 if [ -f ~/.bashrc ]; then
