@@ -1,10 +1,10 @@
 # Vim Customizations #
 #====================#
 # Goto dotfiles folder
-dotdir=~/Documents/Development/Configuration/dotfiles
-rm -frd $dotdir/vim
-autoldir=$dotdir/vim/autoload
-bundledir=$dotdir/vim/bundle
+dotdir=~
+rm -frd $dotdir/.vim
+autoldir=$dotdir/.vim/autoload
+bundledir=$dotdir/.vim/bundle
 
 mkdir -p $autoldir $bundledir
 

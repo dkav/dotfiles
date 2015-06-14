@@ -10,7 +10,7 @@ dotdir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )  # dotfiles directory
 backdir=~/.dotfiles_bak  # dotfiles backup directory
 
 # Assign list of files/folders to symlink in homedir
-files="bash_profile bashrc gitconfig gitignore_global hgignore_global hgrc inputrc vim 
+files="bash_profile bashrc gitconfig gitignore_global hgignore_global hgrc inputrc 
        vimrc gvimrc zprofile zshenv zshrc"    
 
 
