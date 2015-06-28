@@ -4,6 +4,7 @@
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Paths to additional binaries
+PATH=$PATH:/Library/Frameworks/GDAL.framework/Versions/1.11/Programs
 PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 export PATH
