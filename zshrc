@@ -71,3 +71,6 @@ alias ddd="cd /Users/Darren/Documents/Development"
 alias pws="python -m SimpleHTTPServer &"
 alias ipn="ipython notebook"
 
+# Homebrew Aliases
+alias hbu="brew update; brew upgrade; brew cleanup"
+
