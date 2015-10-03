@@ -92,4 +92,3 @@ alias ipn="ipython notebook"
 
 # Homebrew Aliases
 alias hbu="brew update; brew upgrade; brew cleanup"
-
