@@ -29,10 +29,29 @@ compinit
 # Change Terminal title in same manner as bash
 if [[ "$TERM_PROGRAM" == "Apple_Terminal" && -z "$INSIDE_EMACS" ]]; then
     update_terminal_hook() {
-	local SEARCH=' '
-	local REPLACE='%20'
-	local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
-	printf '\e]7;%s\a' "$PWD_URL"
+        # Identify the directory using a "file:" scheme URL, including
+        # the host name to disambiguate local vs. remote paths.
+
+        # Percent-encode the pathname.
+        local url_path=''
+        {
+            # Use LC_CTYPE=C to process text byte-by-byte. Ensure that
+            # LC_ALL isn't set, so it doesn't interfere.
+            local i ch hexch LC_CTYPE=C LC_ALL=
+            for ((i = 0; i < ${#PWD}; ++i)); do
+                ch="${PWD:$i:1}"
+                if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
+                    url_path+="$ch"
+                else
+                    printf -v hexch "%02X" "'$ch"
+                    # printf treats values greater than 127 as
+                    # negative and pads with "FF", so truncate.
+                    url_path+="%${hexch: -2:2}"
+                fi
+            done
+        }
+
+        printf '\e]7;%s\a' "file://$HOSTNAME$url_path"
     }
     typeset -a precmd_functions
     if [[ -z $precmd_functions[(r)update_terminal_hook] ]]; then
