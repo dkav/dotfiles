@@ -1,0 +1,6 @@
+-- PSQL Configuration File
+
+\set COMP_KEYWORD_CASE upper
+\set HISTCONTROL ignoredups
+\x auto
+\pset null '[NULL]'
