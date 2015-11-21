@@ -27,6 +27,8 @@ pydev() {
 rbdev() {
         if which -p rbenv > /dev/null; then
             export RBENV_ROOT=/usr/local/var/rbenv
+            autoload bashcompinit
+            bashcompinit
             eval "$(rbenv init -)"
         fi
     }
