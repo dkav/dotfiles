@@ -12,21 +12,18 @@ rtime=`date +%Y%m%d%H%M%S`
 dotdir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 backdir=~/.dotfiles_$rtime
 
-# Assign list of files/folders to symlink in homedir
-shopt -s extglob
-files=( +([^.]) )
-
 # Create backup directory
 echo "Creating backup folder:"
 echo "$backdir"
-
 mkdir -p "$backdir"
-
-# Change to the dotfiles directory
-cd $dotdir
 echo
 
-# Move dotfiles in homedir to backup directory, then create symlinks 
+# Assign list of files/folders to copy to home dir
+cd $dotdir
+shopt -s extglob
+files=( +([^.]) )
+
+# Move dotfiles in home dir to backup directory, then copy files 
 echo "Backing up and/or copying the following dot files:"
 for file in "${files[@]}"; do
     echo ".$file"
