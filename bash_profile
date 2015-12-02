@@ -25,6 +25,8 @@ rbdev() {
         if which rbenv > /dev/null; then
             export RBENV_ROOT=/usr/local/var/rbenv
             eval "$(rbenv init -)"
+
+            alias ipn="ipython notebook"
         fi
     }
 
@@ -33,6 +35,9 @@ nodev() {
         if [ -f $(brew --prefix nvm)/nvm.sh ]; then
             export NVM_DIR=/usr/local/var/nvm
             source $(brew --prefix nvm)/nvm.sh
+
+            alias ng="npm list -g --depth=0"
+            alias nl="npm list --depth=0"
         fi
     }
 
