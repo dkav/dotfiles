@@ -20,6 +20,8 @@ pydev() {
             export PYENV_ROOT=/usr/local/opt/pyenv
             eval "$(pyenv init -)"
             eval "$(pyenv virtualenv-init -)"
+
+            alias ipn="pyenv shell ipython;ipython notebook"
         fi
     }
 
@@ -28,8 +30,6 @@ rbdev() {
         if which -p rbenv > /dev/null; then
             export RBENV_ROOT=/usr/local/var/rbenv
             eval "$(rbenv init -)"
-
-            alias ipn="ipython notebook"
         fi
     }
 
