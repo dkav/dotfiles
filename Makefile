@@ -1,3 +1,8 @@
+# Makefile for dotfiles
+#
+# Based on code from Rob Loach -
+# https://github.com/RobLoach/dotfiles/blob/master/Makefile
+
 DOTFILES  := ${PWD}
 TARGET	  := ${HOME}
 LINK	  := ln -fs
