@@ -2,16 +2,11 @@
 
 # Install Vim plugins and manage with pathogen #
 #==============================================#
+echo "Installing Vim plugins"
 
 dotdir=$HOME/.vim
 autoldir=$dotdir/autoload
 bundledir=$dotdir/bundle
-
-# Backup existing .vim folder if it exists
-if [ -d "$dotdir" ]; then
-    echo "Backing up old .vim folder"
-    mv -f $dotdir ${dotdir}_bak
-fi
 
 mkdir -p $autoldir $bundledir
 
@@ -37,4 +32,4 @@ clone_vplugin vim-colors-solarized altercation
 clone_vplugin vim-fugitive tpope
 clone_vplugin vim-flake8 nvie
 
-echo "Done"
+echo "Plugins installed"
