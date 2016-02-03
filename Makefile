@@ -8,8 +8,8 @@ TARGET	  := ${HOME}
 LINK	  := ln -fs
 DELETE	  := rm -f
 
-all: bash zsh git hg vim pgsql
-clean: bash-clean zsh-clean git-clean hg-clean vim-clean pgsql-clean
+all: bash zsh git hg vim pgsql ruby
+clean: bash-clean zsh-clean git-clean hg-clean vim-clean pgsql-clean ruby-clean
 
 
 bash: bash-clean
@@ -76,3 +76,10 @@ pgsql-clean:
 	@${DELETE} ${TARGET}/.psqlrc
 	@echo "pgsql cleaned"
 
+ruby:ruby-clean
+	@ echo "Ruby \c"
+	@${LINK} ${DOTFILES}/ruby/gemrc ${TARGET}/.gemrc
+	@echo "is configured"	
+ruby-clean:	
+	@${DELETE} ${TARGET}/.gemrc
+	@echo "Ruby cleaned"
