@@ -27,7 +27,8 @@ clone_vplugin()
     rm -rf !$/.git
 }
 
-clone_vplugin vim-airline bling
+clone_vplugin vim-airline vim-airline
+clone_vplugin vim-airline-themes vim-airline
 clone_vplugin vim-colors-solarized altercation
 clone_vplugin vim-fugitive tpope
 clone_vplugin vim-flake8 nvie
