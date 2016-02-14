@@ -8,8 +8,8 @@ path=(/usr/local/bin
       /sbin)
 
 # Paths to additional binaries
-path+=(/Library/Frameworks/GDAL.framework/Versions/1.11/Programs)
-path+=(/Applications/Postgres.app/Contents/Versions/9.4/bin)
+path+=(/Library/Frameworks/GDAL.framework/Versions/Current/Programs)
+path+=(/Applications/Postgres.app/Contents/Versions/latest/bin)
 export PATH
 
 # DEVELOPEMENT
