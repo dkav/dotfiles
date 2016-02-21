@@ -21,7 +21,7 @@ pydev() {
             eval "$(pyenv init -)"
             eval "$(pyenv virtualenv-init -)"
 
-            alias ipn="pyenv shell ipython;ipython notebook"
+            alias jpn="pyenv shell jupyter;jupyter notebook"
         fi
     }
 
