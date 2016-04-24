@@ -47,7 +47,7 @@ nodev() {
 # Misc
 # ----
 # Homebrew completion
-source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
+source $(brew --prefix)/etc/bash_completion.d/brew
 
 # Load in .bashrc
 if [ -f ~/.bashrc ]; then
