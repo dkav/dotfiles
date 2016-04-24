@@ -1,6 +1,7 @@
 [user]
 	name = Darren Kavanagh
 	email = dkav@users.noreply.github.com
+	signingkey = 37E3C689
 [core]
 	excludesfile = ~/.gitignore_global
 [filter "media"]
@@ -17,3 +18,5 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[credential]
+	helper = osxkeychain
