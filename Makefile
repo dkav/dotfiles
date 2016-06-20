@@ -36,6 +36,14 @@ zsh-clean:
 	@${DELETE} ${TARGET}/.zshenv
 	@echo "zsh cleaned"
 
+x11: x11-clean
+	@echo "X11 \c"
+	@${LINK} ${DOTFILES}/x11/Xresources ${TARGET}/.Xresources
+	@echo "is configured"
+x11-clean:
+	@${DELETE} ${TARGET}/.Xresources	
+	@echo "X11 cleaned"
+
 git: git-clean
 	@echo "git \c"
 	@${LINK} ${DOTFILES}/git/gitconfig ${TARGET}/.gitconfig
