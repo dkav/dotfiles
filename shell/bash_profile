@@ -1,0 +1,29 @@
+# PATH
+# ----
+# Base path
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+# Paths to additional binaries
+PATH=$PATH:/Library/Frameworks/GDAL.framework/Versions/Current/Programs
+PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+export PATH
+
+
+# DEVELOPEMENT
+# ------------
+# Add functions that setup dev environments
+if [ -f ~/.dev_setup ]; then
+    source ~/.dev_setup
+fi
+
+
+# Misc
+# ----
+# Homebrew completion
+source $(brew --prefix)/etc/bash_completion.d/brew
+
+# Load in .bashrc
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi

@@ -8,86 +8,100 @@ TARGET	  := ${HOME}
 LINK	  := ln -fs
 DELETE	  := rm -f
 
+
 all: bash zsh git hg vim pgsql ruby
-clean: bash-clean zsh-clean git-clean hg-clean vim-clean pgsql-clean ruby-clean
+clean: bash-clean zsh-clean shell-clean git-clean hg-clean vim-clean pgsql-clean ruby-clean
 
 
-bash: bash-clean
+bash: bash-clean shell
 	@echo "bash \c"
-	@${LINK} ${DOTFILES}/bash/bash_profile ${TARGET}/.bash_profile
-	@${LINK} ${DOTFILES}/bash/bashrc ${TARGET}/.bashrc
-	@${LINK} ${DOTFILES}/bash/inputrc ${TARGET}/.inputrc
-	@echo "is configured"
+	@${LINK} ${DOTFILES}/shell/bash_profile ${TARGET}/.bash_profile
+	@${LINK} ${DOTFILES}/shell/bashrc ${TARGET}/.bashrc
+	@${LINK} ${DOTFILES}/shell/inputrc ${TARGET}/.inputrc
+	@echo "configured"
 bash-clean:
+	@echo "bash \c"
 	@${DELETE} ${TARGET}/.bash_profile
 	@${DELETE} ${TARGET}/.bashrc
 	@${DELETE} ${TARGET}/.inputrc
-	@echo "bash cleaned"
+	@echo "cleaned"
 
-zsh: zsh-clean
+zsh: zsh-clean shell
 	@echo "zsh \c"
-	@${LINK} ${DOTFILES}/zsh/zprofile ${TARGET}/.zprofile
-	@${LINK} ${DOTFILES}/zsh/zshrc ${TARGET}/.zshrc
-	@${LINK} ${DOTFILES}/zsh/zshenv ${TARGET}/.zshenv
-	@echo "is configured"
+	@${LINK} ${DOTFILES}/shell/zprofile ${TARGET}/.zprofile
+	@${LINK} ${DOTFILES}/shell/zshrc ${TARGET}/.zshrc
+	@${LINK} ${DOTFILES}/shell/zshenv ${TARGET}/.zshenv
+	@echo "configured"
 zsh-clean:
+	@echo "zsh \c"
 	@${DELETE} ${TARGET}/.zprofile
 	@${DELETE} ${TARGET}/.zshrc
 	@${DELETE} ${TARGET}/.zshenv
-	@echo "zsh cleaned"
+	@echo "cleaned"
+
+shell: shell-clean
+	@${LINK} ${DOTFILES}/shell/dev_setup ${TARGET}/.dev_setup
+shell-clean:
+	@${DELETE} ${TARGET}/.dev_setup
 
 x11: x11-clean
 	@echo "X11 \c"
 	@${LINK} ${DOTFILES}/x11/Xresources ${TARGET}/.Xresources
-	@echo "is configured"
+	@echo "configured"
 x11-clean:
-	@${DELETE} ${TARGET}/.Xresources	
-	@echo "X11 cleaned"
+	@echo "X11 \c"
+	@${DELETE} ${TARGET}/.Xresources
+	@echo "cleaned"
 
 git: git-clean
 	@echo "git \c"
 	@${LINK} ${DOTFILES}/git/gitconfig ${TARGET}/.gitconfig
 	@${LINK} ${DOTFILES}/git/gitignore_global ${TARGET}/.gitignore_global
-	@echo "is configured"
+	@echo "configured"
 git-clean:
+	@echo "git \c"
 	@${DELETE} ${TARGET}/.gitconfig
 	@${DELETE} ${TARGET}/.gitignore_global
-	@echo "git cleaned"
+	@echo "cleaned"
 
 hg: hg-clean
 	@echo "hg \c"
 	@${LINK} ${DOTFILES}/hg/hgrc ${TARGET}/.hgrc
 	@${LINK} ${DOTFILES}/hg/hgignore_global ${TARGET}/.hgignore_global
-	@echo "is configured"
+	@echo "configured"
 hg-clean:
+	@echo "hg \c"
 	@${DELETE} ${TARGET}/.hgrc
 	@${DELETE} ${TARGET}/.hgignore_global
-	@echo "hg cleaned"
+	@echo "cleaned"
 
 vim: vim-clean
 	@echo "vim \c"
 	@${LINK} ${DOTFILES}/vim/vimrc ${TARGET}/.vimrc
 	@${LINK} ${DOTFILES}/vim/gvimrc ${TARGET}/.gvimrc
 	@${DOTFILES}/vim/vim_plugins.sh >/dev/null
-	@echo "is configured"
+	@echo "configured"
 vim-clean:
+	@echo "vim \c"
 	@${DELETE} ${TARGET}/.vimrc
 	@${DELETE} ${TARGET}/.gvimrc
 	@${DELETE} -r ${TARGET}/.vim
-	@echo "vim cleaned"
+	@echo "cleaned"
 
 pgsql: pgsql-clean
 	@echo "pgsql \c"
 	@${LINK} ${DOTFILES}/pgsql/psqlrc ${TARGET}/.psqlrc
-	@echo "is configured"
+	@echo "configured"
 pgsql-clean:
+	@echo "pgsql \c"
 	@${DELETE} ${TARGET}/.psqlrc
-	@echo "pgsql cleaned"
+	@echo "cleaned"
 
 ruby:ruby-clean
 	@ echo "Ruby \c"
 	@${LINK} ${DOTFILES}/ruby/gemrc ${TARGET}/.gemrc
-	@echo "is configured"	
-ruby-clean:	
+	@echo "configured"
+ruby-clean:
+	@echo "Ruby \c"
 	@${DELETE} ${TARGET}/.gemrc
-	@echo "Ruby cleaned"
+	@echo "cleaned"
