@@ -17,6 +17,6 @@ export PATH
 # DEVELOPEMENT
 # ------------
 # Add functions that setup dev environments
-if [ -f ~/.dev_setup ]; then
-    source ~/.dev_setup
+if [ -f ~/.dev_config ]; then
+    source ~/.dev_config
 fi
