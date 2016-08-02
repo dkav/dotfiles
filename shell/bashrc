@@ -5,19 +5,6 @@ PS1="$ "
 
 # ALIASES
 # -------
-# 'ls'  Aliases
-alias ll="ls -lh"
-alias la="ls -lah"
-alias lh="ls -lad .*"
-alias ls="ls -G"
-
-# Windows Aliases
-alias cls="clear"
-alias dir="ls"
-
-# Development Aliases
-alias ddd="cd /Users/Darren/Documents/Development"
-alias pws="python -m SimpleHTTPServer &"
-
-# Homebrew Aliases
-alias hbu="brew update; brew upgrade; brew cleanup"
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi

@@ -40,9 +40,11 @@ zsh-clean:
 	@echo "cleaned"
 
 shell: shell-clean
-	@${LINK} ${DOTFILES}/shell/dev_setup ${TARGET}/.dev_setup
+	@${LINK} ${DOTFILES}/shell/aliases ${TARGET}/.aliases
+	@${LINK} ${DOTFILES}/shell/dev_config ${TARGET}/.dev_config
 shell-clean:
-	@${DELETE} ${TARGET}/.dev_setup
+	@${DELETE} ${TARGET}/.aliases
+	@${DELETE} ${TARGET}/.dev_config
 
 x11: x11-clean
 	@echo "X11 \c"

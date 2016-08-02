@@ -1,0 +1,19 @@
+# ALIASES
+# -------
+# 'ls'  Aliases
+alias ls="ls -G"
+alias ll="ls -lh"
+alias la="ls -lah"
+alias lt="ls -laht"
+alias lh="ls -lad .*"
+
+# Windows Aliases
+alias cls="clear"
+alias dir="ls"
+
+# Development Aliases
+alias ddd="cd /Users/Darren/Documents/Development"
+alias pws="python -m SimpleHTTPServer &"
+
+# Homebrew Aliases
+alias hbu="brew update; brew upgrade; brew cleanup"

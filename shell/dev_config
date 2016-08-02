@@ -1,5 +1,5 @@
-    # DEVELOPEMENT
-# ------------
+# DEVELOPEMENT ENVIRONMENT CONFIGURATION
+# --------------------------------------
 # Python pyenv & pyenv virtualenv
 pydev() {
         if which pyenv > /dev/null; then
