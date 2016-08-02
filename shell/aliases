@@ -13,10 +13,13 @@ alias dir="ls"
 
 # Development Aliases
 alias ddd="cd /Users/Darren/Documents/Development"
-alias pws="python -m SimpleHTTPServer &"
 alias devno=". ~/.dev/dev_no"
 alias devpy=". ~/.dev/dev_py"
 alias devrb=". ~/.dev/dev_rb"
 
+# Web Servers
+alias nws=". ~/.dev/devno && http-server ./ & open -g http://localhost:8080"
+alias pws="python -m SimpleHTTPServer & open -g http://localhost:8000"
+
 # Homebrew Aliases
-alias hbu="brew update; brew upgrade; brew cleanup"
+alias hbu="brew update && brew upgrade && brew cleanup"
