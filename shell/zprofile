@@ -13,10 +13,3 @@ path+=(/Applications/Postgres.app/Contents/Versions/latest/bin)
 
 export PATH
 
-
-# DEVELOPEMENT
-# ------------
-# Add functions that setup dev environments
-if [ -f ~/.dev_config ]; then
-    source ~/.dev_config
-fi

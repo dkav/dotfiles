@@ -14,6 +14,9 @@ alias dir="ls"
 # Development Aliases
 alias ddd="cd /Users/Darren/Documents/Development"
 alias pws="python -m SimpleHTTPServer &"
+alias devno=". ~/.dev/dev_no"
+alias devpy=". ~/.dev/dev_py"
+alias devrb=". ~/.dev/dev_rb"
 
 # Homebrew Aliases
 alias hbu="brew update; brew upgrade; brew cleanup"
