@@ -13,8 +13,8 @@ export PATH
 # Misc
 # ----
 # Homebrew completion
-if [ -f $(brew --prefix)/etc/bash_completion.d/brew ]; then
-    source $(brew --prefix)/etc/bash_completion.d/brew
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
 fi
 
 # Load in .bashrc
