@@ -50,7 +50,7 @@ shell-clean:
 	@${DELETE} ${TARGET}/.dev/dev_no
 	@${DELETE} ${TARGET}/.dev/dev_py
 	@${DELETE} ${TARGET}/.dev/dev_rb
-	@${DELETE} ${TARGET}/.dev/
+	@rmdir ${TARGET}/.dev/
 
 x11: x11-clean
 	@echo "X11 \c"
