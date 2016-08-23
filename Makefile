@@ -41,16 +41,10 @@ zsh-clean:
 
 shell: shell-clean
 	@${LINK} ${DOTFILES}/shell/aliases ${TARGET}/.aliases
-	@mkdir ${TARGET}/.dev
-	@${LINK} ${DOTFILES}/dev/dev_no ${TARGET}/.dev/dev_no
-	@${LINK} ${DOTFILES}/dev/dev_py ${TARGET}/.dev/dev_py
-	@${LINK} ${DOTFILES}/dev/dev_rb ${TARGET}/.dev/dev_rb
+	@${LINK} ${DOTFILES}/dev/ ${TARGET}/.dev
 shell-clean:
 	@${DELETE} ${TARGET}/.aliases
-	@${DELETE} ${TARGET}/.dev/dev_no
-	@${DELETE} ${TARGET}/.dev/dev_py
-	@${DELETE} ${TARGET}/.dev/dev_rb
-	@rmdir ${TARGET}/.dev/
+	@${DELETE} ${TARGET}/.dev
 
 x11: x11-clean
 	@echo "X11 \c"
