@@ -9,7 +9,7 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: bash zsh git hg vim pgsql ruby
+all: bash zsh git vim pgsql ruby
 clean: bash-clean zsh-clean shell-clean git-clean hg-clean vim-clean pgsql-clean ruby-clean
 
 
@@ -30,13 +30,11 @@ zsh: zsh-clean shell
 	@echo "zsh \c"
 	@${LINK} ${DOTFILES}/shell/zprofile ${TARGET}/.zprofile
 	@${LINK} ${DOTFILES}/shell/zshrc ${TARGET}/.zshrc
-	@${LINK} ${DOTFILES}/shell/zshenv ${TARGET}/.zshenv
 	@echo "configured"
 zsh-clean:
 	@echo "zsh \c"
 	@${DELETE} ${TARGET}/.zprofile
 	@${DELETE} ${TARGET}/.zshrc
-	@${DELETE} ${TARGET}/.zshenv
 	@echo "cleaned"
 
 shell: shell-clean
