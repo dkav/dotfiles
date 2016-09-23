@@ -135,7 +135,7 @@ set noshowmode
 " Replace line percent with total number of lines
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
-
+let g:airline_skip_empty_sections = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
