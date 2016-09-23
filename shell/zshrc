@@ -14,7 +14,7 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/Users/Darren/.zshrc'
 autoload -Uz compinit
-compinit
+compinit -i
 # End of lines added by compinstall
 
 
