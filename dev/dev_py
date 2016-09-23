@@ -7,6 +7,4 @@ if which pyenv > /dev/null; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-    alias jpn="pyenv shell jupyter;jupyter notebook"
 fi

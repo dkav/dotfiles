@@ -1,25 +1,31 @@
 # ALIASES
 # -------
-# 'ls'  Aliases
+
+# Directory listings
 alias ls="ls -G"
 alias ll="ls -lh"
 alias la="ls -lah"
 alias lt="ls -laht"
 alias lh="ls -lad .*"
 
-# Windows Aliases
+# DOS commands
 alias cls="clear"
 alias dir="ls"
 
-# Development Aliases
-alias ddd="cd /Users/Darren/Documents/Development"
+# Dev environment setup
 alias devno=". ~/.dev/dev_no"
 alias devpy=". ~/.dev/dev_py"
 alias devrb=". ~/.dev/dev_rb"
 
-# Web Servers
+# Web servers
 alias nws=". ~/.dev/dev_no && http-server ./ &; open -g http://localhost:8080"
 alias pws="python -m SimpleHTTPServer &; open -g http://localhost:8000"
 
-# Homebrew Aliases
+# Homebrew
 alias hbu="brew update && brew upgrade && brew cleanup"
+
+# Jupyter notebook
+alias jpn='devpy && pyenv shell jupyter && jupyter notebook'
+
+# Directory shortcuts
+alias ddd="cd /Users/Darren/Documents/Development"
