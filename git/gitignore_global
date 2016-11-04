@@ -1,6 +1,6 @@
 # OS X #
 # ---- #
-.DS_Store
+*.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -10,9 +10,14 @@ Icon
 # Thumbnails
 ._*
 
-# Files that might appear on external disk
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
 .Spotlight-V100
+.TemporaryItems
 .Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
 # Directories potentially created on remote AFP share
 .AppleDB
@@ -21,24 +26,31 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+
 # vim #
 # --- #
+# swap
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
-*.un~
+
+# session
 Session.vim
+
+# temporary
 .netrwhist
 *~
 
-# Mercurial #
-# --------- #
-/.hg/*
-*/.hg/*
-.hgignore
+# auto-generated tag files
+tags
+
 
 # Xcode #
 # ----- #
+## Build generated
 build/
+DerivedData/
+
+## Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -47,24 +59,9 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
-*.xccheckout
+xcuserdata/
+
+## Other
 *.moved-aside
-iDerivedData
-*.xcuserstate
-
-# IPython Notebook #
-# ---------------- #
-# Temporary data
-.ipynb_checkpoints/
-
-# R and R Studio #
-# ---------------#
-# Workspace
-.RData
-
-# History files
-.Rhistory
-
-# RStudio files
-.Rproj.user
+*.xccheckout
+*.xcscmblueprint
