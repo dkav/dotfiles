@@ -1,36 +1,32 @@
 #!/bin/bash
 
-# Install Vim plugins and manage with pathogen #
-#==============================================#
-echo "Installing Vim plugins"
+# Install Vim plugins #
+#=====================#
+echo "Installing Vim plugins:"
 
 dotdir=$HOME/.vim
-autoldir=$dotdir/autoload
-bundledir=$dotdir/bundle
+packdir=$dotdir/pack
 
-mkdir -p $autoldir $bundledir
-
-# Install vim-pathogen
-echo "Installing vim-pathogen"
-curl -LSso $autoldir/pathogen.vim https://tpo.pe/pathogen.vim
+mkdir -p $packdir
 
 # Install Vim plugins
 clone_vplugin()
 {   # Function to clone Vim plugins
     local vim_plugin=$1
     local github_user=$2
+    local install_dir=$3
+    local start_opt=$4
 
-    echo "Installing $vim_plugin"
+    echo " $vim_plugin ($start_opt)"
     git clone --depth=1 --quiet \
         https://github.com/$github_user/$vim_plugin.git \
-        $bundledir/$vim_plugin
+        $packdir/$install_dir/$start_opt/$vim_plugin
     rm -rf !$/.git
 }
 
-clone_vplugin vim-airline vim-airline
-clone_vplugin vim-airline-themes vim-airline
-clone_vplugin vim-colors-solarized altercation
-clone_vplugin vim-fugitive tpope
-clone_vplugin vim-flake8 nvie
-
-echo "Plugins installed"
+# clone plugin-name github-user install-folder auto-start/manual
+clone_vplugin vim-airline vim-airline airline start
+clone_vplugin vim-airline-themes vim-airline airline start
+clone_vplugin vim-colors-solarized altercation color-scheme start
+clone_vplugin vim-fugitive tpope git start
+clone_vplugin vim-flake8 nvie python opt

@@ -32,9 +32,6 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
-" Manage Plugins with pathogen
-execute pathogen#infect()
-
 " Set terminal timeout length to 50, helps with airline
 set ttimeoutlen=50
 
@@ -88,7 +85,7 @@ syntax on
 
 " Set Theme
 set background=dark
-colorscheme solarized
+:silent! colorscheme solarized
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -132,10 +129,11 @@ set laststatus=2
 " Hide default mode indicator
 set noshowmode
 
-" Replace line percent with total number of lines
+" For airline replace line percent with total number of lines
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
 let g:airline_skip_empty_sections = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
