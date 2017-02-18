@@ -12,21 +12,22 @@ mkdir -p $packdir
 # Install Vim plugins
 clone_vplugin()
 {   # Function to clone Vim plugins
-    local vim_plugin=$1
-    local github_user=$2
+
+    # Input parameters
+    local github_user=$1
+    local repo=$2
     local install_dir=$3
     local start_opt=$4
+    local plugin=$5
 
     echo " $vim_plugin ($start_opt)"
     git clone --depth=1 --quiet \
-        https://github.com/$github_user/$vim_plugin.git \
-        $packdir/$install_dir/$start_opt/$vim_plugin
+        https://github.com/$github_user/$repo.git \
+        $packdir/$install_dir/$start_opt/$plugin
     rm -rf !$/.git
 }
 
-# clone plugin-name github-user install-folder auto-start/manual
-clone_vplugin vim-airline vim-airline airline start
-clone_vplugin vim-airline-themes vim-airline airline start
-clone_vplugin vim-colors-solarized altercation color-scheme start
-clone_vplugin vim-fugitive tpope git start
-clone_vplugin vim-flake8 nvie python opt
+clone_vplugin vim-airline vim-airline statusline start airline
+clone_vplugin vim-airline vim-airline-themes statusline start airline-themes
+clone_vplugin tpope vim-fugitive git start fugitive
+clone_vplugin lifepillar vim-solarized8 themes opt solarized8

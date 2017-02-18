@@ -39,6 +39,12 @@ set ttimeoutlen=50
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" In terminal change cursor to I-Beam in insert mode
+if &term =~ "xterm"
+    let &t_SI = "\e[5 q"
+    let &t_EI = "\e[2 q"
+endif
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -84,8 +90,7 @@ set mat=2
 syntax on
 
 " Set Theme
-set background=dark
-:silent! colorscheme solarized
+:silent! colorscheme solarized8_dark
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
