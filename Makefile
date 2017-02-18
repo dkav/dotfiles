@@ -77,14 +77,13 @@ hg-clean:
 
 vim: vim-clean
 	@echo "vim \c"
-	@${LINK} ${DOTFILES}/vim/vimrc ${TARGET}/.vimrc
-	@${LINK} ${DOTFILES}/vim/gvimrc ${TARGET}/.gvimrc
+	@mkdir ${TARGET}/.vim
+	@${LINK} ${DOTFILES}/vim/vimrc ${TARGET}/.vim/vimrc
+	@${LINK} ${DOTFILES}/vim/gvimrc ${TARGET}/.vim/gvimrc
 	@${DOTFILES}/vim/vim_plugins.sh >/dev/null
 	@echo "configured"
 vim-clean:
 	@echo "vim \c"
-	@${DELETE} ${TARGET}/.vimrc
-	@${DELETE} ${TARGET}/.gvimrc
 	@${DELETE} -r ${TARGET}/.vim
 	@echo "cleaned"
 
