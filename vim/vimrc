@@ -90,7 +90,7 @@ set mat=2
 syntax on
 
 " Set Theme
-:silent! colorscheme solarized8_dark
+:silent! colorscheme flattened_dark
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

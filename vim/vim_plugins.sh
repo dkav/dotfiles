@@ -30,4 +30,4 @@ clone_vplugin()
 clone_vplugin vim-airline vim-airline statusline start airline
 clone_vplugin vim-airline vim-airline-themes statusline start airline-themes
 clone_vplugin tpope vim-fugitive git start fugitive
-clone_vplugin lifepillar vim-solarized8 themes opt solarized8
+clone_vplugin romainl flattened themes opt flattened
