@@ -8,8 +8,9 @@ set guioptions-=r
 set lines=40
 set columns=100
 
-" Disable blinking cursor in normal mode
+" Set cursor options
 set guicursor=n:blinkon0
+set guicursor+=i-ci:ver10
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
