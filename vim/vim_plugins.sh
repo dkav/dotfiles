@@ -7,27 +7,31 @@ echo "Installing Vim plugins:"
 dotdir=$HOME/.vim
 packdir=$dotdir/pack
 
+# Make vim packdir in .vim folder
 mkdir -p $packdir
 
-# Install Vim plugins
 clone_vplugin()
 {   # Function to clone Vim plugins
 
     # Input parameters
-    local github_user=$1
-    local repo=$2
-    local install_dir=$3
-    local start_opt=$4
-    local plugin=$5
+    local repo=$1
+    local install_dir=$packdir/$2
+    local gen_doc=$3
 
     echo " $vim_plugin ($start_opt)"
-    git clone --depth=1 --quiet \
-        https://github.com/$github_user/$repo.git \
-        $packdir/$install_dir/$start_opt/$plugin
-    rm -rf !$/.git
+
+    # Get project from Github without any version control files
+    svn export https://github.com/$repo/trunk $install_dir
+
+    # Generate helptags
+    if $gen_doc ; then
+        mvim -nNes -u NONE -c "helptags $install_dir/doc" -c q
+    fi
 }
 
-clone_vplugin vim-airline vim-airline statusline start airline
-clone_vplugin vim-airline vim-airline-themes statusline start airline-themes
-clone_vplugin tpope vim-fugitive git start fugitive
-clone_vplugin romainl flattened themes opt flattened
+# Install Vim plugins
+clone_vplugin "vim-airline/vim-airline" "statusline/start/airline" true
+clone_vplugin "vim-airline/vim-airline-themes" \
+    "statusline/start/airline-themes" true
+clone_vplugin "tpope/vim-fugitive" "git/start/fugitive" true
+clone_vplugin "romainl/flattened" "themes/opt/flattened" false
