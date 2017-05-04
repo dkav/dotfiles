@@ -9,8 +9,11 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: bash zsh git vim pgsql ruby
-clean: bash-clean zsh-clean shell-clean git-clean hg-clean vim-clean pgsql-clean ruby-clean
+all: bash zsh git vim pgsql pythong ruby
+
+clean: bash-clean zsh-clean shell-clean \
+    git-clean hg-clean vim-clean pgsql-clean \
+    ruby-clean
 
 
 bash: bash-clean shell
@@ -55,19 +58,20 @@ x11-clean:
 
 git: git-clean
 	@echo "git \c"
-	@${LINK} ${DOTFILES}/git/gitconfig ${TARGET}/.gitconfig
-	@${LINK} ${DOTFILES}/git/gitignore_global ${TARGET}/.gitignore_global
+	@mkdir ${TARGET}/.config/git
+	@${LINK} ${DOTFILES}/git/config ${TARGET}/.config/git/config
+	@${LINK} ${DOTFILES}/git/ignore ${TARGET}/.config/git/ignore
 	@echo "configured"
 git-clean:
 	@echo "git \c"
-	@${DELETE} ${TARGET}/.gitconfig
-	@${DELETE} ${TARGET}/.gitignore_global
+	@${DELETE} -r ${TARGET}/.config/git
 	@echo "cleaned"
 
 hg: hg-clean
 	@echo "hg \c"
 	@${LINK} ${DOTFILES}/hg/hgrc ${TARGET}/.hgrc
-	@${LINK} ${DOTFILES}/hg/hgignore_global ${TARGET}/.hgignore_global
+	@${LINK} ${DOTFILES}/hg/hgignore_global \
+		${TARGET}/.hgignore_global
 	@echo "configured"
 hg-clean:
 	@echo "hg \c"

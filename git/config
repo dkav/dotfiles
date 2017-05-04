@@ -3,7 +3,6 @@
 	email = dkav@users.noreply.github.com
 	signingkey = 37E3C689
 [core]
-	excludesfile = ~/.gitignore_global
 	editor = mvim -f
 [filter "media"]
 	required = true
