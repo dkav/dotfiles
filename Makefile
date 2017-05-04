@@ -13,7 +13,7 @@ all: bash zsh git vim pgsql pythong ruby
 
 clean: bash-clean zsh-clean shell-clean \
     git-clean hg-clean vim-clean pgsql-clean \
-    ruby-clean
+    python-clean ruby-clean
 
 
 bash: bash-clean shell
@@ -98,6 +98,16 @@ pgsql: pgsql-clean
 pgsql-clean:
 	@echo "pgsql \c"
 	@${DELETE} ${TARGET}/.psqlrc
+	@echo "cleaned"
+
+python:python-clean
+	@ echo "Python \c"
+	@mkdir ${TARGET}/.pip
+	@${LINK} ${DOTFILES}/python/pip.conf ${TARGET}/.pip/pip.conf
+	@echo "configured"
+python-clean:
+	@echo "Python \c"
+	@${DELETE} -r ${TARGET}/.pip
 	@echo "cleaned"
 
 ruby:ruby-clean
