@@ -2,7 +2,7 @@
 # -------------------------------
 
 # Node nvm
-if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+if [ -f $(brew --prefix nvm)/nvm.sh ] > /dev/null; then
     export NVM_DIR=/usr/local/var/nvm
     source $(brew --prefix nvm)/nvm.sh
 
