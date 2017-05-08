@@ -9,7 +9,7 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: bash zsh git vim pgsql pythong ruby
+all: bash zsh git vim pgsql python ruby
 
 clean: bash-clean zsh-clean shell-clean \
     git-clean hg-clean vim-clean pgsql-clean \
