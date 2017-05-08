@@ -58,7 +58,7 @@ x11-clean:
 
 git: git-clean
 	@echo "git \c"
-	@mkdir ${TARGET}/.config/git
+	@mkdir -p ${TARGET}/.config/git
 	@${LINK} ${DOTFILES}/git/config ${TARGET}/.config/git/config
 	@${LINK} ${DOTFILES}/git/ignore ${TARGET}/.config/git/ignore
 	@echo "configured"
