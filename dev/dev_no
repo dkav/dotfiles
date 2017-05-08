@@ -10,7 +10,7 @@ if hash brew 2>/dev/null; then
         alias ng="npm list -g --depth=0"
         alias nl="npm list --depth=0"
     else
-        echo "Node Version Manager not installed"\
+        echo "Node Version Manager not installed."\
         "Cannot setup Node environment."
     fi
 else
