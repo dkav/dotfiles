@@ -18,7 +18,7 @@ alias devpy=". ~/.dev/dev_py"
 alias devrb=". ~/.dev/dev_rb"
 
 # Web servers
-alias nws=". ~/.dev/dev_no && http-server ./ &; open -g http://localhost:8080"
+alias nws="devno && http-server ./ &; open -g http://localhost:8080"
 alias pws="python -m SimpleHTTPServer &; open -g http://localhost:8000"
 
 # Homebrew
