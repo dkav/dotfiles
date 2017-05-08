@@ -2,7 +2,9 @@
 # -------------------------------
 
 # Ruby rbenv
-if which rbenv > /dev/null; then
+if hash rbenv 2>/dev/null; then
     export RBENV_ROOT=/usr/local/var/rbenv
     eval "$(rbenv init -)"
+else
+    echo "RBENV not installed. Cannot setup Ruby environment."
 fi

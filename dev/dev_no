@@ -2,12 +2,17 @@
 # -------------------------------
 
 # Node nvm
-if which brew > /dev/null; then
+if hash brew 2>/dev/null; then
     if [ -f $(brew --prefix nvm)/nvm.sh ] > /dev/null; then
         export NVM_DIR=/usr/local/var/nvm
         source $(brew --prefix nvm)/nvm.sh
 
         alias ng="npm list -g --depth=0"
         alias nl="npm list --depth=0"
+    else
+        echo "Node Version Manager not installed"\
+        "Cannot setup Node environment."
     fi
+else
+    echo "Homebrew not installed. Cannot setup Node environment."
 fi

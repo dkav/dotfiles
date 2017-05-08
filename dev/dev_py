@@ -2,9 +2,11 @@
 # ---------------------------------
 
 # Python pyenv & pyenv virtualenv
-if which pyenv > /dev/null; then
+if hash pyenv 2>/dev/null; then
     export PYENV_ROOT=/usr/local/var/pyenv
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+else
+    echo "PYENV not installed. Cannot setup Python environment."
 fi
