@@ -171,6 +171,9 @@ nnoremap <leader>q :q<cr>
 " Save and quit
 nnoremap <leader>wq :wq<cr>
 
+" Toggle line numbers
+nnoremap <leader>n :set invnumber<CR>
+
 " Remove trailing white space
 nnoremap <leader>rt :%s/\s\+$//e<CR>
 
