@@ -180,8 +180,9 @@ nnoremap <leader>hl :set hlsearch! hlsearch?<CR>
 " Toggle and untoggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
 
-" Run Syntastic checker
+" Syntastic mappings
 nnoremap <leader>sc :SyntasticCheck<cr>
+nnoremap <leader>st :SyntasticToggleMode<cr>
 
 " Location list navigation
 nnoremap <leader>ln :lnext<cr>
