@@ -27,8 +27,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
+" Define a custom map leader for use in key mappings
 let mapleader = ","
 let g:mapleader = ","
 
@@ -164,26 +163,26 @@ let g:syntastic_python_checkers = ['flake8', 'pylint']
 " => Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fast saving
-nmap <leader>w :w<cr>
+nnoremap <leader>w :w<cr>
 
 " Fast quit
-nmap <leader>q :q<cr>
+nnoremap <leader>q :q<cr>
 
 " Save and quit
-nmap <leader>wq :wq<cr>
+nnoremap <leader>wq :wq<cr>
 
 " Remove trailing white space
 nnoremap <leader>rt :%s/\s\+$//e<CR>
 
 " Toggle highlighting on/off and show current value
-noremap <leader>hl :set hlsearch! hlsearch?<CR>
+nnoremap <leader>hl :set hlsearch! hlsearch?<CR>
 
 " Toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+nnoremap <leader>ss :setlocal spell!<cr>
 
 " Run Syntastic checker
-map <leader>sc :SyntasticCheck<cr>
+nnoremap <leader>sc :SyntasticCheck<cr>
 
 " Location list navigation
-map <leader>ln :lnext<cr>
-map <leader>lp :lprev<cr>
+nnoremap <leader>ln :lnext<cr>
+nnoremap <leader>lp :lprev<cr>
