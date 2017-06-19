@@ -169,31 +169,11 @@ nmap <leader>q :q<cr>
 " Save and quit
 nmap <leader>wq :wq<cr>
 
-" Enter command mode
-nmap <leader>; :<CR>
-imap <leader>; <esc>:
-
-" Enter normal mode
-imap <leader>, <esc>
-
-" Enter insert mode
-nmap <leader>, i
-
 " Remove trailing white space
-nnoremap <leader>rtw :%s/\s\+$//e<CR>
+nnoremap <leader>rt :%s/\s\+$//e<CR>
 
-" Press Ctrl-N to toggle highlighting on/off,
-" and show current value
-noremap <leader> :set hlsearch! hlsearch?<CR>
+" Toggle highlighting on/off and show current value
+noremap <leader>hl :set hlsearch! hlsearch?<CR>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
+" Toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
