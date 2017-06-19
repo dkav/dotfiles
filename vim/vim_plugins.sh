@@ -35,3 +35,4 @@ clone_vplugin "vim-airline/vim-airline-themes" \
     "statusline/start/airline-themes" true
 clone_vplugin "tpope/vim-fugitive" "git/start/fugitive" true
 clone_vplugin "romainl/flattened" "themes/opt/flattened" false
+clone_vplugin "vim-syntastic/syntastic" "syntax/start/syntastic" true
