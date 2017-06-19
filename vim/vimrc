@@ -180,3 +180,10 @@ noremap <leader>hl :set hlsearch! hlsearch?<CR>
 
 " Toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
+
+" Run Syntastic checker
+map <leader>sc :SyntasticCheck<cr>
+
+" Location list navigation
+map <leader>ln :lnext<cr>
+map <leader>lp :lprev<cr>
