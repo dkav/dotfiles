@@ -162,14 +162,9 @@ let g:syntastic_python_checkers = ['flake8', 'pylint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fast saving
+" Fast saving and quiting
 nnoremap <leader>w :w<cr>
-
-" Fast quit
 nnoremap <leader>q :q<cr>
-
-" Save and quit
-nnoremap <leader>wq :wq<cr>
 
 " Toggle line numbers
 nnoremap <leader>n :set invnumber<CR>
