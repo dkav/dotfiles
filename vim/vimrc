@@ -180,6 +180,8 @@ nnoremap <leader>ss :setlocal spell!<cr>
 
 " Syntastic mappings
 nnoremap <leader>sc :SyntasticCheck<cr>
+nnoremap <leader>se :Errors<cr>
+nnoremap <leader>sr :lclose<cr>:SyntasticReset<cr>
 nnoremap <leader>st :SyntasticToggleMode<cr>
 
 " Location list navigation
