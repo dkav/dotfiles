@@ -185,5 +185,6 @@ nnoremap <leader>sr :lclose<cr>:SyntasticReset<cr>
 nnoremap <leader>st :SyntasticToggleMode<cr>
 
 " Location list navigation
+nnoremap <leader>lc :lcose<cr>
 nnoremap <leader>ln :lnext<cr>
 nnoremap <leader>lp :lprev<cr>
