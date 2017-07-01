@@ -147,8 +147,8 @@ let g:airline#extensions#syntastic#enabled = 1
 " => Syntax checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set Syntastic options
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_enable_balloons = 0
 let g:syntastic_check_on_open = 0
@@ -179,12 +179,11 @@ nnoremap <leader>hl :set hlsearch! hlsearch?<CR>
 nnoremap <leader>cs :setlocal spell!<cr>
 
 " Syntastic mappings
-nnoremap <leader>sc :SyntasticCheck<cr>
+nnoremap <leader>sc :SyntasticToggleMode<cr>:SyntasticCheck<cr>
 nnoremap <leader>se :Errors<cr>
-nnoremap <leader>sr :lclose<cr>:SyntasticReset<cr>
-nnoremap <leader>st :SyntasticToggleMode<cr>
+nnoremap <leader>sr :SyntasticToggleMode<cr>:SyntasticReset<cr>
 
 " Location list navigation
-nnoremap <leader>lc :lcose<cr>
+nnoremap <leader>lc :lclose<cr>
 nnoremap <leader>ln :lnext<cr>
 nnoremap <leader>lp :lprev<cr>
