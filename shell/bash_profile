@@ -12,6 +12,9 @@ export PATH
 
 # Misc
 # ----
+# Set default browser
+export BROWSER=open
+
 # Homebrew completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     source $(brew --prefix)/etc/bash_completion

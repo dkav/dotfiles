@@ -13,3 +13,8 @@ path+=(/Applications/Postgres.app/Contents/Versions/latest/bin)
 
 export PATH
 
+
+# Misc
+# ----
+# Set default browser
+export BROWSER=open
