@@ -17,4 +17,4 @@ set guicursor+=i-ci:ver10
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set Powerline compatible font
-set guifont=Sauce\ Code\ Powerline:h11
+set guifont=Source\ Code\ Pro\ for\ Powerline:h11
