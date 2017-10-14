@@ -6,33 +6,28 @@
 " => General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ensure vi compatbility is turned off
-set nocp
-
-" Maintain file attributes
-set backupcopy=yes
+set nocompatible
 
 " Get rid of startup screen
 set shortmess+=I
 
-" Sets how many lines of history VIM has to remember
+" Set how many lines of history to remember
 set history=100
+
+" Use UTF-8 character encoding
+set encoding=utf-8
+
+" Maintain file attributes
+set backupcopy=yes
+
+" Automatically re-read file if is changed from the outside
+set autoread
 
 " Enable filetype plugins
 filetype plugin on
-filetype indent on
 
 " Define *.md files as markdown filetype
-au BufRead,BufNewFile *.md set filetype=markdown
-
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" Define a custom map leader for use in key mappings
-let mapleader = ","
-let g:mapleader = ","
-
-" Set terminal timeout length to 50, helps with airline
-set ttimeoutlen=50
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -44,14 +39,13 @@ if &term =~ "xterm"
     let &t_EI = "\e[2 q"
 endif
 
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+" Set the nubmer of context lines above and below the cursor
+set scrolloff=7
 
-" Turn on the WiLd menu
+" Configure commmand completion
 set wildmenu
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set wildignore+=*~,*.swp,*.tmp
+set wildignore+=.DS_Store
 
 "Always show current position
 set ruler
@@ -60,26 +54,17 @@ set ruler
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" Ignore case when searching
-set ignorecase
-
-" Makes search act like search in modern browsers
+" Set search options
 set incsearch
-
-" When searching try to be smart about cases
+set ignorecase
 set smartcase
 
-" Don't redraw while executing macros (good performance config)
+" Don't redraw while executing macros
 set lazyredraw
 
-" For regular expressions turn magic on
-set magic
-
-" Show matching brackets when text indicator is over them
+" Show matching brace when cursor is over a brace
 set showmatch
-
-" How many tenths of a second to blink when matching brackets
-set mat=2
+set matchtime=2
 
 " Remove netrw banner
 let g:netrw_banner = 0
@@ -98,20 +83,17 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set indentation
+filetype indent on
+set autoindent
+set shiftwidth=4
+
 " Use spaces instead of tabs
 set expandtab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
 set softtabstop=4
 
-" Linebreak on 500 characters
-set lbr
-set tw=500
-
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+" Linebreak
+set linebreak
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -135,6 +117,9 @@ set laststatus=2
 
 " Hide default mode indicator
 set noshowmode
+
+" Set terminal timeout length to help with airline
+set ttimeoutlen=50
 
 " For airline replace line percent with total number of lines
 let g:airline_powerline_fonts = 1
@@ -162,6 +147,10 @@ let g:syntastic_python_checkers = ['flake8', 'pylint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Define a custom map leader
+let mapleader = ","
+let g:mapleader = ","
+
 " Fast saving and quiting
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
