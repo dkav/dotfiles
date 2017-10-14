@@ -2,34 +2,40 @@
 	name = Darren Kavanagh
 	email = dkav@users.noreply.github.com
 	signingkey = 37E3C689
+[credential]
+	helper = osxkeychain
 [core]
 	editor = mvim -f
+[diff]
+	tool = vimdiff
+	guitool = mvimdiff
+[difftool]
+	prompt = false
+[difftool "mvimdiff"]
+	cmd = mvimdiff -f \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = vimdiff
+	guitool = mvimmerge
+[mergetool "mvimmerge"]
+	cmd = mvimdiff -f \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 [filter "media"]
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
-[diff]
-	tool = vimdiff
-[merge]
-	tool = vimdiff
-[difftool]
-	prompt = false
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[credential]
-	helper = osxkeychain
 [alias]
 	st = status
 	ci = commit
 	br = branch
 	co = checkout
 	df = diff
-	dc = diff --cached
-	lg = log -p
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	dfc = diff --cached
+	dt = difftool
+	dtg = difftool -g
+	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit
 	ls = ls-files
-	ign = ls-files -o -i --exclude-standard
+	lsi = ls-files -o -i --exclude-standard
