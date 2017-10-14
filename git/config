@@ -9,6 +9,8 @@
 [diff]
 	tool = vimdiff
 	guitool = mvimdiff
+[diff "textutil"]
+	textconv=textutil -convert txt -stdout
 [difftool]
 	prompt = false
 [difftool "mvimdiff"]
@@ -34,6 +36,7 @@
 	co = checkout
 	df = diff
 	dfc = diff --cached
+	dfw = diff --word-diff=color --unified=1
 	dt = difftool
 	dtg = difftool -g
 	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit
