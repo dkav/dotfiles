@@ -13,11 +13,14 @@
 	textconv=textutil -convert txt -stdout
 [difftool]
 	prompt = false
+	trustExitCode = true
 [difftool "mvimdiff"]
 	cmd = mvimdiff -f \"$LOCAL\" \"$REMOTE\"
 [merge]
 	tool = vimdiff
 	guitool = mvimmerge
+[mergetool]
+	trustExitCode = true
 [mergetool "mvimmerge"]
 	cmd = mvimdiff -f \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 [filter "media"]
