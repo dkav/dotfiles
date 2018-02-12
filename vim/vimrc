@@ -153,8 +153,8 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Fast saving and quiting
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 
 " Toggle line numbers
 nnoremap <leader>n :set invnumber<CR>
@@ -166,14 +166,14 @@ nnoremap <leader>rt :%s/\s\+$//e<CR>
 nnoremap <leader>hl :set hlsearch! hlsearch?<CR>
 
 " Toggle and untoggle spell checking
-nnoremap <leader>cs :setlocal spell!<cr>
+nnoremap <leader>cs :setlocal spell!<CR>
 
 " Syntastic mappings
-nnoremap <leader>sc :SyntasticToggleMode<cr>:SyntasticCheck<cr>
-nnoremap <leader>se :Errors<cr>
-nnoremap <leader>sr :SyntasticToggleMode<cr>:SyntasticReset<cr>
+nnoremap <leader>sc :SyntasticToggleMode<CR>:SyntasticCheck<CR>
+nnoremap <leader>se :Errors<CR>
+nnoremap <leader>sr :SyntasticToggleMode<CR>:SyntasticReset<CR>
 
 " Location list navigation
-nnoremap <leader>lc :lclose<cr>
-nnoremap <leader>ln :lnext<cr>
-nnoremap <leader>lp :lprev<cr>
+nnoremap <leader>lc :lclose<CR>
+nnoremap <leader>ln :lnext<CR>
+nnoremap <leader>lp :lprev<CR>
