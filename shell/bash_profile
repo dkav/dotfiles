@@ -4,6 +4,7 @@
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Paths to additional binaries
+PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.6/bin
 PATH=$PATH:/Library/Frameworks/GDAL.framework/Versions/Current/Programs
 PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
