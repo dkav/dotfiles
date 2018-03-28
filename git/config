@@ -45,3 +45,5 @@
 	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit
 	ls = ls-files
 	lsi = ls-files -o -i --exclude-standard
+[commit]
+	gpgsign = true
