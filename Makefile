@@ -56,6 +56,17 @@ x11-clean:
 	@${DELETE} ${TARGET}/.Xresources
 	@echo "cleaned"
 
+gpg: gpg-clean
+	@echo "gpg \c"
+	@mkdir -p ${TARGET}/.gpg
+	@${LINK} ${DOTFILES}/gpg/gpg-agent.conf \
+	    ${TARGET}/.gnupg/gpg-agent.conf
+	@echo "configured"
+gpg-clean:
+	@echo "gpg \c"
+	@${DELETE} ${TARGET}/.gnupg/gpg-agent.conf
+	@echo "cleaned"
+
 git: git-clean
 	@echo "git \c"
 	@mkdir -p ${TARGET}/.config/git
