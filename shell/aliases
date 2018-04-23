@@ -22,7 +22,8 @@ alias nws="devno && http-server ./ &; open -g http://localhost:8080"
 alias pws="python -m SimpleHTTPServer &; open -g http://localhost:8000"
 
 # Homebrew
-alias hbu="brew update && brew upgrade && brew cleanup"
+alias hbu="brew update && brew upgrade && brew cleanup && brew cask cleanup"
+alias hco="brew cask outdated"
 
 # Git
 alias git=hub
