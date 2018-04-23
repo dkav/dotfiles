@@ -24,6 +24,9 @@ alias pws="python -m SimpleHTTPServer &; open -g http://localhost:8000"
 # Homebrew
 alias hbu="brew update && brew upgrade && brew cleanup"
 
+# Git
+alias git=hub
+
 # Jupyter notebook
 alias jpn='devpy && pyenv shell jupyter && jupyter notebook'
 
