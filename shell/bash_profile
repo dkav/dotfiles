@@ -16,6 +16,9 @@ export PATH
 # Set default browser
 export BROWSER=open
 
+# Set default editor
+export EDITOR=/usr/local/bin/mvim
+
 # Homebrew completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     source $(brew --prefix)/etc/bash_completion

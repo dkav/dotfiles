@@ -19,3 +19,6 @@ export PATH
 # ----
 # Set default browser
 export BROWSER=open
+
+# Set default editor
+export EDITOR=/usr/local/bin/mvim
