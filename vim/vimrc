@@ -148,6 +148,10 @@ let g:syntastic_python_checkers = ['flake8', 'pylint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Make search results appear in the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
+
 " Define a custom map leader
 let mapleader = ","
 let g:mapleader = ","
