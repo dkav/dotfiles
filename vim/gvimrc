@@ -8,6 +8,12 @@ set guioptions-=r
 set lines=40
 set columns=100
 
+" Set larger window for diff
+if &diff
+  let &columns=180
+  set nu
+endif
+
 " Set cursor options
 set guicursor=n:blinkon0
 set guicursor+=i-ci:ver10
