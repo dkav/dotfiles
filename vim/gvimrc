@@ -1,8 +1,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MacVim user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Hide right scrollbar
-set guioptions-=r
+" Hide scrollbars
+set guioptions=
 
 " Set default window size
 set lines=40
