@@ -157,14 +157,14 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 
 " Toggle line numbers
-nnoremap <leader>n :set invnumber<CR>
+nnoremap <silent><leader>n :set invnumber<CR>
 
 " Trailing white space
 nnoremap <leader>st /\s\+$/<CR>
 nnoremap <leader>rt :%s/\s\+$//e<Bar>noh<CR>
 
 " Toggle highlighting on/off and show current value
-nnoremap <leader>hl :set hlsearch! hlsearch?<CR>
+nnoremap <silent><leader>hl :set hlsearch! hlsearch?<CR>
 
 " Toggle and untoggle spell checking
 nnoremap <leader>cs :setlocal spell!<CR>
