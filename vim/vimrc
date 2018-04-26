@@ -148,6 +148,13 @@ let g:syntastic_python_checkers = ['flake8', 'pylint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Make `jj` throw you into normal mode
+inoremap jj <esc>
+
+" Map colon 
+nnoremap ; :
+nnoremap : ;
+
 " Make search results appear in the middle of the screen
 nnoremap n nzz
 nnoremap N Nzz
