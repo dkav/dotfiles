@@ -27,6 +27,7 @@ alias hco="brew cask outdated"
 
 # Git
 alias git=hub
+alias gt=git
 
 # Jupyter notebook
 alias jpn='devpy && pyenv shell jupyter && jupyter notebook'
