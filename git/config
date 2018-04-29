@@ -33,17 +33,35 @@
 	process = git-lfs filter-process
 	required = true
 [alias]
-	st = status
+	# Basic
+	st = status -s
+	cl = clone
 	ci = commit
-	br = branch
 	co = checkout
+	br = branch
+	r = reset
+	cp = cherry-pick
+	gr = grep -Iin
+
+	# Diff
 	df = diff
 	dfc = diff --cached
 	dfw = diff --word-diff=color --unified=1
-	dt = difftool
-	dtg = difftool -g
-	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit
-	ls = ls-files
-	lsi = ls-files -o -i --exclude-standard
+	dt = difftool -g
+
+	# Log
+	ls = log --pretty=format:'%C(yellow)%h%Creset %C(magenta)%d%Creset %s %C(cyan)[%an]%Creset'
+	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(cyan)[%an]%Creset' --abbrev-commit
+	ll = log --pretty=format:'%C(yellow)%h%Creset %C(magenta)%d%Creset %s %C(cyan)[%an]%Creset' --numstat
+	ld = log --pretty=format:'%C(yellow)%h%Creset %Cgreen%cd%C(magenta)%d%Creset %s %C(cyan)[%an]%Creset' --date=short
+
+	# Stash
+	sl = stash list
+	sa = stash apply
+	ss = stash save
+
+	# Aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+
 [commit]
 	gpgsign = true
