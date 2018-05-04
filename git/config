@@ -58,6 +58,7 @@
 	# Stash
 	sl = stash list
 	sa = stash apply
+	sp = stash pop
 	ss = stash save
 
 	# Aliases
