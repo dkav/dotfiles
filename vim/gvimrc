@@ -1,6 +1,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MacVim user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Window title
+set titlestring=%t%(\ %m%)
 
 " Set default window size
 set lines=40
