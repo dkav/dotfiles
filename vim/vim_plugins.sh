@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Install Vim plugins #
-#=====================#
+# ------------------- #
+# Called from dotfiles makefile
+
 echo "Installing Vim plugins:"
 
 dotdir=$HOME/.vim
