@@ -36,3 +36,4 @@ clone_vplugin "vim-airline/vim-airline-themes" \
 clone_vplugin "tpope/vim-fugitive" "git/start/fugitive" true
 clone_vplugin "romainl/flattened" "themes/opt/flattened" false
 clone_vplugin "vim-syntastic/syntastic" "syntax/start/syntastic" true
+clone_vplugin "majutsushi/tagbar" "tags/start/tagbar" true

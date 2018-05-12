@@ -19,6 +19,9 @@ endif
 set guicursor=n:blinkon0
 set guicursor+=i-ci:ver10
 
+" Expand window for Tagbar
+let g:tagbar_expand = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts

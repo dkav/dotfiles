@@ -159,6 +159,9 @@ nnoremap : ;
 nnoremap n nzz
 nnoremap N Nzz
 
+" Toggle Tagbar window
+nnoremap <silent><F9> :TagbarToggle<CR>
+
 " Define a custom map leader
 let mapleader = ","
 let g:mapleader = ","
