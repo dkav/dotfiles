@@ -1,9 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MacVim user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Hide scrollbars
-set guioptions-=r
-set guioptions-=l
 
 " Set default window size
 set lines=40
@@ -14,6 +11,12 @@ if &diff
   let &columns=180
   set nu
 endif
+
+" Hide scrollbars
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
 
 " Set cursor options
 set guicursor=n:blinkon0
