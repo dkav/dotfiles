@@ -183,10 +183,10 @@ nnoremap <silent><leader>hl :set hlsearch! hlsearch?<CR>
 " Toggle and untoggle spell checking
 nnoremap <leader>cs :setlocal spell!<CR>
 
-" Syntastic mappings
-nnoremap <leader>sc :set nu<Bar>SyntasticToggleMode<Bar>SyntasticCheck<CR>
+" Syntastic mappings:
+nnoremap <leader>sc :SyntasticToggleMode<Bar>SyntasticCheck<BAR>set nu<CR>
 nnoremap <leader>se :Errors<CR>
-nnoremap <leader>sr :set nonu<Bar>SyntasticToggleMode<Bar>SyntasticReset<CR>
+nnoremap <leader>sr :SyntasticToggleMode<Bar>SyntasticReset<CR>
 
 " Location list navigation
 nnoremap <leader>lc :lclose<CR>
