@@ -128,6 +128,11 @@ let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
 let g:airline_skip_empty_sections = 1
 let g:airline_extensions = ['branch', 'tagbar', 'whitespace']
 
+" Quick Fix status line
+autocmd Filetype qf
+    \ let w:airline_disabled = 1 |
+    \ setlocal statusline=%t%=%(Total:\ %L\ %)
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntax checking
