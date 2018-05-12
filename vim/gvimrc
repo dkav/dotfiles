@@ -12,6 +12,9 @@ if &diff
   set nu
 endif
 
+" Expand window for Tagbar
+let g:tagbar_expand = 1
+
 " Hide scrollbars
 set guioptions-=r
 set guioptions-=R
@@ -21,9 +24,6 @@ set guioptions-=L
 " Set cursor options
 set guicursor=n:blinkon0
 set guicursor+=i-ci:ver10
-
-" Expand window for Tagbar
-let g:tagbar_expand = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
