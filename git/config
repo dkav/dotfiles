@@ -21,22 +21,34 @@
 	editor = mvim -f
 [diff]
 	tool = vimdiff
-	guitool = mvimdiff
 [diff "textutil"]
 	textconv = textutil -convert txt -stdout
-[difftool]
-	prompt = false
 [difftool "vimdiff"]
 	trustExitCode = true
-[difftool "mvimdiff"]
+[difftool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \
+		"\"$REMOTE\"" "\"$LOCAL\""
+[difftool "mvim"]
 	cmd = mvimdiff -f \"$LOCAL\" \"$REMOTE\"
 [merge]
 	tool = vimdiff
-	guitool = mvimmerge
+	conflictstyle = diff3
 [mergetool]
+	keepBackup = false
+[mergetool "vimdiff"]
 	trustExitCode = true
-[mergetool "mvimmerge"]
-	cmd = mvimdiff -f \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+[mergetool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \
+		\"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = false
+[mergetool "mvim2"]
+	cmd = mvimdiff -f -M -c '2wincmd w | set modifiable | set write' \
+		\"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+	trustExitCode = false
+[mergetool "mvim3"]
+	cmd = mvimdiff -f -M -c '4wincmd w | wincmd J | set modifiable | set write' \
+		\"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = false
 [alias]
 	# Basic
 	st = status -s
@@ -50,9 +62,14 @@
 
 	# Diff
 	df = diff
-	dfc = diff --cached
-	dfw = diff --word-diff=color --unified=1
-	dt = difftool -g
+	dt = difftool --tool p4merge
+	dc = diff --name-only --diff-filter=U # Conflicted files
+	ds = diff --staged
+	dw = diff --word-diff=color --unified=1
+
+	# Merge
+	mg = merge
+	mt = mergetool --tool p4merge
 
 	# Log
 	ls = log --pretty=format:'%C(yellow)%h%Creset %C(magenta)%d%Creset %s %C(cyan)[%an]%Creset'
