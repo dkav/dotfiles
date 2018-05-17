@@ -56,9 +56,16 @@
 	ci = commit
 	co = checkout
 	br = branch
-	r = reset
+	ph = push
+	pl = pull
+	rs = reset
 	cp = cherry-pick
-	gr = grep -Iin
+	sh = stash
+	gp = grep -Iin
+
+	# Rebase
+	rb = rebase
+	ri = rebase -i
 
 	# Diff
 	df = diff
@@ -81,11 +88,5 @@
 	ld = log --date=short \
 		--pretty=format:'%C(yellow)%h%Creset %Cgreen%cd%C(magenta)%d%Creset %s %C(cyan)[%an]%Creset'
 
-	# Stash
-	sl = stash list
-	sa = stash apply
-	sp = stash pop
-	ss = stash save
-
 	# Aliases
-	la = "!git config -l | grep alias | cut -c 7-"
+	al = "!git config -l | grep alias | cut -c 7- | less"
