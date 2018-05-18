@@ -182,6 +182,7 @@ let g:mapleader = ","
 " Fast saving and quiting
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>x :wq<CR>
 
 " Toggle line numbers
 nnoremap <silent><leader>n :set invnumber<CR>
