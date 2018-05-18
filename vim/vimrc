@@ -87,11 +87,9 @@ syntax on
 " Set indentation
 filetype indent on
 set autoindent
-set shiftwidth=4
 
-" Use spaces instead of tabs
-set expandtab
-set softtabstop=4
+autocmd Filetype python
+    \ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 " Linebreak
 set linebreak
