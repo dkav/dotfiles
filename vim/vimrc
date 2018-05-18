@@ -42,10 +42,8 @@ endif
 " Set the nubmer of context lines above and below the cursor
 set scrolloff=7
 
-" Configure commmand completion
-set wildmenu
-set wildignore+=*~,*.swp,*.tmp
-set wildignore+=.DS_Store
+" Break lines without breaking words
+set linebreak
 
 "Always show current position
 set ruler
@@ -53,6 +51,11 @@ set ruler
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+" Configure commmand completion
+set wildmenu
+set wildignore+=*~,*.swp,*.tmp
+set wildignore+=.DS_Store
 
 " Set search options
 set incsearch
@@ -91,8 +94,6 @@ set autoindent
 autocmd Filetype python
     \ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
-" Linebreak
-set linebreak
 " Set tab and eol display characters
 set listchars=tab:‣\ ,eol:¬
 
