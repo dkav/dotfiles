@@ -95,6 +95,8 @@ set softtabstop=4
 
 " Linebreak
 set linebreak
+" Set tab and eol display characters
+set listchars=tab:‣\ ,eol:¬
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -191,6 +193,9 @@ nnoremap <leader>rt :%s/\s\+$//e<Bar>noh<CR>
 
 " Toggle highlighting on/off and show current value
 nnoremap <silent><leader>hl :set hlsearch! hlsearch?<CR>
+
+" Toggle `set list`
+nnoremap <silent><leader>l :set list!<CR>
 
 " Toggle and untoggle spell checking
 nnoremap <leader>cs :setlocal spell!<CR>
