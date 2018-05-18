@@ -170,6 +170,10 @@ nnoremap : ;
 nnoremap n nzz
 nnoremap N Nzz
 
+" Switch flattended themes
+nnoremap <F5> :colorscheme flattened_dark<CR>
+nnoremap <F6> :colorscheme flattened_light<CR>
+
 " Define a custom map leader
 let mapleader = ","
 let g:mapleader = ","
