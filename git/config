@@ -18,7 +18,7 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	editor = vim -f
+	editor = mvim -f
 [diff]
 	tool = vimdiff
 [diff "textutil"]
