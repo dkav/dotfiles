@@ -6,6 +6,8 @@
 	helper = osxkeychain
 [commit]
 	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg
 [pull]
 	rebase = true
 [filter "media"]
@@ -20,7 +22,7 @@
 [core]
 	editor = mvim -f
 [diff]
-	tool = vimdiff
+	tool = p4merge
 [diff "textutil"]
 	textconv = textutil -convert txt -stdout
 [difftool "vimdiff"]
@@ -32,6 +34,7 @@
 	cmd = mvimdiff -f \"$LOCAL\" \"$REMOTE\"
 [merge]
 	tool = vimdiff
+	guitool = p4merge
 	conflictstyle = diff3
 [mergetool]
 	keepBackup = false
