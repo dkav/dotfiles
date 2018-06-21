@@ -58,17 +58,18 @@
 	instructionFormat = %s [%an] [%ai]
 [alias]
 	# Basic
-	st = status -s
+	br = branch
+	co = checkout
 	cl = clone
 	ci = commit
-	co = checkout
-	br = branch
-	ph = push
-	pl = pull
-	rs = reset
 	cp = cherry-pick
-	sh = stash
 	gp = grep -Iin
+	pl = pull
+	ph = push
+	rt = remote
+	rs = reset
+	ss = stash
+	st = status
 
 	# Rebase
 	rb = rebase
