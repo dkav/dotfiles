@@ -140,7 +140,6 @@ autocmd Filetype qf
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set NERDTree options
 let NERDTreeMinimalUI = 1
-let NERDTreeQuitOnOpen = 1
 let NERDTreeIgnore = ['\.pyc$']
 
 " Set Tagbar options
