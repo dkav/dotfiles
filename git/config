@@ -84,6 +84,7 @@
 
 	# Merge
 	mg = merge
+	mn = merge --no-ff
 	mt = mergetool --tool p4merge
 
 	# Log
