@@ -52,6 +52,8 @@
 	cmd = mvimdiff -f -M -c '4wincmd w | wincmd J | set modifiable | set write' \
 		\"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = false
+[rebase]
+	instructionFormat = %s [%an] [%ai]
 [alias]
 	# Basic
 	st = status -s
