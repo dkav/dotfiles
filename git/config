@@ -94,5 +94,8 @@
 	ll = log --numstat \
 		--pretty=format:'%C(yellow)%h %C(cyan)<%an> %Cgreen(%ad)%n%s'
 
+	# Config
+	ce = config --global --edit
+
 	# Aliases
 	al = "!git config -l | grep alias | cut -c 7- | less"
