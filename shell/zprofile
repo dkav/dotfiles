@@ -7,10 +7,6 @@ path=(/usr/local/bin
       /usr/sbin
       /sbin)
 
-# Paths to additional binaries
-path+=(Library/Frameworks/Python.framework/Versions/3.6/bin)
-path+=(/Applications/Postgres.app/Contents/Versions/latest/bin)
-
 export PATH
 
 
