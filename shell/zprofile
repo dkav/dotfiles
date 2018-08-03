@@ -9,7 +9,6 @@ path=(/usr/local/bin
 
 # Paths to additional binaries
 path+=(Library/Frameworks/Python.framework/Versions/3.6/bin)
-path+=(/Library/Frameworks/GDAL.framework/Versions/Current/Programs)
 path+=(/Applications/Postgres.app/Contents/Versions/latest/bin)
 
 export PATH
@@ -22,3 +21,6 @@ export BROWSER=open
 
 # Set default editor
 export EDITOR=/usr/local/bin/mvim
+
+# Set path to GDAL drivers
+export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins
