@@ -28,8 +28,7 @@
 [difftool "vimdiff"]
 	trustExitCode = true
 [difftool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \
-		"\"$REMOTE\"" "\"$LOCAL\""
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$REMOTE\"" "\"$LOCAL\""
 [difftool "mvim"]
 	cmd = mvimdiff -f \"$LOCAL\" \"$REMOTE\"
 [merge]
@@ -41,16 +40,13 @@
 [mergetool "vimdiff"]
 	trustExitCode = true
 [mergetool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \
-		\"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = false
 [mergetool "mvim2"]
-	cmd = mvimdiff -f -M -c '2wincmd w | set modifiable | set write' \
-		\"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+	cmd = mvimdiff -f -M -c '2wincmd w | set modifiable | set write' \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 	trustExitCode = false
 [mergetool "mvim3"]
-	cmd = mvimdiff -f -M -c '4wincmd w | wincmd J | set modifiable | set write' \
-		\"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
+	cmd = mvimdiff -f -M -c '4wincmd w | wincmd J | set modifiable | set write' \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = false
 [log]
 	date = format:%Y-%m-%d %H:%M
