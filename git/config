@@ -88,11 +88,11 @@
 	mt = mergetool --tool p4merge
 
 	# Log
-	ls = log --pretty=format:'%C(yellow)%h %Creset %<(50,trunc)%s %C(cyan)<%an> %Cgreen(%ad)'
-	lg = log --graph --color \
-		--pretty=format:'%C(yellow)%h%C(magenta)%d%Creset %<|(70,trunc)%s%C(cyan)<%an> %Cgreen(%ad)'
-	ll = log --numstat \
-		--pretty=format:'%C(yellow)%h %C(cyan)<%an> %Cgreen(%ad)%n%s'
+	ls = log --pretty=format:'%C(yellow)%h %Creset %<(50,trunc)%s %C(cyan)%<(15,trunc)%an %Cgreen%ad'
+	ln = log --pretty=format:'%C(yellow)%h %Creset %<(25,trunc)%s %C(cyan)%<(15,trunc)%an %ad %Cgreen%<(15,trunc)%cn %cd'
+	lg = log --graph --color --pretty=format:'%C(yellow)%h%C(magenta)%d%Creset %<|(65,trunc)%s %C(cyan)%<(15,trunc)%an %Cgreen%ad'
+	ll = log --stat --pretty=format:'%C(yellow)%h %C(cyan)%an %Cgreen%ad%n %s%n'
+	lf = log --pretty=fuller
 
 	# Config
 	ce = config --global --edit
