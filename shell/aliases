@@ -26,7 +26,7 @@ alias bw="brew"
 alias bwu="brew update && brew upgrade && brew cleanup"
 alias bk="brew cask"
 alias bko="brew update && brew cask outdated"
-alias bku="brew cask upgrade && brew cask cleanup"
+alias bku="brew cask upgrade && brew cleanup"
 
 # Git
 alias git="hub"
