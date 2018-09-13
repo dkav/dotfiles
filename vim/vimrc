@@ -11,8 +11,13 @@ set nocompatible
 " Get rid of startup screen
 set shortmess+=I
 
-" Set how many lines of history to remember
+" Set how many lines of command history to remember
 set history=100
+
+" Use persistent history
+call mkdir("/tmp/vim-undo", "p", 0700)
+set undodir=/tmp/vim-undo
+set undofile
 
 " Use UTF-8 character encoding
 set encoding=utf-8
