@@ -25,8 +25,8 @@ alias pws="python -m SimpleHTTPServer &; open -g http://localhost:8000"
 alias bw="brew"
 alias bwu="brew update && brew upgrade && brew cleanup"
 alias bk="brew cask"
-alias bko="brew update && brew cask outdated --greedy"
-alias bku="brew cask upgrade --greedy && brew cleanup"
+alias bko="brew update && brew cask outdated"
+alias bku="brew cask upgrade && brew cleanup"
 
 # Git
 alias git="hub"
