@@ -15,7 +15,7 @@ set shortmess+=I
 set history=100
 
 " Use persistent history
-call mkdir("/tmp/vim-undo", "p", 0700)
+silent! call mkdir("/tmp/vim-undo", "", 0700)
 set undodir=/tmp/vim-undo
 set undofile
 
