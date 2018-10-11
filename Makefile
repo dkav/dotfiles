@@ -9,11 +9,11 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: bash zsh git vim pgsql python ruby
+all: bash zsh gpg git vim python ruby pgsql
 
-clean: bash-clean zsh-clean shell-clean \
-    git-clean hg-clean vim-clean pgsql-clean \
-    python-clean ruby-clean
+clean: bash-clean zsh-clean shell-clean x11-clean \
+    gpg-clean git-clean hg-clean vim-clean \
+    python-clean ruby-clean pgsql-clean
 
 
 bash: bash-clean shell
