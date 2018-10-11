@@ -36,4 +36,4 @@ alias gt="git"
 alias jpn="devpy && pyenv shell jupyter && jupyter notebook"
 
 # Directory shortcuts
-alias ddd="cd /Users/Darren/Documents/Development"
+alias ddd="cd /Users/dkav/Documents/Development"
