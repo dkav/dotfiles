@@ -9,11 +9,12 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: bash zsh gpg git vim python ruby pgsql
+all: bash zsh gpg git vim python ruby pgsql sqlite
 
 clean: bash-clean zsh-clean shell-clean x11-clean \
     gpg-clean git-clean hg-clean vim-clean \
-    python-clean ruby-clean pgsql-clean
+    python-clean ruby-clean \
+    pgsql-clean sqlite-clean
 
 
 bash: bash-clean shell
@@ -108,15 +109,6 @@ vim-clean:
 	@${DELETE} -r ${TARGET}/.vim
 	@echo "cleaned"
 
-pgsql: pgsql-clean
-	@echo "pgsql \c"
-	@${LINK} ${DOTFILES}/pgsql/psqlrc ${TARGET}/.psqlrc
-	@echo "configured"
-pgsql-clean:
-	@echo "pgsql \c"
-	@${DELETE} ${TARGET}/.psqlrc
-	@echo "cleaned"
-
 python:python-clean
 	@ echo "Python \c"
 	@mkdir ${TARGET}/.pip
@@ -134,4 +126,22 @@ ruby:ruby-clean
 ruby-clean:
 	@echo "Ruby \c"
 	@${DELETE} ${TARGET}/.gemrc
+	@echo "cleaned"
+
+pgsql: pgsql-clean
+	@echo "pgsql \c"
+	@${LINK} ${DOTFILES}/pgsql/psqlrc ${TARGET}/.psqlrc
+	@echo "configured"
+pgsql-clean:
+	@echo "pgsql \c"
+	@${DELETE} ${TARGET}/.psqlrc
+	@echo "cleaned"
+
+sqlite: sqlite-clean
+	@echo "sqlite \c"
+	@${LINK} ${DOTFILES}/sqlite/sqliterc ${TARGET}/.sqliterc
+	@echo "configured"
+sqlite-clean:
+	@echo "sqlite \c"
+	@${DELETE} ${TARGET}/.sqliterc
 	@echo "cleaned"
