@@ -25,6 +25,8 @@
 	tool = p4merge
 [diff "textutil"]
 	textconv = textutil -convert txt -stdout
+[difftool]
+	prompt = false
 [difftool "vimdiff"]
 	trustExitCode = true
 [difftool "p4merge"]
