@@ -150,6 +150,13 @@ let NERDTreeIgnore = ['\.pyc$']
 " Set Tagbar options
 let g:tagbar_compact = 1
 
+" Set CtrlP options
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Set GitGutter options
+let g:gitgutter_signs = 0
+
 " Set Syntastic options
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -204,6 +211,7 @@ nnoremap <leader>cs :setlocal spell!<CR>
 " Toggle IDE windows
 nnoremap <silent><leader>[ :NERDTreeToggle<CR>
 nnoremap <silent><leader>] :TagbarToggle<CR>
+nnoremap <silent><leader>gg :GitGutterSignsToggle<CR>
 
 " Syntastic mappings:
 nnoremap <leader>sc :SyntasticToggleMode<Bar>SyntasticCheck<BAR>set nu<CR>

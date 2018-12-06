@@ -37,6 +37,10 @@ clone_vplugin "vim-airline/vim-airline-themes" \
     "statusline/start/airline-themes" true
 clone_vplugin "romainl/flattened" "themes/opt/flattened" false
 clone_vplugin "scrooloose/nerdtree" "ide/start/nerdtree" true
+clone_vplugin "scrooloose/nerdcommenter" "ide/start/nerdcommenter" true
 clone_vplugin "majutsushi/tagbar" "ide/start/tagbar" true
+clone_vplugin "ludovicchabant/vim-gutentags" "ide/start/gutentags" true
+clone_vplugin "ctrlpvim/ctrlp.vim" "ide/start/ctrlp" true
 clone_vplugin "tpope/vim-fugitive" "ide/start/fugitive" true
+clone_vplugin "airblade/vim-gitgutter" "ide/start/gitgutter" true
 clone_vplugin "vim-syntastic/syntastic" "ide/start/syntastic" true
