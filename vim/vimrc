@@ -199,8 +199,8 @@ nnoremap <silent><leader>n :set invnumber<CR>
 nnoremap <leader>st /\s\+$/<CR>
 nnoremap <leader>rt :%s/\s\+$//e<Bar>noh<CR>
 
-" Toggle highlighting on/off and show current value
-nnoremap <silent><leader>hl :set hlsearch! hlsearch?<CR>
+" Toggle highlighting on/off
+nnoremap <silent><leader>h :set hlsearch!<CR>
 
 " Toggle `set list`
 nnoremap <silent><leader>l :set list!<CR>
