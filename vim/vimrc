@@ -34,8 +34,9 @@ set autoread
 " Enable filetype plugins
 filetype plugin on
 
-" Define *.md files as markdown filetype
-autocmd BufRead,BufNewFile *.md set filetype=markdown
+" Assign files to file type
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.pyt set filetype=python
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
