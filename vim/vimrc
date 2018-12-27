@@ -12,7 +12,7 @@ set nocompatible
 set shortmess+=I
 
 " Reduce update time for plugins
-set updatetime=100
+set updatetime=1000
 
 " Set how many lines of command history to remember
 set history=100
