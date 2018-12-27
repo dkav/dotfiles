@@ -2,3 +2,8 @@
 # ======================== #
 # Ignore case
 set completion-ignore-case on
+# -----------------
+
+# Search history
+"\e[A":history-search-backward
+"\e[B":history-search-forward
