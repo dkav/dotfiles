@@ -1,7 +1,11 @@
-# Custom Bash Key Bindings #
-# ======================== #
-# Ignore case
+# Custom Readline Key Bindings #
+# ============================ #
+
+# Tab completion
 set completion-ignore-case on
+set show-all-if-ambiguous on
+TAB: menu-complete
+
 # -----------------
 
 # Search history
