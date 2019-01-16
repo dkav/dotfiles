@@ -32,7 +32,8 @@ alias bku="brew cask upgrade && brew cleanup"
 alias git="hub"
 alias gt="git"
 
-# Jupyter notebook
+# IPython & Jupyter
+alias ipy=ipython
 alias jpn="devpy && pyenv shell jupyter && jupyter notebook"
 
 # Directory shortcuts
