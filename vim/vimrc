@@ -34,10 +34,6 @@ set autoread
 " Enable filetype plugins
 filetype plugin on
 
-" Assign files to file type
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd BufNewFile,BufRead *.pyt set filetype=python
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -100,9 +96,6 @@ syntax on
 filetype indent on
 set autoindent
 
-autocmd Filetype python
-    \ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
-
 " Set tab and eol display characters
 set listchars=tab:‣\ ,eol:¬
 
@@ -137,11 +130,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
 let g:airline_skip_empty_sections = 1
 let g:airline_extensions = ['branch', 'tagbar', 'whitespace']
-
-" Quick Fix status line
-autocmd Filetype qf
-    \ let w:airline_disabled = 1 |
-    \ setlocal statusline=%t%=%(Total:\ %L\ %)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

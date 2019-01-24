@@ -102,6 +102,9 @@ vim: vim-clean
 	@mkdir ${TARGET}/.vim
 	@${LINK} ${DOTFILES}/vim/vimrc ${TARGET}/.vim/vimrc
 	@${LINK} ${DOTFILES}/vim/gvimrc ${TARGET}/.vim/gvimrc
+	@${LINK} ${DOTFILES}/vim/ftdetect ${TARGET}/.vim/ftdetect
+	@mkdir ${TARGET}/.vim/after
+	@${LINK} ${DOTFILES}/vim/ftplugin ${TARGET}/.vim/after/ftplugin
 	@${DOTFILES}/vim/vim_plugins.sh >/dev/null
 	@echo "configured"
 vim-clean:
