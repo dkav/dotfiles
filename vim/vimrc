@@ -127,10 +127,10 @@ set ttimeoutlen=50
 
 " For airline replace line percent with total number of lines
 let g:airline_powerline_fonts = 1
-let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
-let g:airline_skip_empty_sections = 1
 let g:airline_extensions = ['branch', 'whitespace']
 let g:airline_exclude_filetypes=['nerdtree', 'qf', 'tagbar']
+let g:airline_skip_empty_sections = 1
+let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
