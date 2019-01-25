@@ -44,3 +44,22 @@ set guicursor+=i-ci:ver10
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set Powerline compatible font
 set guifont=Source\ Code\ Pro\ for\ Powerline:h11
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Key mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toggle IDE windows
+let s:nerdtree = 0
+function AdjustWindowWidth()
+  if (s:nerdtree)
+    let l:width = &columns - 31
+    let s:nerdtree = 0
+  else
+    let l:width = &columns + 31
+    let s:nerdtree = 1
+  endif
+  let &columns = l:width
+endfunction
+
+nnoremap <silent><leader>[ :call AdjustWindowWidth()<CR>:NERDTreeToggle<BAR>wincmd p<CR>
