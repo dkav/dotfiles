@@ -2,8 +2,19 @@
 " => MacVim user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Window title
-set titlestring=%t%(\ %m%)
+function WinTitle() abort
+    if &filetype == 'nerdtree'
+        let &titlestring = "NERDTree"
+    elseif &filetype == 'tagbar'
+        let &titlestring = "Tagbar"
+    else
+        set titlestring=%t%(\ %m%)
+    endif
+endfunction
 
+autocmd BufEnter * call WinTitle()
+
+"
 " Set default window size
 set lines=40
 set columns=100
