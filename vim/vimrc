@@ -183,6 +183,10 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>x :wq<CR>
 
+" Indent or unindent entire file
+nnoremap <leader>i gg=G<C-O><C-O>
+nnoremap <leader>u :%left<CR>
+
 " Toggle line numbers
 nnoremap <silent><leader>n :set invnumber<CR>
 
