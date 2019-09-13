@@ -9,7 +9,7 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: bash zsh gpg git vim ruby pgsql sqlite
+all: bash zsh tmux gpg git vim ruby pgsql sqlite
 
 clean: bash-clean zsh-clean shell-clean \
     gpg-clean git-clean vim-clean \
@@ -45,6 +45,15 @@ shell: shell-clean
 	@${LINK} ${DOTFILES}/shell/aliases ${TARGET}/.aliases
 shell-clean:
 	@${DELETE} ${TARGET}/.aliases
+
+tmux: tmux-clean shell
+	@echo "tmux \c"
+	@${LINK} ${DOTFILES}/tmux/tmux.conf ${TARGET}/.tmux.conf
+	@echo "configured"
+tmux-clean:
+	@echo "tmux \c"
+	@${DELETE} ${TARGET}/.tmux.conf
+	@echo "cleaned"
 
 
 gpg: gpg-clean
