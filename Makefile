@@ -9,11 +9,11 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: bash zsh gpg git vim python ruby pgsql sqlite
+all: bash zsh gpg git vim ruby pgsql sqlite
 
-clean: bash-clean zsh-clean shell-clean x11-clean \
-    gpg-clean git-clean hg-clean vim-clean \
-    python-clean ruby-clean \
+clean: bash-clean zsh-clean shell-clean \
+    gpg-clean git-clean vim-clean \
+    ruby-clean \
     pgsql-clean sqlite-clean
 
 
@@ -48,14 +48,6 @@ shell-clean:
 	@${DELETE} ${TARGET}/.aliases
 	@${DELETE} ${TARGET}/.dev
 
-x11: x11-clean
-	@echo "X11 \c"
-	@${LINK} ${DOTFILES}/x11/Xresources ${TARGET}/.Xresources
-	@echo "configured"
-x11-clean:
-	@echo "X11 \c"
-	@${DELETE} ${TARGET}/.Xresources
-	@echo "cleaned"
 
 gpg: gpg-clean
 	@echo "gpg \c"
@@ -85,18 +77,6 @@ git-clean:
 	@${DELETE} ${TARGET}/.config/git/ignore
 	@echo "cleaned"
 
-hg: hg-clean
-	@echo "hg \c"
-	@${LINK} ${DOTFILES}/hg/hgrc ${TARGET}/.hgrc
-	@${LINK} ${DOTFILES}/hg/hgignore_global \
-		${TARGET}/.hgignore_global
-	@echo "configured"
-hg-clean:
-	@echo "hg \c"
-	@${DELETE} ${TARGET}/.hgrc
-	@${DELETE} ${TARGET}/.hgignore_global
-	@echo "cleaned"
-
 vim: vim-clean
 	@echo "vim \c"
 	@mkdir ${TARGET}/.vim
@@ -112,15 +92,6 @@ vim-clean:
 	@${DELETE} -r ${TARGET}/.vim
 	@echo "cleaned"
 
-python:python-clean
-	@ echo "Python \c"
-	@mkdir ${TARGET}/.pip
-	@${LINK} ${DOTFILES}/python/pip.conf ${TARGET}/.pip/pip.conf
-	@echo "configured"
-python-clean:
-	@echo "Python \c"
-	@${DELETE} -r ${TARGET}/.pip
-	@echo "cleaned"
 
 ruby:ruby-clean
 	@ echo "Ruby \c"
@@ -130,6 +101,7 @@ ruby-clean:
 	@echo "Ruby \c"
 	@${DELETE} ${TARGET}/.gemrc
 	@echo "cleaned"
+
 
 pgsql: pgsql-clean
 	@echo "pgsql \c"
