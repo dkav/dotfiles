@@ -43,4 +43,4 @@ clone_vplugin "ludovicchabant/vim-gutentags" "ide/start/gutentags" true
 clone_vplugin "ctrlpvim/ctrlp.vim" "ide/start/ctrlp" true
 clone_vplugin "tpope/vim-fugitive" "ide/start/fugitive" true
 clone_vplugin "airblade/vim-gitgutter" "ide/start/gitgutter" true
-clone_vplugin "vim-syntastic/syntastic" "ide/start/syntastic" true
+clone_vplugin "dense-analysis/ale" "ide/start/ale" true

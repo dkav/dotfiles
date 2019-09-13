@@ -124,7 +124,7 @@ set noshowmode
 
 " For airline replace line percent with total number of lines
 let g:airline_powerline_fonts = 1
-let g:airline_extensions = ['branch', 'whitespace']
+let g:airline_extensions = ['branch', 'whitespace', 'ale']
 let g:airline_exclude_filetypes=['nerdtree', 'qf', 'tagbar']
 let g:airline_skip_empty_sections = 1
 let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
@@ -145,18 +145,18 @@ let g:tagbar_compact = 1
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Set ALE options
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_fix_on_save = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+
 " Set GitGutter options
 let g:gitgutter_enabled = 0
-
-" Set Syntastic options
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_enable_balloons = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {"mode": "passive"}
-let g:syntastic_python_checkers = ['flake8', 'pylint']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -173,6 +173,11 @@ nnoremap N Nzz
 " Switch flattended themes
 nnoremap <F5> :colorscheme flattened_dark<CR>
 nnoremap <F6> :colorscheme flattened_light<CR>
+
+" ALE navigation
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 
 " Define a custom map leader
 let mapleader = ","
@@ -207,14 +212,12 @@ nnoremap <leader>cs :setlocal spell!<CR>
 nnoremap <silent><leader>[ :NERDTreeToggle<BAR>wincmd p<CR>
 nnoremap <silent><leader>] :TagbarToggle<CR>
 
+" Toggle ALE
+nnoremap <silent><leader>al :ALEToggle<CR>
+
 " GitGutter mappings
 nnoremap <silent><leader>gg :GitGutterToggle<CR>
 nnoremap <silent><leader>gs :GitGutterSignsToggle<CR>
-
-" Syntastic mappings
-nnoremap <leader>sc :SyntasticToggleMode<Bar>SyntasticCheck<BAR>set nu<CR>
-nnoremap <leader>se :Errors<CR>
-nnoremap <leader>sr :SyntasticToggleMode<Bar>SyntasticReset<CR>
 
 " Location list navigation
 nnoremap <leader>lc :lclose<CR>
