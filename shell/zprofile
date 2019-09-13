@@ -2,6 +2,8 @@
 # ----
 # Base PATH
 path=(/usr/local/bin
+      /usr/local/opt/ruby/bin
+      /usr/local/sbin
       /usr/bin
       /bin
       /usr/sbin

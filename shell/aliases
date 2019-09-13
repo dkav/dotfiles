@@ -12,14 +12,9 @@ alias lh="ls -lad .*"
 alias cls="clear"
 alias dir="ls"
 
-# Dev environment setup
-alias devno=". ~/.dev/dev_no"
-alias devpy=". ~/.dev/dev_py"
-alias devrb=". ~/.dev/dev_rb"
-
 # Web servers
-alias nws="devno && http-server ./ &; open -g http://localhost:8080"
-alias pws="python -m SimpleHTTPServer &; open -g http://localhost:8000"
+alias nws="http-server -o"
+alias pws="python3 -m http.server &; sleep 0.1; open -g http://localhost:8000; fg"
 
 # Homebrew
 alias bw="brew"
@@ -32,9 +27,13 @@ alias bku="brew cask upgrade && brew cleanup"
 alias git="hub"
 alias gt="git"
 
+# Node
+alias ng="npm list -g --depth=0"
+alias nl="npm list --depth=0"
+
 # IPython & Jupyter
 alias ipy=ipython
-alias jpn="devpy && pyenv shell jupyter && jupyter notebook"
+alias jpn="jupyter notebook"
 
 # Directory shortcuts
 alias ddd="cd /Users/dkav/Documents/Development"

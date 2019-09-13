@@ -43,10 +43,8 @@ zsh-clean:
 
 shell: shell-clean
 	@${LINK} ${DOTFILES}/shell/aliases ${TARGET}/.aliases
-	@${LINK} ${DOTFILES}/dev/ ${TARGET}/.dev
 shell-clean:
 	@${DELETE} ${TARGET}/.aliases
-	@${DELETE} ${TARGET}/.dev
 
 
 gpg: gpg-clean
