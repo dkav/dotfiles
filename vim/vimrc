@@ -196,9 +196,15 @@ nnoremap <leader>u :%left<CR>
 " Toggle line numbers
 nnoremap <silent><leader>n :set invnumber<CR>
 
-" Trailing white space
-nnoremap <leader>st /\s\+$/<CR>
-nnoremap <leader>rt :%s/\s\+$//e<Bar>noh<CR>
+" Remove trailing white space
+:nnoremap <Leader>rt :let _save_pos=getpos(".") <Bar>
+    \ :let _s=@/ <Bar>
+    \ :%s/\s\+$//e <Bar>
+    \ :let @/=_s <Bar>
+    \ :nohl <Bar>
+    \ :unlet _s<Bar>
+    \ :call setpos('.', _save_pos)<Bar>
+    \ :unlet _save_pos<CR><CR>
 
 " Toggle highlighting on/off
 nnoremap <silent><leader>h :set hlsearch!<CR>
