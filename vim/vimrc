@@ -67,6 +67,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+set shortmess-=S
 
 " Don't redraw while executing macros
 set lazyredraw
@@ -166,10 +167,6 @@ let g:gitgutter_enabled = 0
 " Map colon
 nnoremap ; :
 nnoremap : ;
-
-" Make search results appear in the middle of the screen
-nnoremap n nzz
-nnoremap N Nzz
 
 " Switch flattended themes
 nnoremap <F5> :colorscheme flattened_dark<CR>
