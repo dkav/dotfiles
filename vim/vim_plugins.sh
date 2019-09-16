@@ -32,10 +32,16 @@ clone_vplugin()
 }
 
 # Install Vim plugins
+# -------------------
+# Statusline
 clone_vplugin "vim-airline/vim-airline" "statusline/start/airline" true
 clone_vplugin "vim-airline/vim-airline-themes" \
     "statusline/start/airline-themes" true
+
+# Themes
 clone_vplugin "romainl/flattened" "themes/opt/flattened" false
+
+# IDE
 clone_vplugin "scrooloose/nerdtree" "ide/start/nerdtree" true
 clone_vplugin "majutsushi/tagbar" "ide/start/tagbar" true
 clone_vplugin "ludovicchabant/vim-gutentags" "ide/start/gutentags" true
