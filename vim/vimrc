@@ -213,7 +213,7 @@ nnoremap <silent><leader>l :set list!<CR>
 nnoremap <leader>sc :setlocal spell!<CR>
 
 " Toggle IDE windows
-nnoremap <silent><leader>[ :NERDTreeToggle<BAR>wincmd p<CR>
+nnoremap <silent><leader>[ :NERDTreeToggle <BAR> wincmd p<CR>
 nnoremap <silent><leader>] :TagbarToggle<CR>
 
 " ALE mappings
