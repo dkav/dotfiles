@@ -6,4 +6,5 @@ let b:ale_linters = ['flake8', 'pylint', 'vulture']
 
 let b:ale_fix_on_save = 1
 let b:ale_fixers = ['black', 'remove_trailing_lines', 'trim_whitespace']
-let g:ale_python_black_options = '--line-length 79'
+let b:ale_fix_on_save_ignore = ['black']
+let b:ale_python_black_options = '--line-length 79'
