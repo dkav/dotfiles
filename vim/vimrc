@@ -167,6 +167,11 @@ let g:gitgutter_enabled = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Define a custom map leader
+let mapleader = ","
+let g:mapleader = ","
+
+
 " Map colon
 nnoremap ; :
 nnoremap : ;
@@ -179,10 +184,6 @@ nnoremap <F6> :colorscheme flattened_light<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-
-" Define a custom map leader
-let mapleader = ","
-let g:mapleader = ","
 
 " Fast saving and quiting
 nnoremap <leader>w :w<CR>
