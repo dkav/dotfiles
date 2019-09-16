@@ -210,7 +210,7 @@ nnoremap <silent><leader>h :set hlsearch!<CR>
 nnoremap <silent><leader>l :set list!<CR>
 
 " Toggle and untoggle spell checking
-nnoremap <leader>cs :setlocal spell!<CR>
+nnoremap <leader>sc :setlocal spell!<CR>
 
 " Toggle IDE windows
 nnoremap <silent><leader>[ :NERDTreeToggle<BAR>wincmd p<CR>
