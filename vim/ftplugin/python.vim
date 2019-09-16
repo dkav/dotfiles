@@ -2,8 +2,8 @@ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 setlocal number
 setlocal omnifunc=python3complete#Complete
 
-let b:ale_linters = ['flake8', 'pylint', 'vulture']
-
+" ALE settings
+let b:ale_linters = ['flake8', 'pylint', 'vulture', 'pyls']
 let b:ale_fix_on_save = 1
 let b:ale_fixers = ['black', 'remove_trailing_lines', 'trim_whitespace']
 let b:ale_fix_on_save_ignore = ['black']
