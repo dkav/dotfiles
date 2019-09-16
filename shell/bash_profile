@@ -1,8 +1,14 @@
 # PATH
 # ----
 # Base path
-PATH=/usr/local/bin:/usr/local/opt/ruby/bin:/usr/local/sbin\
-     :/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/usr/local/bin:\
+     /usr/local/opt/ruby/bin:\
+     /usr/local/lib/ruby/gems/2.6.0/bin:\
+     /usr/local/sbin:\
+     /usr/bin:\
+     /bin:\
+     /usr/sbin:\
+     /sbin
 
 export PATH
 
