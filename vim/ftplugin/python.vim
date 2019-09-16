@@ -1,5 +1,6 @@
 setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 setlocal number
+setlocal omnifunc=python3complete#Complete
 
 let b:ale_linters = ['flake8', 'pylint', 'vulture']
 
