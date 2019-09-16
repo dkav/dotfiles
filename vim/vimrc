@@ -180,11 +180,6 @@ nnoremap : ;
 nnoremap <F5> :colorscheme flattened_dark<CR>
 nnoremap <F6> :colorscheme flattened_light<CR>
 
-" ALE navigation
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-
 " Fast saving and quiting
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
@@ -220,8 +215,11 @@ nnoremap <leader>sc :setlocal spell!<CR>
 nnoremap <silent><leader>[ :NERDTreeToggle<BAR>wincmd p<CR>
 nnoremap <silent><leader>] :TagbarToggle<CR>
 
-" Toggle ALE
-nnoremap <silent><leader>al :ALEToggle<CR>
+" ALE mappings
+nmap <leader>al <Plug>(ale_toggle)
+nmap <leader>af <Plug>(ale_fix)
+nmap <C-k> <Plug>(ale_previous_wrap)
+nmap <C-j> <Plug>(ale_next_wrap)
 
 " GitGutter mappings
 nnoremap <silent><leader>gg :GitGutterToggle<CR>
