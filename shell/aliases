@@ -40,3 +40,6 @@ alias jpn="jupyter notebook"
 
 # Directory shortcuts
 alias ddd="cd /Users/dkav/Documents/Development"
+
+# Update macOS environment
+alias mac-update="/Users/dkav/Documents/Development/Configuration/update-config.sh"
