@@ -8,7 +8,8 @@ path=(/usr/local/bin
       /usr/bin
       /bin
       /usr/sbin
-      /sbin)
+      /sbin
+      /Applications/QGIS3.8.app/Contents/MacOS/bin)
 
 export PATH
 
