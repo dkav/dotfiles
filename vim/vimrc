@@ -126,7 +126,7 @@ set noshowmode
 " For airline replace line percent with total number of lines
 let g:airline_powerline_fonts = 1
 let g:airline_symbols = {}
-let g:airline_symbols.dirty = ' *'
+let g:airline#extensions#branch#vcs_checks = []
 let g:airline_extensions = ['branch', 'whitespace', 'ale']
 let g:airline_exclude_filetypes=['nerdtree', 'qf', 'tagbar']
 let g:airline_skip_empty_sections = 1
