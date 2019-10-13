@@ -24,7 +24,7 @@ alias bko="brew update && brew cask outdated"
 alias bku="brew cask upgrade && brew cleanup"
 
 # Vim
-alias vim=/Applications/MacVim.app/Contents/bin/vim 
+alias vim=/Applications/MacVim.app/Contents/bin/vim
 
 # Git
 alias git="hub"
