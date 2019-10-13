@@ -8,7 +8,7 @@ function WinTitle() abort
     elseif &filetype == 'tagbar'
         let &titlestring = "Tagbar"
     else
-        set titlestring=%t%(\ %m%)
+       set titlestring=
     endif
 endfunction
 
