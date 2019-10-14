@@ -1,89 +1,67 @@
-#============================================================
-#
-#  BASE ZSH SETTINGS
-#
-#============================================================
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory autocd
-bindkey -v
-# End of lines configured by zsh-newuser-install
+# ZSH SETTINGS
+#=============
 
+# Options
+# -------
+setopt AUTO_CD  # Change to dir automatically
+
+bindkey -v  # Use Vi mode
+
+disable r  # Disable r builtin
+
+
+# Directory Stack
+# ---------------
+DIRSTACKSIZE=8
+setopt AUTO_PUSHD  # Add old dir to dir stack
+setopt PUSHD_IGNORE_DUPS  # Don't add dups to dir stack
+setopt PUSHD_MINUS  # Reverts the +/- operators
+setopt PUSHD_SILENT  # Do not print the dir stack
+setopt PUSHD_TO_HOME  # pushd with no arguments goes to $Home
+
+
+# Prompt
+# ------
+# Detect version control
+precmd() {
+    vcs_info
+}
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' enable git  # Detect git only
+
+setopt PROMPT_SUBST  # Prompt expansion
+
+zstyle ':vcs_info:*' formats '%r [%b] %# '  # Prompt in repos
+zstyle ':vcs_info:*' nvcsformats '%# '  # Prompt in standard folders
+
+PROMPT='${vcs_info_msg_0_}'
+
+
+# Completion
+# ----------
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/Darren/.zshrc'
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+zstyle :compinstall filename '/Users/dkav/.zshrc'
+
 autoload -Uz compinit
 compinit -i
 # End of lines added by compinstall
 
 
-#============================================================
-#
-# PERSONAL SETTINGS
-#
-#============================================================
-# TERMINAL & SHELL
-# ----------------
-# Window Title
-# Change Terminal title in same manner as bash
-if [[ "$TERM_PROGRAM" == "Apple_Terminal" && -z "$INSIDE_EMACS" ]]; then
-    update_terminal_hook() {
-        # Identify the directory using a "file:" scheme URL, including
-        # the host name to disambiguate local vs. remote paths.
-
-        # Percent-encode the pathname.
-        local url_path=''
-        {
-            # Use LC_CTYPE=C to process text byte-by-byte. Ensure that
-            # LC_ALL isn't set, so it doesn't interfere.
-            local i ch hexch LC_CTYPE=C LC_ALL=
-            for ((i = 0; i < ${#PWD}; ++i)); do
-                ch="${PWD:$i:1}"
-                if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
-                    url_path+="$ch"
-                else
-                    printf -v hexch "%02X" "'$ch"
-                    # printf treats values greater than 127 as
-                    # negative and pads with "FF", so truncate.
-                    url_path+="%${hexch: -2:2}"
-                fi
-            done
-        }
-
-        printf '\e]7;%s\a' "file://$HOSTNAME$url_path"
-    }
-    typeset -a precmd_functions
-    if [[ -z $precmd_functions[(r)update_terminal_hook] ]]; then
-        precmd_functions+=update_terminal_hook
-    fi
-fi
-
-# Shell Prompt
-# Change prompt when in vi command mode
-function zle-line-init zle-keymap-select {
-    PS1="${${KEYMAP/vicmd/%% }/(main|viins)/$ }"
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-# Search History
+# Search history
+# --------------
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "^[[A" up-line-or-beginning-search  # Up
+bindkey "^[[B" down-line-or-beginning-search  # Down
 
-# Tab Completion
-# Ignore case
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-# Disable Builtins
-disable r
-
-# ALIASES
+# Aliases
 # -------
 if [ -f ~/.aliases ]; then
     source ~/.aliases

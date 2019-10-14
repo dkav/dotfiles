@@ -8,6 +8,9 @@ alias la="ls -lah"
 alias lt="ls -laht"
 alias lh="ls -lad .*"
 
+# Directory history
+alias dh='dirs -v'
+
 # DOS commands
 alias cls="clear"
 alias dir="ls"
