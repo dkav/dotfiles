@@ -33,6 +33,8 @@ zstyle ':vcs_info:*' enable git  # Detect git only
 setopt PROMPT_SUBST  # Prompt expansion
 
 zstyle ':vcs_info:*' formats '%r [%b] %# '  # Prompt in repos
+zstyle ':vcs_info:*' actionformats '%r [%b|%a] %# '  # During special actions
+
 zstyle ':vcs_info:*' nvcsformats '%# '  # Prompt in standard folders
 
 PROMPT='${vcs_info_msg_0_}'
