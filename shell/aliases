@@ -46,5 +46,5 @@ alias jpn="jupyter notebook"
 alias ddd="cd /Users/dkav/Documents/Development"
 
 # Update macOS environment
-alias mac-update="/Users/dkav/Documents/Development/Configuration/\
+alias mac-update="/Users/dkav/Documents/Development/Configuration/Mac-Update/\
 update-config.sh"
