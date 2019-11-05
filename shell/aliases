@@ -17,7 +17,8 @@ alias dir="ls"
 
 # Web servers
 alias nws="http-server -o"
-alias pws="python3 -m http.server &; sleep 0.1; open -g http://localhost:8000; fg"
+alias pws="python3 -m http.server &; sleep 0.1; \
+open -g http://localhost:8000; fg"
 
 # Homebrew
 alias bw="brew"
@@ -45,4 +46,5 @@ alias jpn="jupyter notebook"
 alias ddd="cd /Users/dkav/Documents/Development"
 
 # Update macOS environment
-alias mac-update="/Users/dkav/Documents/Development/Configuration/update-config.sh"
+alias mac-update="/Users/dkav/Documents/Development/Configuration/\
+update-config.sh"
