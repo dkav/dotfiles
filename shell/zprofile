@@ -4,6 +4,7 @@
 path=(/usr/local/bin
       /usr/local/opt/ruby/bin
       /usr/local/lib/ruby/gems/2.6.0/bin
+      /usr/local/opt/tcl-tk/bin
       /usr/local/sbin
       /usr/bin
       /bin
