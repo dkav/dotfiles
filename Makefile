@@ -19,8 +19,8 @@ clean: zsh-clean shell-clean \
 
 zsh: zsh-clean shell
 	@echo "zsh \c"
-	@${LINK} ${DOTFILES}/shell/zprofile ${TARGET}/.zprofile
-	@${LINK} ${DOTFILES}/shell/zshrc ${TARGET}/.zshrc
+	@${LINK} "${DOTFILES}/shell/zprofile" ${TARGET}/.zprofile
+	@${LINK} "${DOTFILES}/shell/zshrc" ${TARGET}/.zshrc
 	@echo "configured"
 zsh-clean:
 	@echo "zsh \c"
@@ -29,13 +29,13 @@ zsh-clean:
 	@echo "cleaned"
 
 shell: shell-clean
-	@${LINK} ${DOTFILES}/shell/aliases ${TARGET}/.aliases
+	@${LINK} "${DOTFILES}/shell/aliases" ${TARGET}/.aliases
 shell-clean:
 	@${DELETE} ${TARGET}/.aliases
 
 tmux: tmux-clean shell
 	@echo "tmux \c"
-	@${LINK} ${DOTFILES}/tmux/tmux.conf ${TARGET}/.tmux.conf
+	@${LINK} "${DOTFILES}/tmux/tmux.conf" ${TARGET}/.tmux.conf
 	@echo "configured"
 tmux-clean:
 	@echo "tmux \c"
@@ -46,7 +46,7 @@ tmux-clean:
 gpg: gpg-clean
 	@echo "gpg \c"
 	@mkdir -p ${TARGET}/.gpg
-	@${LINK} ${DOTFILES}/gpg/gpg-agent.conf \
+	@${LINK} "${DOTFILES}/gpg/gpg-agent.conf" \
 	    ${TARGET}/.gnupg/gpg-agent.conf
 	@echo "configured"
 gpg-clean:
@@ -57,11 +57,11 @@ gpg-clean:
 git: git-clean
 	@echo "git \c"
 	@mkdir -p ${TARGET}/.config/git
-	@${LINK} ${DOTFILES}/git/attributes \
+	@${LINK} "${DOTFILES}/git/attributes" \
 	    ${TARGET}/.config/git/attributes
-	@${LINK} ${DOTFILES}/git/config \
+	@${LINK} "${DOTFILES}/git/config" \
 		${TARGET}/.config/git/config
-	@${LINK} ${DOTFILES}/git/ignore \
+	@${LINK} "${DOTFILES}/git/ignore" \
 	    	${TARGET}/.config/git/ignore
 	@echo "configured"
 git-clean:
@@ -74,12 +74,12 @@ git-clean:
 vim: vim-clean
 	@echo "vim ..."
 	@mkdir ${TARGET}/.vim
-	@${LINK} ${DOTFILES}/vim/vimrc ${TARGET}/.vim/vimrc
-	@${LINK} ${DOTFILES}/vim/gvimrc ${TARGET}/.vim/gvimrc
-	@${LINK} ${DOTFILES}/vim/ftdetect ${TARGET}/.vim/ftdetect
+	@${LINK} "${DOTFILES}/vim/vimrc" ${TARGET}/.vim/vimrc
+	@${LINK} "${DOTFILES}/vim/gvimrc" ${TARGET}/.vim/gvimrc
+	@${LINK} "${DOTFILES}/vim/ftdetect" ${TARGET}/.vim/ftdetect
 	@mkdir ${TARGET}/.vim/after
-	@${LINK} ${DOTFILES}/vim/ftplugin ${TARGET}/.vim/after/ftplugin
-	@${DOTFILES}/vim/vim_plugins.sh >/dev/null
+	@${LINK} "${DOTFILES}/vim/ftplugin" ${TARGET}/.vim/after/ftplugin
+	@"${DOTFILES}/vim/vim_plugins.sh" >/dev/null
 	@echo "... configured"
 vim-clean:
 	@echo "vim \c"
@@ -89,7 +89,7 @@ vim-clean:
 
 ruby:ruby-clean
 	@ echo "Ruby \c"
-	@${LINK} ${DOTFILES}/ruby/gemrc ${TARGET}/.gemrc
+	@${LINK} "${DOTFILES}/ruby/gemrc" ${TARGET}/.gemrc
 	@echo "configured"
 ruby-clean:
 	@echo "Ruby \c"
@@ -99,7 +99,7 @@ ruby-clean:
 
 pgsql: pgsql-clean
 	@echo "pgsql \c"
-	@${LINK} ${DOTFILES}/pgsql/psqlrc ${TARGET}/.psqlrc
+	@${LINK} "${DOTFILES}/pgsql/psqlrc" ${TARGET}/.psqlrc
 	@echo "configured"
 pgsql-clean:
 	@echo "pgsql \c"
@@ -108,7 +108,7 @@ pgsql-clean:
 
 sqlite: sqlite-clean
 	@echo "sqlite \c"
-	@${LINK} ${DOTFILES}/sqlite/sqliterc ${TARGET}/.sqliterc
+	@${LINK} "${DOTFILES}/sqlite/sqliterc" ${TARGET}/.sqliterc
 	@echo "configured"
 sqlite-clean:
 	@echo "sqlite \c"
