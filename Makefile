@@ -9,26 +9,13 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: bash zsh tmux gpg git vim ruby pgsql sqlite
+all: zsh tmux gpg git vim ruby pgsql sqlite
 
-clean: bash-clean zsh-clean shell-clean \
+clean: zsh-clean shell-clean \
     gpg-clean git-clean vim-clean \
     ruby-clean \
     pgsql-clean sqlite-clean
 
-
-bash: bash-clean shell
-	@echo "bash \c"
-	@${LINK} ${DOTFILES}/shell/bash_profile ${TARGET}/.bash_profile
-	@${LINK} ${DOTFILES}/shell/bashrc ${TARGET}/.bashrc
-	@${LINK} ${DOTFILES}/shell/inputrc ${TARGET}/.inputrc
-	@echo "configured"
-bash-clean:
-	@echo "bash \c"
-	@${DELETE} ${TARGET}/.bash_profile
-	@${DELETE} ${TARGET}/.bashrc
-	@${DELETE} ${TARGET}/.inputrc
-	@echo "cleaned"
 
 zsh: zsh-clean shell
 	@echo "zsh \c"
