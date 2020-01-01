@@ -1,5 +1,7 @@
 setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 setlocal number
+setlocal nofoldenable
+setlocal foldmethod=indent
 setlocal omnifunc=python3complete#Complete
 
 " ALE settings
