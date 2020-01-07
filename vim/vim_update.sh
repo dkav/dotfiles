@@ -9,6 +9,9 @@ if [ ! -d $packdir ]; then
     return
 fi
 
+counter=0
+
+
 update_vplugin()
 {   # Function to clone Vim plugins
 
@@ -34,11 +37,13 @@ update_vplugin()
             if [ -z $gen_doc ] ; then
                 mvim -nNes -u NONE -c "helptags $install_dir/doc" -c q
             fi
+            let counter++
         fi
     else
         echo "Warning: $base_name not installed"
     fi
 }
+
 
 # Update Vim plugins
 # -------------------
@@ -58,3 +63,8 @@ update_vplugin "ide/start/gitgutter"
 update_vplugin "ide/start/ale"
 update_vplugin "ide/opt/nerdcommenter"
 update_vplugin "ide/opt/ctrlp"
+
+# Check that updates occurred
+if [[ "$counter" -eq 0 ]]; then
+    echo "No plugin updates"
+fi
