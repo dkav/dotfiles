@@ -23,5 +23,9 @@ export BROWSER=open
 # Set default editor
 export EDITOR=/usr/local/bin/mvim
 
+# Set default Homebrew Bundle Brewfile
+export HOMEBREW_BUNDLE_FILE="~/Documents/Development/Configuration/\
+Homebrew-Bundle/Brewfile"
+
 # Create pipenv virutalenvs in project folder
 export PIPENV_VENV_IN_PROJECT=1
