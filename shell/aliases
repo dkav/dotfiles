@@ -41,7 +41,7 @@ alias nl="npm list --depth=0"
 
 # IPython & Jupyter
 alias ipy=ipython
-alias jpn="jupyter notebook"
+alias jpl="jupyter lab"
 
 # Directory shortcuts
 alias ddd="cd ~/Documents/Development"
