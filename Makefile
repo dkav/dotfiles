@@ -92,6 +92,17 @@ vim-clean:
 
 
 # Programming Environments
+jupyter:jupyter-clean
+	@echo "Jupyter \c"
+	@mkdir -p ${TARGET}/.jupyter
+	@${LINK} "${DOTFILES}/jupyter/jupyter_notebook_config.py" \
+		${TARGET}/.jupyter/jupyter_notebook_config.py
+	@echo "configured"
+jupyter-clean:
+	@echo "Jupyter \c"
+	@${DELETE} ${TARGET}/.jupyter/jupyter_notebook_config.py
+	@echo "cleaned"
+
 ruby:ruby-clean
 	@ echo "Ruby \c"
 	@${LINK} "${DOTFILES}/ruby/gemrc" ${TARGET}/.gemrc
