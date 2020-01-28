@@ -17,6 +17,7 @@ clean: zsh-clean shell-clean \
     pgsql-clean sqlite-clean
 
 
+# Shell Environments
 zsh: zsh-clean shell
 	@echo "zsh \c"
 	@${LINK} "${DOTFILES}/shell/zprofile" ${TARGET}/.zprofile
@@ -43,6 +44,7 @@ tmux-clean:
 	@echo "cleaned"
 
 
+# Security
 gpg: gpg-clean
 	@echo "gpg \c"
 	@mkdir -p ${TARGET}/.gpg
@@ -54,6 +56,8 @@ gpg-clean:
 	@${DELETE} ${TARGET}/.gnupg/gpg-agent.conf
 	@echo "cleaned"
 
+
+# Development Tools
 git: git-clean
 	@echo "git \c"
 	@mkdir -p ${TARGET}/.config/git
@@ -87,6 +91,7 @@ vim-clean:
 	@echo "cleaned"
 
 
+# Programming Environments
 ruby:ruby-clean
 	@ echo "Ruby \c"
 	@${LINK} "${DOTFILES}/ruby/gemrc" ${TARGET}/.gemrc
@@ -97,6 +102,7 @@ ruby-clean:
 	@echo "cleaned"
 
 
+# Databases
 pgsql: pgsql-clean
 	@echo "pgsql \c"
 	@${LINK} "${DOTFILES}/pgsql/psqlrc" ${TARGET}/.psqlrc
