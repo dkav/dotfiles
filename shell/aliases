@@ -43,9 +43,6 @@ alias nl="npm list --depth=0"
 alias ipy=ipython
 alias jpl="jupyter lab"
 
-# Directory shortcuts
-alias ddd="cd $HOME/Documents/Development"
-
 # Update macOS environment
 alias mac-update="$HOME/Documents/Development/Configuration/Mac-Update/\
 update-config.sh"

@@ -63,6 +63,11 @@ bindkey "^[[A" up-line-or-beginning-search  # Up
 bindkey "^[[B" down-line-or-beginning-search  # Down
 
 
+# Named directories
+# -----------------
+hash -d dev=~/Documents/Development
+hash -d lm=~/Documents/Development/Projects/linkage-mapper
+
 # Aliases
 # -------
 if [ -f ~/.aliases ]; then
