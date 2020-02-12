@@ -83,7 +83,7 @@ vim: vim-clean
 	@${LINK} "${DOTFILES}/vim/ftdetect" ${TARGET}/.vim/ftdetect
 	@mkdir ${TARGET}/.vim/after
 	@${LINK} "${DOTFILES}/vim/ftplugin" ${TARGET}/.vim/after/ftplugin
-	@"${DOTFILES}/vim/vim_plugins.sh" >/dev/null
+	@"${DOTFILES}/vim/vim-plugins.sh" >/dev/null
 	@echo "... configured"
 vim-clean:
 	@echo "vim \c"
