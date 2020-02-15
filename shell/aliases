@@ -32,7 +32,6 @@ alias bbd="brew bundle dump --force --describe"
 alias vim=/Applications/MacVim.app/Contents/bin/vim
 
 # Git
-alias git="hub"
 alias gt="git"
 
 # Node
