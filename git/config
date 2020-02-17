@@ -60,14 +60,16 @@
 	co = checkout
 	cl = clone
 	ci = commit
+	ct = commit -a -m
 	cp = cherry-pick
 	gp = grep -Iin
 	pl = pull
 	ph = push
 	rt = remote
 	rs = reset
+	re = restore
 	ss = stash
-	st = status
+	st = status -s
 
 	# Rebase
 	rb = rebase
