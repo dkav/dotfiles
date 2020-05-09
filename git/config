@@ -57,7 +57,6 @@
 [alias]
 	# Basic
 	br = branch
-	co = checkout
 	cl = clone
 	ci = commit
 	ct = commit -a -m
@@ -70,6 +69,7 @@
 	re = restore
 	ss = stash
 	st = status -s
+	sw = switch
 
 	# Rebase
 	rb = rebase
