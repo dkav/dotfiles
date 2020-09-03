@@ -24,8 +24,6 @@ open -g http://localhost:8000; fg"
 alias bw="brew"
 alias bwu="brew update && brew upgrade && brew cleanup"
 alias bk="brew cask"
-alias bko="brew update && brew cask outdated"
-alias bku="brew cask upgrade && brew cleanup"
 alias bbd="brew bundle dump --force --describe"
 
 # Vim
