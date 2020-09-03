@@ -172,7 +172,6 @@ let g:gitgutter_enabled = 0
 let mapleader = ","
 let g:mapleader = ","
 
-
 " Map colon
 nnoremap ; :
 nnoremap : ;
@@ -232,3 +231,6 @@ nnoremap <silent><leader>gs :GitGutterSignsToggle<CR>
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>ln :lnext<CR>
 nnoremap <leader>lp :lprev<CR>
+
+" Delete in visual mode
+vnoremap <BS> d
