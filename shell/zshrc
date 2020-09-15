@@ -29,6 +29,7 @@ precmd() {
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' enable git  # Detect git only
+zstyle ':vcs_info:*' disable-patterns "*/.git"  # Ignore .git folders
 
 setopt PROMPT_SUBST  # Prompt expansion
 
