@@ -32,6 +32,8 @@ alias vim=/Applications/MacVim.app/Contents/bin/vim
 
 # Git
 alias gt="git"
+alias gs="git status -s"
+alias gk="gitk --all&"
 
 # Node
 alias ng="npm list -g --depth=0"
