@@ -141,7 +141,7 @@ set completeopt=longest,menuone
 
 " Set NERDTree options
 let NERDTreeMinimalUI = 1
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 let g:NERDTreeStatusline = ' NERDTree %=%L items '
 
 " Set Tagbar options
