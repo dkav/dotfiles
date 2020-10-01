@@ -99,3 +99,5 @@
 
 	# Aliases
 	al = "!git config -l | grep alias | cut -c 7- | less"
+[init]
+	defaultBranch = main
