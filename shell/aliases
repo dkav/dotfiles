@@ -25,7 +25,7 @@ alias bw="brew"
 alias bwu="brew upgrade"
 alias bk="brew cask"
 alias bkl="brew list --cask"
-alias bbd="brew bundle dump --force --describe"
+alias bbd="brew bundle dump --force"
 
 # Vim
 alias vim=/Applications/MacVim.app/Contents/bin/vim
