@@ -26,9 +26,6 @@ alias bwu="brew upgrade"
 alias bkl="brew list --cask"
 alias bbd="brew bundle dump --force"
 
-# Vim
-alias vim=/Applications/MacVim.app/Contents/bin/vim
-
 # Git
 alias gt="git"
 alias gs="git status -s"
