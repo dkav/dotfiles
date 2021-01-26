@@ -9,11 +9,11 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: zsh tmux gpg git vim ruby pgsql sqlite
+all: zsh tmux gpg git vim jupyter ruby pgsql sqlite
 
 clean: zsh-clean shell-clean \
     gpg-clean git-clean vim-clean \
-    ruby-clean \
+    jupyter-clean ruby-clean \
     pgsql-clean sqlite-clean
 
 
