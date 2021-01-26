@@ -9,11 +9,11 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: zsh tmux gpg git vim jupyter ruby pgsql sqlite
+all: zsh tmux gpg git vim pip jupyter ruby pgsql sqlite
 
 clean: zsh-clean shell-clean \
     gpg-clean git-clean vim-clean \
-    jupyter-clean ruby-clean \
+    pip-clean jupyter-clean ruby-clean \
     pgsql-clean sqlite-clean
 
 
@@ -91,6 +91,16 @@ vim-clean:
 
 
 # Programming Environments
+pip: pip-clean
+	@echo "pip \c"
+	@mkdir -p ${TARGET}/.config/pip
+	@${LINK} "${DOTFILES}/pip/pip.conf" ${TARGET}/.config/pip/pip.conf
+	@echo "configured"
+pip-clean:
+	@echo "pip \c"
+	@${DELETE} -r ${TARGET}/.config/pip
+	@echo "cleaned"
+
 jupyter:jupyter-clean
 	@echo "Jupyter \c"
 	@mkdir -p ${TARGET}/.jupyter
