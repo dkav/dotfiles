@@ -23,7 +23,7 @@ export BROWSER=open
 # Set default editor
 export EDITOR=/usr/local/bin/mvim
 
-# Homebrew Bundle settings
+# Homebrew settings
 export HOMEBREW_CLEANUP_PERIODIC_FULL_DAY=0
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
 export HOMEBREW_BUNDLE_FILE="$HOME/Development/Configuration/Mac-Config/Homebrew/Brewfile"
