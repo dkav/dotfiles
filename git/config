@@ -57,6 +57,7 @@
 [alias]
 	# Basic
 	br = branch
+	co = checkout
 	cl = clone
 	ci = commit
 	ct = commit -a -m
