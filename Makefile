@@ -9,11 +9,11 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: zsh tmux gpg git vim pip jupyter ruby pgsql sqlite
+all: zsh tmux gpg git vim pip jupyter ruby npm pgsql sqlite
 
 clean: zsh-clean shell-clean \
     gpg-clean git-clean vim-clean \
-    pip-clean jupyter-clean ruby-clean \
+    pip-clean jupyter-clean npm-clean ruby-clean \
     pgsql-clean sqlite-clean
 
 
@@ -119,6 +119,15 @@ ruby:ruby-clean
 ruby-clean:
 	@echo "Ruby \c"
 	@${DELETE} ${TARGET}/.gemrc
+	@echo "cleaned"
+
+npm:npm-clean
+	@ echo "npm \c"
+	@${LINK} "${DOTFILES}/npm/npmrc" ${TARGET}/.npmrc
+	@echo "configured"
+npm-clean:
+	@echo "npm \c"
+	@${DELETE} ${TARGET}/.npmrc
 	@echo "cleaned"
 
 
