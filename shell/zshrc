@@ -78,8 +78,9 @@ bindkey "^[[B" down-line-or-beginning-search  # Down
 
 # Named directories
 # -----------------
-hash -d dev=~/Development
-hash -d lm=~/Development/Projects/linkage-mapper
+hash -d dev=~/Documents/Development
+hash -d lm=~/Documents/Development/Projects/linkage-mapper
+hash -d repos=~/Repositories
 
 # Aliases
 # -------

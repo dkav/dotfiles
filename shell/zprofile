@@ -26,7 +26,7 @@ export EDITOR=/usr/local/bin/mvim
 # Homebrew settings
 export HOMEBREW_CLEANUP_PERIODIC_FULL_DAY=7
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=14
-export HOMEBREW_BUNDLE_FILE="$HOME/Development/Configuration/Mac-Config/Homebrew/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$HOME/Repositories/mac-config/homebrew/Brewfile"
 export HOMEBREW_BUNDLE_NO_LOCK=1
 if [[ -f ~/.token/homebrew_github_api_token ]]; then
     export HOMEBREW_GITHUB_API_TOKEN=$( cat ~/.token/homebrew_github_api_token )
