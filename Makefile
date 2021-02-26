@@ -9,10 +9,10 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: zsh tmux gpg git vim pip jupyter ruby npm pgsql sqlite
+all: zsh tmux git vim pip jupyter ruby npm pgsql sqlite
 
 clean: zsh-clean shell-clean \
-    gpg-clean git-clean vim-clean \
+    git-clean vim-clean \
     pip-clean jupyter-clean npm-clean ruby-clean \
     pgsql-clean sqlite-clean
 
@@ -41,19 +41,6 @@ tmux: tmux-clean shell
 tmux-clean:
 	@echo "tmux \c"
 	@${DELETE} ${TARGET}/.tmux.conf
-	@echo "cleaned"
-
-
-# Security
-gpg: gpg-clean
-	@echo "gpg \c"
-	@mkdir -p ${TARGET}/.gpg
-	@${LINK} "${DOTFILES}/gpg/gpg-agent.conf" \
-	    ${TARGET}/.gnupg/gpg-agent.conf
-	@echo "configured"
-gpg-clean:
-	@echo "gpg \c"
-	@${DELETE} ${TARGET}/.gnupg/gpg-agent.conf
 	@echo "cleaned"
 
 
