@@ -53,7 +53,7 @@ autoload -Uz compinit
 compinit -i
 # End of lines added by compinstall
 
-# pip zsh completion start
+# pip completion
 function _pip_completion {
   local words cword
   read -Ac words
@@ -63,7 +63,6 @@ function _pip_completion {
              PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
 }
 compctl -K _pip_completion pip pip3
-# pip zsh completion end
 
 
 # Search history
