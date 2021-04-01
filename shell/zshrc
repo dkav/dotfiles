@@ -95,6 +95,4 @@ hash -d repos=~/Repositories
 
 # Aliases
 # -------
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-fi
+source ~/.aliases
