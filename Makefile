@@ -22,11 +22,13 @@ sh: sh-clean shell
 	@echo "sh \c"
 	@${LINK} "${DOTFILES}/shell/zprofile" ${TARGET}/.zprofile
 	@${LINK} "${DOTFILES}/shell/zshrc" ${TARGET}/.zshrc
+	@${LINK} "${DOTFILES}/shell/shellcheckrc" ${TARGET}/.shellcheckrc
 	@echo "configured"
 sh-clean:
 	@echo "sh \c"
 	@${DELETE} ${TARGET}/.zprofile
 	@${DELETE} ${TARGET}/.zshrc
+	@${DELETE} ${TARGET}/.shellcheckrc
 	@echo "cleaned"
 
 shell: shell-clean
