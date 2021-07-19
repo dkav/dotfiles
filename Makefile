@@ -9,22 +9,22 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: zsh tmux git vim pip jupyter ruby npm pgsql sqlite
+all: sh tmux git vim pip jupyter ruby npm pgsql sqlite
 
-clean: zsh-clean shell-clean \
+clean: sh-clean shell-clean \
     git-clean vim-clean \
     pip-clean jupyter-clean npm-clean ruby-clean \
     pgsql-clean sqlite-clean
 
 
 # Shell Environments
-zsh: zsh-clean shell
-	@echo "zsh \c"
+sh: sh-clean shell
+	@echo "sh \c"
 	@${LINK} "${DOTFILES}/shell/zprofile" ${TARGET}/.zprofile
 	@${LINK} "${DOTFILES}/shell/zshrc" ${TARGET}/.zshrc
 	@echo "configured"
-zsh-clean:
-	@echo "zsh \c"
+sh-clean:
+	@echo "sh \c"
 	@${DELETE} ${TARGET}/.zprofile
 	@${DELETE} ${TARGET}/.zshrc
 	@echo "cleaned"
