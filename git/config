@@ -8,8 +8,17 @@
 	gpgsign = true
 [gpg]
 	program = /usr/local/bin/gpg
+
+[core]
+	editor = mvim -f
+
+[init]
+	defaultBranch = main
 [pull]
 	rebase = true
+[rebase]
+	instructionFormat = %s [%an] [%ai]
+
 [filter "media"]
 	required = true
 	clean = git media clean %f
@@ -19,8 +28,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[core]
-	editor = mvim -f
+
 [diff]
 	tool = p4merge
 [diff "textutil"]
@@ -33,6 +41,7 @@
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$REMOTE\"" "\"$LOCAL\""
 [difftool "mvim"]
 	cmd = mvimdiff -f \"$LOCAL\" \"$REMOTE\"
+
 [merge]
 	tool = vimdiff
 	guitool = p4merge
@@ -50,10 +59,9 @@
 [mergetool "mvim3"]
 	cmd = mvimdiff -f -M -c '4wincmd w | wincmd J | set modifiable | set write' \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
 	trustExitCode = false
+
 [log]
 	date = format:%Y-%m-%d %H:%M
-[rebase]
-	instructionFormat = %s [%an] [%ai]
 [alias]
 	# Basic
 	br = branch
@@ -103,5 +111,3 @@
 
 	# Aliases
 	al = "!git config -l | grep alias | cut -c 7- | less"
-[init]
-	defaultBranch = main
