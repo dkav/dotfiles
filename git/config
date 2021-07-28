@@ -62,6 +62,10 @@
 
 [log]
 	date = format:%Y-%m-%d %H:%M
+[blame]
+	date = format:%Y-%m-%d %H:%M
+	coloring = highlightRecent
+
 [alias]
 	# Basic
 	br = branch
