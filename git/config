@@ -61,20 +61,23 @@
 	cl = clone
 	ci = commit
 	ct = commit -a -m
+	ca = commit -a --amend --no-edit
 	cp = cherry-pick
 	gp = grep -Iin
 	pl = pull
 	ph = push
+	pf = push -f
 	rt = remote
 	rs = reset
 	re = restore
-	ss = stash
+	sa = stash
 	st = status -s
 	sw = switch
 
 	# Rebase
 	rb = rebase
 	ri = rebase -i
+	rc = rebase --continue
 
 	# Diff
 	df = diff
@@ -96,7 +99,7 @@
 	lf = log --pretty=fuller
 
 	# Config
-	ce = config --global --edit
+	ec = config --global --edit
 
 	# Aliases
 	al = "!git config -l | grep alias | cut -c 7- | less"
