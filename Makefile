@@ -65,17 +65,20 @@ git-clean:
 	@echo "cleaned"
 
 vim: vim-clean
-	@echo "vim ..."
-	@mkdir ${TARGET}/.vim
+	@echo "vim \c"
+	@mkdir -p ${TARGET}/.vim
 	@${LINK} "${DOTFILES}/vim/vimrc" ${TARGET}/.vim/vimrc
 	@${LINK} "${DOTFILES}/vim/gvimrc" ${TARGET}/.vim/gvimrc
 	@${LINK} "${DOTFILES}/vim/ftdetect" ${TARGET}/.vim/ftdetect
 	@mkdir ${TARGET}/.vim/after
 	@${LINK} "${DOTFILES}/vim/ftplugin" ${TARGET}/.vim/after/ftplugin
-	@echo "... configured"
+	@echo "configured"
 vim-clean:
 	@echo "vim \c"
-	@${DELETE} -r ${TARGET}/.vim
+	@${DELETE} ${TARGET}/.vim/vimrc
+	@${DELETE} ${TARGET}/.vim/gvimrc
+	@${DELETE} ${TARGET}/.vim/ftdetect
+	@${DELETE} -r ${TARGET}/.vim/after
 	@echo "cleaned"
 
 
