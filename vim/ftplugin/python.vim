@@ -10,3 +10,6 @@ let b:ale_fix_on_save = 1
 let b:ale_fixers = ['black', 'remove_trailing_lines', 'trim_whitespace']
 let b:ale_fix_on_save_ignore = ['black']
 let b:ale_python_black_options = '--line-length 79'
+
+" Key mappings
+nnoremap <leader>b oimport pdb; pdb.set_trace()<Esc>
