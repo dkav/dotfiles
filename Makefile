@@ -9,36 +9,39 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: sh tmux git vim pip jupyter ruby npm pgsql sqlite
+all: shell git vim python ruby npm db
 
-clean: sh-clean shell-clean \
+clean: shell-clean \
     git-clean vim-clean \
-    pip-clean jupyter-clean npm-clean ruby-clean \
-    pgsql-clean sqlite-clean
+    python-clean ruby-clean npm-clean \
+    db-clean
 
 
 # Shell Environments
-sh: sh-clean shell
+shell: zsh alias tmux
+shell-clean: zsh-clean alias-clean tmux-clean
+
+zsh: zsh-clean
 	@echo "sh \c"
 	@${LINK} "${DOTFILES}/shell/zprofile" ${TARGET}/.zprofile
 	@${LINK} "${DOTFILES}/shell/zshrc" ${TARGET}/.zshrc
 	@${LINK} "${DOTFILES}/shell/shellcheckrc" ${TARGET}/.shellcheckrc
 	@echo "configured"
-sh-clean:
+zsh-clean:
 	@echo "sh \c"
 	@${DELETE} ${TARGET}/.zprofile
 	@${DELETE} ${TARGET}/.zshrc
 	@${DELETE} ${TARGET}/.shellcheckrc
 	@echo "cleaned"
 
-shell: shell-clean
+alias: alias-clean
 	@${LINK} "${DOTFILES}/shell/aliases" ${TARGET}/.aliases
-shell-clean:
+alias-clean:
 	@${DELETE} ${TARGET}/.aliases
 
-tmux: tmux-clean shell
+tmux: tmux-clean
 	@echo "tmux \c"
-	@${LINK} "${DOTFILES}/tmux/tmux.conf" ${TARGET}/.tmux.conf
+	@${LINK} "${DOTFILES}/shell/tmux.conf" ${TARGET}/.tmux.conf
 	@echo "configured"
 tmux-clean:
 	@echo "tmux \c"
@@ -84,10 +87,13 @@ vim-clean:
 
 
 # Programming Environments
+python: pip jupyter
+python-clean: pip-clean jupyter-clean
+
 pip: pip-clean
 	@echo "pip \c"
 	@mkdir -p ${TARGET}/.config/pip
-	@${LINK} "${DOTFILES}/pip/pip.conf" ${TARGET}/.config/pip/pip.conf
+	@${LINK} "${DOTFILES}/python/pip.conf" ${TARGET}/.config/pip/pip.conf
 	@echo "configured"
 pip-clean:
 	@echo "pip \c"
@@ -97,7 +103,7 @@ pip-clean:
 jupyter:jupyter-clean
 	@echo "Jupyter \c"
 	@mkdir -p ${TARGET}/.jupyter
-	@${LINK} "${DOTFILES}/jupyter/jupyter_notebook_config.py" \
+	@${LINK} "${DOTFILES}/python/jupyter_notebook_config.py" \
 		${TARGET}/.jupyter/jupyter_notebook_config.py
 	@echo "configured"
 jupyter-clean:
@@ -125,9 +131,12 @@ npm-clean:
 
 
 # Databases
+db: pgsql sqlite
+db-clean: pgsql-clean sqlite-clean
+
 pgsql: pgsql-clean
 	@echo "pgsql \c"
-	@${LINK} "${DOTFILES}/pgsql/psqlrc" ${TARGET}/.psqlrc
+	@${LINK} "${DOTFILES}/db/psqlrc" ${TARGET}/.psqlrc
 	@echo "configured"
 pgsql-clean:
 	@echo "pgsql \c"
@@ -136,7 +145,7 @@ pgsql-clean:
 
 sqlite: sqlite-clean
 	@echo "sqlite \c"
-	@${LINK} "${DOTFILES}/sqlite/sqliterc" ${TARGET}/.sqliterc
+	@${LINK} "${DOTFILES}/db/sqliterc" ${TARGET}/.sqliterc
 	@echo "configured"
 sqlite-clean:
 	@echo "sqlite \c"
