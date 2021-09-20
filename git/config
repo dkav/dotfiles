@@ -90,6 +90,8 @@
 	rb = rebase
 	ri = rebase -i
 	rc = rebase --continue
+	rd = rebase --committer-date-is-author-date
+	ra = rebase --reset-author-date
 
 	# Diff
 	df = diff
