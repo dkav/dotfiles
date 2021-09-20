@@ -116,4 +116,4 @@
 	ec = config --global --edit
 
 	# Aliases
-	al = "!git config -l | grep alias | cut -c 7- | less"
+	al = "!git config -l | grep alias | cut -c 7- | less -X"
