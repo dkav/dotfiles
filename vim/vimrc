@@ -210,6 +210,14 @@ nnoremap <silent><leader>l :set list!<CR>
 " Toggle and untoggle spell checking
 nnoremap <leader>sc :setlocal spell!<CR>
 
+" Location list navigation
+nnoremap <leader>lc :lclose<CR>
+nnoremap <leader>ln :lnext<CR>
+nnoremap <leader>lp :lprev<CR>
+
+" Delete in visual mode
+vnoremap <BS> d
+
 " Toggle IDE windows
 nnoremap <silent><leader>[ :NERDTreeToggle <BAR> wincmd p<CR>
 nnoremap <silent><leader>] :TagbarToggle<CR>
@@ -225,11 +233,3 @@ nmap <C-j> <Plug>(ale_next_wrap)
 " GitGutter mappings
 nnoremap <silent><leader>gg :GitGutterToggle<CR>
 nnoremap <silent><leader>gs :GitGutterSignsToggle<CR>
-
-" Location list navigation
-nnoremap <leader>lc :lclose<CR>
-nnoremap <leader>ln :lnext<CR>
-nnoremap <leader>lp :lprev<CR>
-
-" Delete in visual mode
-vnoremap <BS> d
