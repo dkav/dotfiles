@@ -207,6 +207,9 @@ nnoremap <silent><leader>h :set hlsearch!<CR>
 " Toggle `set list`
 nnoremap <silent><leader>l :set list!<CR>
 
+" Tooggle cursor line and column
+nnoremap <silent><leader>c :set cursorcolumn!<Bar>set cursorline!<CR>
+
 " Toggle and untoggle spell checking
 nnoremap <leader>sc :setlocal spell!<CR>
 
