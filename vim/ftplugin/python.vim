@@ -4,6 +4,7 @@ setlocal number
 setlocal nofoldenable
 setlocal foldmethod=indent
 setlocal omnifunc=python3complete#Complete
+let g:pyindent_open_paren = 'shiftwidth()'
 
 " ALE settings
 let b:ale_linters = ['flake8', 'pylint', 'vulture', 'pyls']
