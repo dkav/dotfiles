@@ -15,11 +15,6 @@ alias dh='dirs -v'
 alias cls="clear"
 alias dir="ls"
 
-# Web servers
-alias nws="http-server -o"
-alias pws="python3 -m http.server &; sleep 0.1; \
-open -g http://localhost:8000; fg"
-
 # Homebrew
 alias bw="brew"
 alias bwu="brew upgrade"
@@ -31,10 +26,15 @@ alias gt="git"
 alias gs="git status -s"
 alias gk="gitk --all&"
 
+# IPython & Jupyter
+alias ipy=ipython
+alias jpl="jupyter lab"
+
 # Node
 alias ng="npm list -g --depth=0"
 alias nl="npm list --depth=0"
 
-# IPython & Jupyter
-alias ipy=ipython
-alias jpl="jupyter lab"
+# Web servers
+alias nws="http-server -o"
+alias pws="python3 -m http.server &; sleep 0.1; \
+open -g http://localhost:8000; fg"
