@@ -94,3 +94,8 @@ source ~/.nmdirs
 # Aliases
 # -------
 source ~/.aliases
+
+# Misc
+# ----
+# Pyenv
+eval "$(pyenv init -)"

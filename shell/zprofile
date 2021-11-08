@@ -34,5 +34,6 @@ export HOMEBREW_BUNDLE_FILE="$HOME/Repositories/mac-config/homebrew/Brewfile"
 export HOMEBREW_BUNDLE_NO_LOCK=1
 export HOMEBREW_GITHUB_API_TOKEN=$( cat ~/.token/homebrew_github_api_token )
 
-# Create pipenv virutalenvs in project folder
-export PIPENV_VENV_IN_PROJECT=1
+# Pyenv
+eval "$(pyenv init --path)"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
