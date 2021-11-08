@@ -30,7 +30,7 @@ export GH_TOKEN=$( cat ~/.token/shell_github_api_token )
 export HOMEBREW_CLEANUP_PERIODIC_FULL_DAY=7
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=14
 export HOMEBREW_NO_EMOJI=1
-export HOMEBREW_BUNDLE_FILE="$HOME/Repositories/mac-config/homebrew/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$HOME/.brewfile"
 export HOMEBREW_BUNDLE_NO_LOCK=1
 export HOMEBREW_GITHUB_API_TOKEN=$( cat ~/.token/homebrew_github_api_token )
 
