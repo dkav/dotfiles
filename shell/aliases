@@ -16,7 +16,8 @@ alias cls="clear"
 alias dir="ls"
 
 # Homebrew
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias brew='env PATH=${${PATH//$(pyenv root)\/shims:/}'\
+'//:\/Applications\/Postgres.app\/Contents\/Versions\/latest\/bin/} brew'
 alias bw="brew"
 alias bwu="brew upgrade"
 alias bkl="brew list --cask"
