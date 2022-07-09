@@ -9,8 +9,7 @@ path=(/usr/local/bin
       /usr/bin
       /bin
       /usr/sbin
-      /sbin
-      /Applications/Postgres.app/Contents/Versions/latest/bin)
+      /sbin)
 
 export PATH
 
