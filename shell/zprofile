@@ -4,7 +4,7 @@
 path=(/usr/local/opt/python@3.10/bin
       /usr/local/bin
       /usr/local/opt/ruby/bin
-      /usr/local/lib/ruby/gems/3.1.0/bin
+      $(/usr/local/opt/ruby/bin/gem environment gemdir)/bin
       /usr/local/opt/tcl-tk/bin
       /usr/local/sbin
       /usr/bin
