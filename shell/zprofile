@@ -26,6 +26,7 @@ export EDITOR=/usr/local/bin/mvim
 export GH_TOKEN=$( cat ~/.token/shell_github_api_token )
 
 # Homebrew settings
+export HOMEBREW_AUTOREMOVE=1
 export HOMEBREW_CLEANUP_PERIODIC_FULL_DAY=7
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=14
 export HOMEBREW_NO_EMOJI=1
