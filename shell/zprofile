@@ -35,6 +35,7 @@ export HOMEBREW_BUNDLE_FILE="$HOME/.brewfile"
 export HOMEBREW_BUNDLE_NO_LOCK=1
 export HOMEBREW_GITHUB_API_TOKEN=$( cat ~/.token/homebrew_github_api_token )
 export HOMEBREW_DEVELOPER=1
+export HOMEBREW_NO_INSTALL_FROM_API=1 # To support Catalina
 
 # Pyenv
 eval "$(pyenv init --path)"
