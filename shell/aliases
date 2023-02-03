@@ -19,8 +19,15 @@ alias dir="ls"
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias bw="brew"
 alias bwu="brew upgrade"
-alias bkl="brew list --cask"
+alias bwo="brew outdated"
+alias blf="brew list --formula"
+alias blc="brew list --cask"
+alias blp="brew list --pinned"
+alias bwl="brew leaves --installed-on-request"
+alias bui="brew uses --installed"
+alias bud="brew uses --installed --include-build"
 alias bbd="brew bundle dump --force"
+alias bwc="brew autoremove && brew cleanup --prune=all"
 
 # Git
 alias gt="git"
