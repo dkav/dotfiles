@@ -87,8 +87,8 @@ vim-clean:
 
 
 # Programming Environments
-python: pip jupyter
-python-clean: pip-clean jupyter-clean
+python: pip ipython jupyter
+python-clean: pip-clean ipython-clean jupyter-clean
 
 pip: pip-clean
 	@echo "pip \c"
@@ -98,6 +98,17 @@ pip: pip-clean
 pip-clean:
 	@echo "pip \c"
 	@${DELETE} -r ${TARGET}/.config/pip
+	@echo "cleaned"
+
+ipython:ipython-clean
+	@echo "IPython \c"
+	@mkdir -p ${TARGET}/.ipython
+	@${LINK} "${DOTFILES}/python/ipython_config.py" \
+		${TARGET}/.ipython/profile_default/ipython_config.py
+	@echo "configured"
+ipython-clean:
+	@echo "IPython \c"
+	@${DELETE} ${TARGET}/.ipython/profile_default/ipython_config.py
 	@echo "cleaned"
 
 jupyter:jupyter-clean
