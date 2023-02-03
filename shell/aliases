@@ -34,6 +34,10 @@ alias gt="git"
 alias gs="git status -s"
 alias gk="gitk --all&"
 
+# Python
+alias python="/usr/local/bin/python3"
+alias pip="/usr/local/bin/pip3"
+
 # IPython & Jupyter
 alias ipy=ipython
 alias jpl="jupyter lab"
