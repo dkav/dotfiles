@@ -22,9 +22,6 @@ export BROWSER=open
 # Set default editor
 export EDITOR=/usr/local/bin/mvim
 
-# GitHub shell token
-export GH_TOKEN=$( cat ~/.token/shell_github_api_token )
-
 # Homebrew settings
 export HOMEBREW_AUTOREMOVE=1
 export HOMEBREW_CLEANUP_PERIODIC_FULL_DAY=7
