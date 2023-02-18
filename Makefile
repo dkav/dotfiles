@@ -87,8 +87,8 @@ vim-clean:
 
 
 # Programming Environments
-python: pip ipython jupyter
-python-clean: pip-clean ipython-clean jupyter-clean
+python: pip pypi ipython jupyter
+python-clean: pip-clean pypi-clean ipython-clean jupyter-clean
 
 pip: pip-clean
 	@echo "pip \c"
@@ -98,6 +98,16 @@ pip: pip-clean
 pip-clean:
 	@echo "pip \c"
 	@${DELETE} -r ${TARGET}/.config/pip
+	@echo "cleaned"
+
+pypi: pypi-clean
+	@echo "pypi \c"
+	@mkdir -p ${TARGET}/.config/pypi
+	@${LINK} "${DOTFILES}/python/pypirc" ${TARGET}/.pypirc
+	@echo "configured"
+pypi-clean:
+	@echo "pypi \c"
+	@${DELETE} -r ${TARGET}/.pypirc
 	@echo "cleaned"
 
 ipython:ipython-clean
