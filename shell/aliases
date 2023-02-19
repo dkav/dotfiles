@@ -27,7 +27,7 @@ alias bwl="brew leaves --installed-on-request"
 alias bui="brew uses --installed"
 alias bud="brew uses --installed --include-build"
 alias bbd="brew bundle dump --force"
-alias bwc="brew autoremove && brew cleanup --prune=all"
+alias bwc="brew cleanup --prune=all"
 
 # Git
 alias gt="git"
