@@ -9,9 +9,10 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: shell git vim python ruby npm db
+all: shell brew git vim python ruby npm db
 
 clean: shell-clean \
+    brew-clean \
     git-clean vim-clean \
     python-clean ruby-clean npm-clean \
     db-clean
@@ -46,6 +47,19 @@ tmux: tmux-clean
 tmux-clean:
 	@echo "tmux \c"
 	@${DELETE} ${TARGET}/.tmux.conf
+	@echo "cleaned"
+
+
+# Homebrew
+brew: brew-clean
+	@echo "Homebrew \c"
+	@mkdir -p ${TARGET}/.homebrew
+	@${LINK} "${DOTFILES}/homebrew/brew.env" \
+		${TARGET}/.homebrew/brew.env
+	@echo "configured"
+brew-clean:
+	@echo "Homebrew \c"
+	@${DELETE} ${TARGET}/.homebrew/brew.env
 	@echo "cleaned"
 
 

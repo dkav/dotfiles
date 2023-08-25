@@ -22,18 +22,6 @@ export BROWSER=open
 # Set default editor
 export EDITOR=/usr/local/bin/mvim
 
-# Homebrew settings
-export HOMEBREW_AUTOREMOVE=1
-export HOMEBREW_CLEANUP_PERIODIC_FULL_DAY=7
-export HOMEBREW_CLEANUP_MAX_AGE_DAYS=14
-export HOMEBREW_NO_EMOJI=1
-export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_BUNDLE_FILE="$HOME/.brewfile"
-export HOMEBREW_BUNDLE_NO_LOCK=1
-export HOMEBREW_GITHUB_API_TOKEN=$( cat ~/.token/homebrew_github_api_token )
-export HOMEBREW_DEVELOPER=1
-export HOMEBREW_NO_INSTALL_FROM_API=1 # To support Catalina
-
 # Pyenv
 eval "$(pyenv init --path)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
