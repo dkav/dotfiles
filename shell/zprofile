@@ -22,6 +22,9 @@ export BROWSER=open
 # Set default editor
 export EDITOR=/usr/local/bin/mvim
 
+# Homebrew
+export HOMEBREW_GITHUB_API_TOKEN=$( cat ~/.token/homebrew_github_api_token )
+
 # Pyenv
 eval "$(pyenv init --path)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
