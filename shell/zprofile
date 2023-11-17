@@ -1,16 +1,9 @@
 # PATH
 # ----
 # Base PATH
-path=(/usr/local/bin
-      /usr/local/opt/ruby/bin
-      $(/usr/local/opt/ruby/bin/gem environment gemdir)/bin
-      /usr/local/opt/tcl-tk/bin
-      /usr/local/sbin
-      /usr/bin
-      /bin
-      /usr/sbin
-      /sbin)
+eval "$(brew shellenv)"
 
+path=($(brew --prefix ruby)/bin $path)
 export PATH
 
 
@@ -20,11 +13,11 @@ export PATH
 export BROWSER=open
 
 # Set default editor
-export EDITOR=/usr/local/bin/mvim
+export EDITOR=$HOMEBREW_PREFIX/bin/mvim
 
 # Homebrew
 export HOMEBREW_BUNDLE_FILE=$HOME/.homebrew/Brewfile
-export HOMEBREW_GITHUB_API_TOKEN=$( cat ~/.token/homebrew_github_api_token )
+export HOMEBREW_GITHUB_API_TOKEN=$( cat $HOME/.token/homebrew_github_api_token )
 
 # Pyenv
 eval "$(pyenv init --path)"
