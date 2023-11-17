@@ -18,7 +18,3 @@ export EDITOR=$HOMEBREW_PREFIX/bin/mvim
 # Homebrew
 export HOMEBREW_BUNDLE_FILE=$HOME/.homebrew/Brewfile
 export HOMEBREW_GITHUB_API_TOKEN=$( cat $HOME/.token/homebrew_github_api_token )
-
-# Pyenv
-eval "$(pyenv init --path)"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
