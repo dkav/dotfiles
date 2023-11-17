@@ -9,9 +9,6 @@ export PATH
 
 # Misc
 # ----
-# Set default browser
-export BROWSER=open
-
 # Set default editor
 export EDITOR=$HOMEBREW_PREFIX/bin/mvim
 
