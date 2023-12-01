@@ -1,6 +1,3 @@
-# ZSH SETTINGS
-#=============
-
 # Options
 # -------
 setopt AUTO_CD  # Change to dir automatically
@@ -8,7 +5,6 @@ setopt AUTO_CD  # Change to dir automatically
 bindkey -v  # Use Vi mode
 
 disable r  # Disable r builtin
-
 
 # Directory Stack
 # ---------------
@@ -18,7 +14,6 @@ setopt PUSHD_IGNORE_DUPS  # Don't add dups to dir stack
 setopt PUSHD_MINUS  # Reverts the +/- operators
 setopt PUSHD_SILENT  # Do not print the dir stack
 setopt PUSHD_TO_HOME  # pushd with no arguments goes to $Home
-
 
 # Prompt
 # ------
@@ -39,7 +34,6 @@ zstyle ':vcs_info:*' actionformats '%r [%b|%a] %# '  # During special actions
 zstyle ':vcs_info:*' nvcsformats '%# '  # Prompt in standard folders
 
 PROMPT='${vcs_info_msg_0_}'
-
 
 # Completion
 # ----------
@@ -76,7 +70,6 @@ _npm_completion() {
   }
 compdef _npm_completion npm
 
-
 # Search history
 # --------------
 autoload -U up-line-or-beginning-search
@@ -85,7 +78,6 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search  # Up
 bindkey "^[[B" down-line-or-beginning-search  # Down
-
 
 # Named directories
 # -----------------
@@ -97,6 +89,5 @@ source ~/.aliases
 
 # Misc
 # ----
-# Pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
