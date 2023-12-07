@@ -38,14 +38,14 @@ PROMPT='${vcs_info_msg_0_}'
 # Completion
 # ----------
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '~/.zshrc'
 
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 autoload -Uz compinit
 compinit -i
-# End of lines added by compinstall
 
 # pip completion
 function _pip_completion {
