@@ -88,7 +88,7 @@
 	# Rebase
 	rb = rebase
 	ri = rebase -i
-	rc = rebase --continue
+	rc = "-c core.editor=true rebase --continue"
 	rd = rebase --committer-date-is-author-date
 	ra = rebase --reset-author-date
 
