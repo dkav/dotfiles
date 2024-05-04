@@ -41,7 +41,7 @@ alias pip="$HOMEBREW_PREFIX/bin/pip3"
 
 # IPython & Jupyter
 alias ipy=ipython
-alias jpl="jupyter lab"
+alias jpl="jupyter-lab"
 
 # Node
 alias ng="npm list -g --depth=0"
