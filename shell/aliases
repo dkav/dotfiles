@@ -37,7 +37,6 @@ alias gk="gitk --all&"
 
 # Python
 alias python="$HOMEBREW_PREFIX/bin/python3"
-alias pip="$HOMEBREW_PREFIX/bin/pip3"
 
 # IPython & Jupyter
 alias ipy=ipython
