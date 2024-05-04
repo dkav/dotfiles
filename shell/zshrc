@@ -42,7 +42,7 @@ zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '~/.zshrc'
 
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}:$HOME/.zfunc"
 
 autoload -Uz compinit
 compinit -i
