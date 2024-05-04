@@ -101,8 +101,8 @@ vim-clean:
 
 
 # Programming Environments
-python: pip pypi ipython jupyter
-python-clean: pip-clean pypi-clean ipython-clean jupyter-clean
+python: pip pypi ruff ipython jupyter
+python-clean: pip-clean pypi-clean ruff-clean ipython-clean jupyter-clean
 
 pip: pip-clean
 	@echo "pip \c"
@@ -122,6 +122,16 @@ pypi: pypi-clean
 pypi-clean:
 	@echo "pypi \c"
 	@${DELETE} -r ${TARGET}/.pypirc
+	@echo "cleaned"
+
+ruff: ruff-clean
+	@echo "ruff \c"
+	@mkdir -p ${TARGET}/.config/ruff
+	@${LINK} "${DOTFILES}/python/ruff.toml" ${TARGET}/.config/ruff/ruff.toml
+	@echo "configured"
+ruff-clean:
+	@echo "ruff \c"
+	@${DELETE} -r ${TARGET}/.config/ruff
 	@echo "cleaned"
 
 ipython:ipython-clean
