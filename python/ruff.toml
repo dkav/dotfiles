@@ -1,0 +1,5 @@
+cache-dir = "~/.cache/ruff"
+line-length = 79
+
+[lint]
+select = ["ALL"]
