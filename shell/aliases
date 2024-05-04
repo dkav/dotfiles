@@ -50,4 +50,4 @@ alias nl="npm list --depth=0"
 # Web servers
 alias nws="http-server -o"
 alias pws="python3 -m http.server &; sleep 0.1; \
-open -g http://localhost:8000; fg"
+  open -g http://localhost:8000; fg"
