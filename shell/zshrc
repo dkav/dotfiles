@@ -86,8 +86,3 @@ source ~/.nmdirs
 # Aliases
 # -------
 source ~/.aliases
-
-# Misc
-# ----
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
