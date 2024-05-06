@@ -6,14 +6,16 @@
 DOTFILES  := ${PWD}
 TARGET	  := ${HOME}
 XDGCFG    := ${XDG_CONFIG_HOME}
+XDGDATA   := ${XDG_DATA_HOME}
 LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: shell brew git vim python ruby npm db
+all: shell brew security git vim python ruby npm db
 
 clean: shell-clean \
     brew-clean \
+    security-clean \
     git-clean vim-clean \
     python-clean ruby-clean npm-clean \
     db-clean
@@ -68,6 +70,22 @@ brew: brew-clean
 brew-clean:
 	@echo "Homebrew \c"
 	@${DELETE} ${TARGET}/.homebrew/brew.env
+	@echo "cleaned"
+
+
+# Security
+security: gpg
+security-clean: gpg-clean
+
+gpg: gpg-clean
+	@echo "GnuPG \c"
+	@mkdir -m 700 -p ${XDGDATA}/gnupg
+	@${LINK} "${DOTFILES}/security/gpg-agent.conf" \
+		${XDGDATA}/gnupg/gpg-agent.conf
+	@echo "configured"
+gpg-clean:
+	@echo "GnuPG \c"
+	@${DELETE} ${XDGDATA}/gnupg/gpg-agent.conf
 	@echo "cleaned"
 
 

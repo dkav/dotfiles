@@ -9,3 +9,6 @@ export PATH
 export EDITOR=$HOMEBREW_PREFIX/bin/mvim
 export HOMEBREW_BUNDLE_FILE=$HOME/.homebrew/Brewfile
 export HOMEBREW_GITHUB_API_TOKEN=$( cat $HOME/.token/homebrew_github_api_token )
+
+# GnuPG
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
