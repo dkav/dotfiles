@@ -11,6 +11,9 @@ alias lh="ls -lad .*"
 # Directory history
 alias dh='dirs -v'
 
+# Bash shell
+alias bash="bash --rcfile <(echo 'unset HISTFILE')"
+
 # DOS commands
 alias cls="clear"
 alias dir="ls"
