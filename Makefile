@@ -5,6 +5,7 @@
 
 DOTFILES  := ${PWD}
 TARGET	  := ${HOME}
+XDGCFG    := ${XDG_CONFIG_HOME}
 LINK	  := ln -fs
 DELETE	  := rm -f
 
@@ -19,40 +20,41 @@ clean: shell-clean \
 
 
 # Shell Environments
-shell: zsh alias shellcheck tmux
-shell-clean: zsh-clean alias-clean shellcheck-clean tmux-clean
+shell: zsh shellcheck tmux
+shell-clean: zsh-clean shellcheck-clean tmux-clean
 
 zsh: zsh-clean
-	@echo "sh \c"
-	@${LINK} "${DOTFILES}/shell/zprofile" ${TARGET}/.zprofile
-	@${LINK} "${DOTFILES}/shell/zshrc" ${TARGET}/.zshrc
+	@echo "Zsh \c"
+	@${LINK} "${DOTFILES}/shell/zshenv" ${TARGET}/.zshenv
+	@mkdir -p ${XDGCFG}/zsh
+	@${LINK} "${DOTFILES}/shell/zprofile" ${XDGCFG}/zsh/.zprofile
+	@${LINK} "${DOTFILES}/shell/zshrc" ${XDGCFG}/zsh/.zshrc
+	@${LINK} "${DOTFILES}/shell/aliases" ${XDGCFG}/zsh/aliases
+	@${LINK} "${DOTFILES}/shell/nmdirs" ${XDGCFG}/zsh/nmdirs
 	@echo "configured"
 zsh-clean:
-	@echo "sh \c"
-	@${DELETE} ${TARGET}/.zprofile
-	@${DELETE} ${TARGET}/.zshrc
+	@echo "Zsh \c"
+	@${DELETE} ${TARGET}/.zshenv
+	@${DELETE} -r ${XDGCFG}/zsh
 	@echo "cleaned"
 
-alias: alias-clean
-	@${LINK} "${DOTFILES}/shell/aliases" ${TARGET}/.aliases
-alias-clean:
-	@${DELETE} ${TARGET}/.aliases
 shellcheck: shellcheck-clean
 	@echo "ShellCheck \c"
-	@${LINK} "${DOTFILES}/shell/shellcheckrc" ${TARGET}/.config/shellcheckrc
+	@${LINK} "${DOTFILES}/shell/shellcheckrc" ${XDGCFG}/shellcheckrc
 	@echo "configured"
 shellcheck-clean:
 	@echo "ShellCheck \c"
-	@${DELETE} ${TARGET}/.config/shellcheckrc
+	@${DELETE} ${XDGCFG}/shellcheckrc
 	@echo "cleaned"
 
 tmux: tmux-clean
 	@echo "tmux \c"
-	@${LINK} "${DOTFILES}/shell/tmux.conf" ${TARGET}/.tmux.conf
+	@mkdir -p ${XDGCFG}/tmux
+	@${LINK} "${DOTFILES}/shell/tmux.conf" ${XDGCFG}/tmux/tmux.conf
 	@echo "configured"
 tmux-clean:
 	@echo "tmux \c"
-	@${DELETE} ${TARGET}/.tmux.conf
+	@${DELETE} -r ${XDGCFG}/tmux
 	@echo "cleaned"
 
 

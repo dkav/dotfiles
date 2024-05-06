@@ -6,6 +6,9 @@ bindkey -v  # Use Vi mode
 
 disable r  # Disable r builtin
 
+HISTFILE="$XDG_STATE_HOME"/zsh/history
+setopt SHARE_HISTORY
+
 # Directory Stack
 # ---------------
 DIRSTACKSIZE=8
@@ -37,15 +40,19 @@ PROMPT='${vcs_info_msg_0_}'
 
 # Completion
 # ----------
+[ -d "$XDG_CACHE_HOME"/zsh ] || mkdir -p "$XDG_CACHE_HOME"/zsh
+
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
-zstyle :compinstall filename '~/.zshrc'
+zstyle :compinstall filename '$XDG_CONFIG_HOME/zsh/.zshrc'
 
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}:$HOME/.zfunc"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}:$XDG_CONFIG_HOME/zsh/zfunc"
 
 autoload -Uz compinit
-compinit -i
+compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 
 # pip completion
 function _pip_completion {
@@ -81,8 +88,8 @@ bindkey "^[[B" down-line-or-beginning-search  # Down
 
 # Named directories
 # -----------------
-source ~/.nmdirs
+source $XDG_CONFIG_HOME/zsh/nmdirs
 
 # Aliases
 # -------
-source ~/.aliases
+source $XDG_CONFIG_HOME/zsh/aliases

@@ -1,0 +1,3 @@
+# Named directories
+hash -d dev=~/Documents/Development
+hash -d repos=~/Repositories
