@@ -19,26 +19,32 @@ clean: shell-clean \
 
 
 # Shell Environments
-shell: zsh alias tmux
-shell-clean: zsh-clean alias-clean tmux-clean
+shell: zsh alias shellcheck tmux
+shell-clean: zsh-clean alias-clean shellcheck-clean tmux-clean
 
 zsh: zsh-clean
 	@echo "sh \c"
 	@${LINK} "${DOTFILES}/shell/zprofile" ${TARGET}/.zprofile
 	@${LINK} "${DOTFILES}/shell/zshrc" ${TARGET}/.zshrc
-	@${LINK} "${DOTFILES}/shell/shellcheckrc" ${TARGET}/.shellcheckrc
 	@echo "configured"
 zsh-clean:
 	@echo "sh \c"
 	@${DELETE} ${TARGET}/.zprofile
 	@${DELETE} ${TARGET}/.zshrc
-	@${DELETE} ${TARGET}/.shellcheckrc
 	@echo "cleaned"
 
 alias: alias-clean
 	@${LINK} "${DOTFILES}/shell/aliases" ${TARGET}/.aliases
 alias-clean:
 	@${DELETE} ${TARGET}/.aliases
+shellcheck: shellcheck-clean
+	@echo "ShellCheck \c"
+	@${LINK} "${DOTFILES}/shell/shellcheckrc" ${TARGET}/.config/shellcheckrc
+	@echo "configured"
+shellcheck-clean:
+	@echo "ShellCheck \c"
+	@${DELETE} ${TARGET}/.config/shellcheckrc
+	@echo "cleaned"
 
 tmux: tmux-clean
 	@echo "tmux \c"
