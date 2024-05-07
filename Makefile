@@ -109,7 +109,7 @@ git-clean:
 	@echo "cleaned"
 
 vim: vim-clean
-	@echo "vim \c"
+	@echo "Vim \c"
 	@mkdir -p ${TARGET}/.vim
 	@${LINK} "${DOTFILES}/vim/vimrc" ${TARGET}/.vim/vimrc
 	@${LINK} "${DOTFILES}/vim/gvimrc" ${TARGET}/.vim/gvimrc
@@ -119,7 +119,7 @@ vim: vim-clean
 	@${LINK} "${DOTFILES}/vim/syntax" ${TARGET}/.vim/after/syntax
 	@echo "configured"
 vim-clean:
-	@echo "vim \c"
+	@echo "Vim \c"
 	@${DELETE} ${TARGET}/.vim/vimrc
 	@${DELETE} ${TARGET}/.vim/gvimrc
 	@${DELETE} ${TARGET}/.vim/ftdetect
