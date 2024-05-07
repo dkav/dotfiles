@@ -93,19 +93,19 @@ gpg-clean:
 # Development Tools
 git: git-clean
 	@echo "git \c"
-	@mkdir -p ${TARGET}/.config/git
+	@mkdir -p ${XDGCFG}/git
 	@${LINK} "${DOTFILES}/git/attributes" \
-	    ${TARGET}/.config/git/attributes
+	    ${XDGCFG}/git/attributes
 	@${LINK} "${DOTFILES}/git/config" \
-		${TARGET}/.config/git/config
+		${XDGCFG}/git/config
 	@${LINK} "${DOTFILES}/git/ignore" \
-	    	${TARGET}/.config/git/ignore
+	    	${XDGCFG}/git/ignore
 	@echo "configured"
 git-clean:
 	@echo "git \c"
-	@${DELETE} ${TARGET}/.config/git/attributes
-	@${DELETE} ${TARGET}/.config/git/config
-	@${DELETE} ${TARGET}/.config/git/ignore
+	@${DELETE} ${XDGCFG}/git/attributes
+	@${DELETE} ${XDGCFG}/git/config
+	@${DELETE} ${XDGCFG}/git/ignore
 	@echo "cleaned"
 
 vim: vim-clean
@@ -133,17 +133,17 @@ python-clean: pip-clean pypi-clean ruff-clean ipython-clean jupyter-clean
 
 pip: pip-clean
 	@echo "pip \c"
-	@mkdir -p ${TARGET}/.config/pip
-	@${LINK} "${DOTFILES}/python/pip.conf" ${TARGET}/.config/pip/pip.conf
+	@mkdir -p ${XDGCFG}/pip
+	@${LINK} "${DOTFILES}/python/pip.conf" ${XDGCFG}/pip/pip.conf
 	@echo "configured"
 pip-clean:
 	@echo "pip \c"
-	@${DELETE} -r ${TARGET}/.config/pip
+	@${DELETE} -r ${XDGCFG}/pip
 	@echo "cleaned"
 
 pypi: pypi-clean
 	@echo "pypi \c"
-	@mkdir -p ${TARGET}/.config/pypi
+	@mkdir -p ${XDGCFG}/pypi
 	@${LINK} "${DOTFILES}/python/pypirc" ${TARGET}/.pypirc
 	@echo "configured"
 pypi-clean:
@@ -153,12 +153,12 @@ pypi-clean:
 
 ruff: ruff-clean
 	@echo "ruff \c"
-	@mkdir -p ${TARGET}/.config/ruff
-	@${LINK} "${DOTFILES}/python/ruff.toml" ${TARGET}/.config/ruff/ruff.toml
+	@mkdir -p ${XDGCFG}/ruff
+	@${LINK} "${DOTFILES}/python/ruff.toml" ${XDGCFG}/ruff/ruff.toml
 	@echo "configured"
 ruff-clean:
 	@echo "ruff \c"
-	@${DELETE} -r ${TARGET}/.config/ruff
+	@${DELETE} -r ${XDGCFG}/ruff
 	@echo "cleaned"
 
 ipython:ipython-clean
