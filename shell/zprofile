@@ -13,7 +13,9 @@ export HOMEBREW_GITHUB_API_TOKEN=$( cat $HOME/.homebrew/homebrew_github_api_toke
 
 # GnuPG
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
+
 # Python
+export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
 # Node
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
