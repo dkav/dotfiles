@@ -11,13 +11,13 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: shell brew security git vim python ruby node db
+all: shell brew security git vim python ruby node r db
 
 clean: shell-clean \
     brew-clean \
     security-clean \
     git-clean vim-clean \
-    python-clean ruby-clean node-clean\
+    python-clean ruby-clean node-clean r-clean\
     db-clean
 
 
@@ -199,6 +199,17 @@ node:node-clean
 node-clean:
 	@echo "Node \c"
 	@${DELETE} -r ${XDGCFG}/npm
+	@echo "cleaned"
+
+r:r-clean
+	@ echo "R \c"
+	@mkdir -p ${XDGCFG}/rstudio
+	@${LINK} "${DOTFILES}/r/rstudio-prefs.json" \
+		${XDGCFG}/rstudio/rstudio-prefs.json
+	@echo "configured"
+r-clean:
+	@echo "R \c"
+	@${DELETE} ${XDGCFG}/rstudio/rstudio-prefs.json
 	@echo "cleaned"
 
 

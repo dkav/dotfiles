@@ -48,6 +48,9 @@ alias jpl="jupyter-lab"
 alias ng="npm list -g --depth=0"
 alias nl="npm list --depth=0"
 
+# R
+alias r="r --no-save"
+
 # Web servers
 alias nws="http-server -o"
 alias pws="python3 -m http.server &; sleep 0.1; \
