@@ -29,3 +29,6 @@ export R_HISTFILE=$XDG_CONFIG_HOME/R/history
 # PostgreSQL
 export PSQLRC=$XDG_CONFIG_HOME/pg/psqlrc
 export PSQL_HISTORY=$XDG_STATE_HOME/psql_history
+
+# SQLite
+export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history

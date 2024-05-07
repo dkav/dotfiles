@@ -230,10 +230,11 @@ pgsql-clean:
 	@echo "cleaned"
 
 sqlite: sqlite-clean
-	@echo "sqlite \c"
-	@${LINK} "${DOTFILES}/db/sqliterc" ${TARGET}/.sqliterc
+	@echo "SQLite \c"
+	@mkdir -p ${XDGCFG}/sqlite3
+	@${LINK} "${DOTFILES}/db/sqliterc" ${XDGCFG}/sqlite3/sqliterc
 	@echo "configured"
 sqlite-clean:
-	@echo "sqlite \c"
-	@${DELETE} ${TARGET}/.sqliterc
+	@echo "SQLite \c"
+	@${DELETE} -r ${XDGCFG}/sqlite3
 	@echo "cleaned"
