@@ -7,6 +7,7 @@ DOTFILES  := ${PWD}
 TARGET	  := ${HOME}
 XDGCFG    := ${XDG_CONFIG_HOME}
 XDGDATA   := ${XDG_DATA_HOME}
+XDGSTATE  := ${XDG_STATE_HOME}
 LINK	  := ln -fs
 DELETE	  := rm -f
 
@@ -218,12 +219,14 @@ db: pgsql sqlite
 db-clean: pgsql-clean sqlite-clean
 
 pgsql: pgsql-clean
-	@echo "pgsql \c"
-	@${LINK} "${DOTFILES}/db/psqlrc" ${TARGET}/.psqlrc
+	@echo "PostgreSQL \c"
+	@mkdir -p ${XDGCFG}/pg
+	@mkdir -p ${XDGSTATE}
+	@${LINK} "${DOTFILES}/db/psqlrc" ${XDGCFG}/pg/psqlrc
 	@echo "configured"
 pgsql-clean:
-	@echo "pgsql \c"
-	@${DELETE} ${TARGET}/.psqlrc
+	@echo "PostgreSQL \c"
+	@${DELETE} -r ${XDGCFG}/pg
 	@echo "cleaned"
 
 sqlite: sqlite-clean

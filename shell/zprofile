@@ -25,3 +25,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export R_HOME_USER=$XDG_CONFIG_HOME/R
 export R_PROFILE_USER=$XDG_CONFIG_HOME/R/profile
 export R_HISTFILE=$XDG_CONFIG_HOME/R/history
+
+# PostgreSQL
+export PSQLRC=$XDG_CONFIG_HOME/pg/psqlrc
+export PSQL_HISTORY=$XDG_STATE_HOME/psql_history
