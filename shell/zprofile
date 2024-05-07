@@ -18,6 +18,13 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
 export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
+
+# Ruby
+export BUNDLE_USER_HOME=$XDG_DATA_HOME/bundler
+export BUNDLE_USER_CACHE=$XDG_CACHE_HOME/bundler
+export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundler/configuration.yml
+export BUNDLE_USER_PLUGIN=$XDG_DATA_HOME/bundler/plugin
+
 # Node
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
