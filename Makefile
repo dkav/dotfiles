@@ -4,7 +4,7 @@
 # https://github.com/RobLoach/dotfiles/blob/master/Makefile
 
 DOTFILES  := ${PWD}
-TARGET	  := ${HOME}
+HMDIR	  := ${HOME}
 XDGCFG    := ${XDG_CONFIG_HOME}
 XDGDATA   := ${XDG_DATA_HOME}
 XDGSTATE  := ${XDG_STATE_HOME}
@@ -28,7 +28,7 @@ shell-clean: zsh-clean shellcheck-clean tmux-clean
 
 zsh: zsh-clean
 	@echo "Zsh \c"
-	@${LINK} "${DOTFILES}/shell/zshenv" ${TARGET}/.zshenv
+	@${LINK} "${DOTFILES}/shell/zshenv" ${HMDIR}/.zshenv
 	@mkdir -p ${XDGCFG}/zsh
 	@${LINK} "${DOTFILES}/shell/zprofile" ${XDGCFG}/zsh/.zprofile
 	@${LINK} "${DOTFILES}/shell/zshrc" ${XDGCFG}/zsh/.zshrc
@@ -37,7 +37,7 @@ zsh: zsh-clean
 	@echo "configured"
 zsh-clean:
 	@echo "Zsh \c"
-	@${DELETE} ${TARGET}/.zshenv
+	@${DELETE} ${HMDIR}/.zshenv
 	@${DELETE} -r ${XDGCFG}/zsh
 	@echo "cleaned"
 
@@ -64,13 +64,13 @@ tmux-clean:
 # Homebrew
 brew: brew-clean
 	@echo "Homebrew \c"
-	@mkdir -p ${TARGET}/.homebrew
+	@mkdir -p ${HMDIR}/.homebrew
 	@${LINK} "${DOTFILES}/homebrew/brew.env" \
-		${TARGET}/.homebrew/brew.env
+		${HMDIR}/.homebrew/brew.env
 	@echo "configured"
 brew-clean:
 	@echo "Homebrew \c"
-	@${DELETE} ${TARGET}/.homebrew/brew.env
+	@${DELETE} ${HMDIR}/.homebrew/brew.env
 	@echo "cleaned"
 
 
@@ -110,20 +110,20 @@ git-clean:
 
 vim: vim-clean
 	@echo "Vim \c"
-	@mkdir -p ${TARGET}/.vim
-	@${LINK} "${DOTFILES}/vim/vimrc" ${TARGET}/.vim/vimrc
-	@${LINK} "${DOTFILES}/vim/gvimrc" ${TARGET}/.vim/gvimrc
-	@${LINK} "${DOTFILES}/vim/ftdetect" ${TARGET}/.vim/ftdetect
-	@mkdir ${TARGET}/.vim/after
-	@${LINK} "${DOTFILES}/vim/ftplugin" ${TARGET}/.vim/after/ftplugin
-	@${LINK} "${DOTFILES}/vim/syntax" ${TARGET}/.vim/after/syntax
+	@mkdir -p ${HMDIR}/.vim
+	@${LINK} "${DOTFILES}/vim/vimrc" ${HMDIR}/.vim/vimrc
+	@${LINK} "${DOTFILES}/vim/gvimrc" ${HMDIR}/.vim/gvimrc
+	@${LINK} "${DOTFILES}/vim/ftdetect" ${HMDIR}/.vim/ftdetect
+	@mkdir ${HMDIR}/.vim/after
+	@${LINK} "${DOTFILES}/vim/ftplugin" ${HMDIR}/.vim/after/ftplugin
+	@${LINK} "${DOTFILES}/vim/syntax" ${HMDIR}/.vim/after/syntax
 	@echo "configured"
 vim-clean:
 	@echo "Vim \c"
-	@${DELETE} ${TARGET}/.vim/vimrc
-	@${DELETE} ${TARGET}/.vim/gvimrc
-	@${DELETE} ${TARGET}/.vim/ftdetect
-	@${DELETE} -r ${TARGET}/.vim/after
+	@${DELETE} ${HMDIR}/.vim/vimrc
+	@${DELETE} ${HMDIR}/.vim/gvimrc
+	@${DELETE} ${HMDIR}/.vim/ftdetect
+	@${DELETE} -r ${HMDIR}/.vim/after
 	@echo "cleaned"
 
 
@@ -144,11 +144,11 @@ pip-clean:
 pypi: pypi-clean
 	@echo "pypi \c"
 	@mkdir -p ${XDGCFG}/pypi
-	@${LINK} "${DOTFILES}/python/pypirc" ${TARGET}/.pypirc
+	@${LINK} "${DOTFILES}/python/pypirc" ${HMDIR}/.pypirc
 	@echo "configured"
 pypi-clean:
 	@echo "pypi \c"
-	@${DELETE} -r ${TARGET}/.pypirc
+	@${DELETE} -r ${HMDIR}/.pypirc
 	@echo "cleaned"
 
 ruff: ruff-clean
@@ -185,11 +185,11 @@ jupyter-clean:
 
 ruby:ruby-clean
 	@ echo "Ruby \c"
-	@${LINK} "${DOTFILES}/ruby/gemrc" ${TARGET}/.gemrc
+	@${LINK} "${DOTFILES}/ruby/gemrc" ${HMDIR}/.gemrc
 	@echo "configured"
 ruby-clean:
 	@echo "Ruby \c"
-	@${DELETE} ${TARGET}/.gemrc
+	@${DELETE} ${HMDIR}/.gemrc
 	@echo "cleaned"
 
 node:node-clean
