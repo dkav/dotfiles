@@ -173,13 +173,13 @@ ipython-clean:
 
 jupyter:jupyter-clean
 	@echo "Jupyter \c"
-	@mkdir -p ${TARGET}/.jupyter
-	@${LINK} "${DOTFILES}/python/jupyter_notebook_config.py" \
-		${TARGET}/.jupyter/jupyter_notebook_config.py
+	@mkdir -p ${XDGCFG}/jupyter
+	@${LINK} "${DOTFILES}/python/jupyter_lab_config.py" \
+		${XDGCFG}/jupyter/jupyter_lab_config.py
 	@echo "configured"
 jupyter-clean:
 	@echo "Jupyter \c"
-	@${DELETE} ${TARGET}/.jupyter/jupyter_notebook_config.py
+	@${DELETE} ${XDGCFG}/jupyter/jupyter_lab_config.py
 	@echo "cleaned"
 
 ruby:ruby-clean
