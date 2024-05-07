@@ -162,13 +162,13 @@ ruff-clean:
 
 ipython:ipython-clean
 	@echo "IPython \c"
-	@mkdir -p ${TARGET}/.ipython/profile_default
+	@mkdir -p ${XDGCFG}/ipython/profile_default
 	@${LINK} "${DOTFILES}/python/ipython_config.py" \
-		${TARGET}/.ipython/profile_default/ipython_config.py
+		${XDGCFG}/ipython/profile_default/ipython_config.py
 	@echo "configured"
 ipython-clean:
 	@echo "IPython \c"
-	@${DELETE} ${TARGET}/.ipython/profile_default/ipython_config.py
+	@${DELETE} ${XDGCFG}/ipython/profile_default/ipython_config.py
 	@echo "cleaned"
 
 jupyter:jupyter-clean
