@@ -11,13 +11,13 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: shell brew security git vim python ruby npm db
+all: shell brew security git vim python ruby node db
 
 clean: shell-clean \
     brew-clean \
     security-clean \
     git-clean vim-clean \
-    python-clean ruby-clean npm-clean \
+    python-clean ruby-clean node-clean\
     db-clean
 
 
@@ -191,13 +191,14 @@ ruby-clean:
 	@${DELETE} ${TARGET}/.gemrc
 	@echo "cleaned"
 
-npm:npm-clean
-	@ echo "npm \c"
-	@${LINK} "${DOTFILES}/npm/npmrc" ${TARGET}/.npmrc
+node:node-clean
+	@ echo "Node \c"
+	@mkdir -p ${XDGCFG}/npm
+	@${LINK} "${DOTFILES}/Node/npmrc" ${XDGCFG}/npm/npmrc
 	@echo "configured"
-npm-clean:
-	@echo "npm \c"
-	@${DELETE} ${TARGET}/.npmrc
+node-clean:
+	@echo "Node \c"
+	@${DELETE} -r ${XDGCFG}/npm
 	@echo "cleaned"
 
 

@@ -12,3 +12,5 @@ export HOMEBREW_GITHUB_API_TOKEN=$( cat $HOME/.token/homebrew_github_api_token )
 
 # GnuPG
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
+# Node
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
