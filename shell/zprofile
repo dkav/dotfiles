@@ -7,6 +7,7 @@ export PATH
 # Environment Variables
 # ---------------------
 # Shell
+export MANPAGER="$HOMEBREW_PREFIX/bin/less -s"
 export EDITOR=$HOMEBREW_PREFIX/bin/mvim
 
 # Homebrew
