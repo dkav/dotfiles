@@ -64,13 +64,13 @@ tmux-clean:
 # Homebrew
 brew: brew-clean
 	@echo "Homebrew \c"
-	@mkdir -p ${HMDIR}/.homebrew
+	@mkdir -p ${XDGCFG}/homebrew
 	@${LINK} "${DOTFILES}/homebrew/brew.env" \
-		${HMDIR}/.homebrew/brew.env
+		${XDGCFG}/homebrew/brew.env
 	@echo "configured"
 brew-clean:
 	@echo "Homebrew \c"
-	@${DELETE} ${HMDIR}/.homebrew/brew.env
+	@${DELETE} ${XDGCFG}/homebrew/brew.env
 	@echo "cleaned"
 
 
