@@ -49,33 +49,10 @@ zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '$XDG_CONFIG_HOME/zsh/.zshrc'
 
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}:$XDG_CONFIG_HOME/zsh/zfunc"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 autoload -Uz compinit
 compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
-
-# pip completion
-function _pip_completion {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
-}
-compctl -K _pip_completion pip pip3
-
-# npm completion
-_npm_completion() {
-    local si=$IFS
-    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                 COMP_LINE=$BUFFER \
-                 COMP_POINT=0 \
-                 npm completion -- "${words[@]}" \
-                 2>/dev/null)
-    IFS=$si
-  }
-compdef _npm_completion npm
 
 # Search history
 # --------------
