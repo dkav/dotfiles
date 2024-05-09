@@ -191,6 +191,7 @@ nnoremap <leader>u :%left<CR>
 
 " Toggle line numbers
 nnoremap <silent><leader>n :set invnumber<CR>
+nnoremap <silent><leader>r :set invrelativenumber<CR>
 
 " Remove trailing white space
 :nnoremap <Leader>rt :let _save_pos=getpos(".") <Bar>
