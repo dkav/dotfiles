@@ -1,6 +1,6 @@
 # PATH
 # ----
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(brew shellenv)" 
 path=($(brew --prefix ruby)/bin $path $HOME/.local/bin)
 export PATH
 
