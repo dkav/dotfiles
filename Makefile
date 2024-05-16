@@ -194,11 +194,12 @@ jupyter-clean:
 
 ruby:ruby-clean
 	@ echo "Ruby \c"
-	@${LINK} "${DOTFILES}/ruby/gemrc" ${XDGCFG}/gemrc
+	@mkdir -p ${XDGCFG}/gem
+	@${LINK} "${DOTFILES}/ruby/gemrc" ${XDGCFG}/gem/gemrc
 	@echo "configured"
 ruby-clean:
 	@echo "Ruby \c"
-	@${DELETE} ${XDGCFG}/gemrc
+	@${DELETE} -r ${XDGCFG}/gem
 	@echo "cleaned"
 
 node:node-clean
