@@ -49,7 +49,10 @@ zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '$XDG_CONFIG_HOME/zsh/.zshrc'
 
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fpath=(
+  $(brew --prefix)/share/zsh/site-functions
+  $fpath
+  $XDG_DATA_HOME/zsh/site-functions)
 
 autoload -Uz compinit
 compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
