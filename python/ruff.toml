@@ -1,4 +1,4 @@
-cache-dir = "~/.cache/ruff"
+cache-dir = "$HOME/.cache/ruff"
 line-length = 79
 
 [lint]
