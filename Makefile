@@ -30,6 +30,7 @@ zsh: zsh-clean
 	@echo "Zsh \c"
 	@${LINK} "${DOTFILES}/shell/zshenv" ${HMDIR}/.zshenv
 	@mkdir -p ${XDGCFG}/zsh
+	@mkdir -p ${XDGSTATE}/zsh
 	@${LINK} "${DOTFILES}/shell/zprofile" ${XDGCFG}/zsh/.zprofile
 	@${LINK} "${DOTFILES}/shell/zshrc" ${XDGCFG}/zsh/.zshrc
 	@${LINK} "${DOTFILES}/shell/aliases" ${XDGCFG}/zsh/aliases
