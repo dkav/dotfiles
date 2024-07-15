@@ -138,8 +138,8 @@ vim-clean:
 
 
 # Programming Environments
-python: pip pypi ruff ipython jupyter
-python-clean: pip-clean pypi-clean ruff-clean ipython-clean jupyter-clean
+python: pip pypi ruff pylint ipython jupyter
+python-clean: pip-clean pypi-clean ruff-clean pylint-clean ipython-clean jupyter-clean
 
 pip: pip-clean
 	@echo "pip \c"
@@ -170,6 +170,16 @@ ruff-clean:
 	@echo "ruff \c"
 	@${DELETE} -r ${XDGCFG}/ruff
 	@echo "cleaned"
+
+pylint: pylint-clean
+	@echo "pylint \c"
+	@${LINK} "${DOTFILES}/python/pylintrc" ${XDGCFG}/pylintrc
+	@echo "configured"
+pylint-clean:
+	@echo "pylint \c"
+	@${DELETE} ${XDGCFG}/pylintrc
+	@echo "cleaned"
+
 
 ipython:ipython-clean
 	@echo "IPython \c"
