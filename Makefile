@@ -120,20 +120,20 @@ git-clean:
 
 vim: vim-clean
 	@echo "Vim \c"
-	@mkdir -p ${HMDIR}/.vim
-	@${LINK} "${DOTFILES}/vim/vimrc" ${HMDIR}/.vim/vimrc
-	@${LINK} "${DOTFILES}/vim/gvimrc" ${HMDIR}/.vim/gvimrc
-	@${LINK} "${DOTFILES}/vim/ftdetect" ${HMDIR}/.vim/ftdetect
-	@mkdir ${HMDIR}/.vim/after
-	@${LINK} "${DOTFILES}/vim/ftplugin" ${HMDIR}/.vim/after/ftplugin
-	@${LINK} "${DOTFILES}/vim/syntax" ${HMDIR}/.vim/after/syntax
+	@mkdir -p ${XDGCFG}/vim
+	@${LINK} "${DOTFILES}/vim/vimrc" ${XDGCFG}/vim/vimrc
+	@${LINK} "${DOTFILES}/vim/gvimrc" ${XDGCFG}/vim/gvimrc
+	@${LINK} "${DOTFILES}/vim/ftdetect" ${XDGCFG}/vim/ftdetect
+	@mkdir ${XDGCFG}/vim/after
+	@${LINK} "${DOTFILES}/vim/ftplugin" ${XDGCFG}/vim/after/ftplugin
+	@${LINK} "${DOTFILES}/vim/syntax" ${XDGCFG}/vim/after/syntax
 	@echo "configured"
 vim-clean:
 	@echo "Vim \c"
-	@${DELETE} ${HMDIR}/.vim/vimrc
-	@${DELETE} ${HMDIR}/.vim/gvimrc
-	@${DELETE} ${HMDIR}/.vim/ftdetect
-	@${DELETE} -r ${HMDIR}/.vim/after
+	@${DELETE} ${XDGCFG}/vim/vimrc
+	@${DELETE} ${XDGCFG}/vim/gvimrc
+	@${DELETE} ${XDGCFG}/vim/ftdetect
+	@${DELETE} -r ${XDGCFG}/vim/after
 	@echo "cleaned"
 
 
