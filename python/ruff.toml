@@ -3,3 +3,4 @@ line-length = 79
 
 [lint]
 select = ["ALL"]
+ignore = [T201]
