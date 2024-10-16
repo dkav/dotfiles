@@ -138,8 +138,19 @@ vim-clean:
 
 
 # Programming Environments
-python: pip pypi ruff pylint ipython jupyter
-python-clean: pip-clean pypi-clean ruff-clean pylint-clean ipython-clean jupyter-clean
+python: pyhist pip pypi \
+	ruff pylint ipython jupyter
+python-clean: pyhist-clean pip-clean pypi-clean \
+	ruff-clean pylint-clean ipython-clean jupyter-clean
+
+pyhist: pyhist-clean
+	@echo "Python history folder \c"
+	@mkdir -p ${XDGSTATE}/python
+	@echo "configured"
+pyhist-clean:
+	@echo "Python history folder \c"
+	@${DELETE} -r ${XDGSTATE}/python
+	@echo "cleaned"
 
 pip: pip-clean
 	@echo "pip \c"
