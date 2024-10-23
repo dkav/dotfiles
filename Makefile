@@ -23,8 +23,8 @@ clean: shell-clean \
 
 
 # Shell Environments
-shell: zsh editline shellcheck tmux
-shell-clean: zsh-clean editline-clean shellcheck-clean tmux-clean
+shell: zsh shellcheck tmux
+shell-clean: zsh-clean shellcheck-clean tmux-clean
 
 zsh: zsh-clean
 	@echo "Zsh \c"
@@ -40,15 +40,6 @@ zsh-clean:
 	@echo "Zsh \c"
 	@${DELETE} ${HMDIR}/.zshenv
 	@${DELETE} -r ${XDGCFG}/zsh
-	@echo "cleaned"
-
-editline: editline-clean
-	@echo "editline \c"
-	@${LINK} "${DOTFILES}/shell/editrc" ${HMDIR}/.editrc
-	@echo "configured"
-editline-clean:
-	@echo "editline \c"
-	@${DELETE} ${HMDIR}/.editrc
 	@echo "cleaned"
 
 shellcheck: shellcheck-clean
