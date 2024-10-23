@@ -5,6 +5,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Save viminfo in XDG state folder
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
+
 " Ensure vi compatbility is turned off
 set nocompatible
 

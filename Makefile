@@ -127,6 +127,7 @@ vim: vim-clean
 	@mkdir ${XDGCFG}/vim/after
 	@${LINK} "${DOTFILES}/vim/ftplugin" ${XDGCFG}/vim/after/ftplugin
 	@${LINK} "${DOTFILES}/vim/syntax" ${XDGCFG}/vim/after/syntax
+	@mkdir -p ${XDGSTATE}/vim
 	@echo "configured"
 vim-clean:
 	@echo "Vim \c"
