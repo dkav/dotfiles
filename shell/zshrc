@@ -73,3 +73,7 @@ source $XDG_CONFIG_HOME/zsh/nmdirs
 # Aliases
 # -------
 source $XDG_CONFIG_HOME/zsh/aliases
+
+# Misc
+# ----
+eval "$(mise activate zsh)"
