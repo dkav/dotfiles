@@ -37,11 +37,12 @@ alias gs="git status -s"
 alias gk="gitk --all&"
 
 # Python
-alias python="python3"
-alias pip="pip3"
+alias py3="python3"
+alias py="python"
 alias pydata="source $HOME/.local/pyvenvs/pydata/bin/activate"
 
 # IPython & Jupyter
+alias ipy3=ipython3
 alias ipy=ipython
 alias jpl="jupyter-lab"
 
