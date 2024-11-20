@@ -77,7 +77,7 @@
 	gp = grep -Iin
 	pl = pull
 	ph = push
-	pf = push -f
+	pf = push --force-with-lease
 	rt = remote
 	rs = reset
 	re = restore
