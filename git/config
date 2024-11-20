@@ -71,10 +71,10 @@
 	co = checkout
 	cl = clone
 	ci = commit
-	ct = commit -a -m
-	ca = commit -a --amend --no-edit
+	ct = commit --all --message
+	ca = commit --all --amend --no-edit
 	cp = cherry-pick
-	gp = grep -Iin
+	gp = grep -I --ignore-case --line-number 
 	pl = pull
 	ph = push
 	pf = push --force-with-lease
@@ -82,12 +82,12 @@
 	rs = reset
 	re = restore
 	sa = stash
-	st = status -s
+	st = status --short
 	sw = switch
 
 	# Rebase
 	rb = rebase
-	ri = rebase -i
+	ri = rebase --interactive
 	rc = "-c core.editor=true rebase --continue"
 	rd = rebase --committer-date-is-author-date
 	ra = rebase --reset-author-date
@@ -115,4 +115,4 @@
 	ec = config --global --edit
 
 	# Aliases
-	al = "!git config -l | grep alias | cut -c 7- | less -X"
+	al = "!git config --list | grep alias | cut -c 7- | less -X"
