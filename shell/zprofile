@@ -30,6 +30,7 @@ export BUNDLE_USER_CACHE=$XDG_CACHE_HOME/bundle
 
 # Node
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NODE_OPTIONS='--disable-warning=ExperimentalWarning'
 
 # R
 export R_HOME_USER=$XDG_CONFIG_HOME/R
