@@ -22,6 +22,8 @@ export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
 export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
 export USE_EMOJI=0 # pipx
+export KAGGLE_CONFIG_DIR=$XDG_CONFIG_HOME/kaggle
+export SHIV_ROOT=$XDG_CACHE_HOME/shiv
 
 # Ruby
 export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundle/config
