@@ -128,6 +128,16 @@ vim-clean:
 	@${DELETE} -r ${XDGCFG}/vim/after
 	@echo "cleaned"
 
+mise: mise-clean
+	@echo "mise \c"
+	@mkdir -p ${XDGCFG}/mise
+	@${LINK} "${DOTFILES}/mise/config.toml" ${XDGCFG}/mise/config.toml
+	@echo "configured"
+mise-clean:
+	@echo "mise \c"
+	@${DELETE} ${XDGCFG}/mise/config.toml
+	@echo "cleaned"
+
 
 # Programming Environments
 python: pyhist pip pypi \

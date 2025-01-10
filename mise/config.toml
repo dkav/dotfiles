@@ -1,0 +1,9 @@
+[alias]
+
+[alias.python]
+
+[alias.python.versions]
+py2 = "2.7.18"
+
+[settings]
+auto_install = false
