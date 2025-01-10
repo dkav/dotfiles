@@ -135,7 +135,7 @@ python: pyhist pip pypi \
 python-clean: pip-clean pypi-clean \
 	ruff-clean pylint-clean ipython-clean jupyter-clean
 
-pyhist: 
+pyhist:
 	@echo "Python history folder \c"
 	@mkdir -p ${XDGSTATE}/python
 	@echo "configured"
