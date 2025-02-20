@@ -73,7 +73,3 @@ source $XDG_CONFIG_HOME/zsh/nmdirs
 # -------
 source $XDG_CONFIG_HOME/zsh/aliases
 function xman() { open x-man-page://$@ ; }
-
-# Misc
-# ----
-eval "$(mise activate zsh)"
