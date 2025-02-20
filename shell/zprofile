@@ -1,7 +1,13 @@
 # PATH
 # ----
 typeset -U path
-path=($path $HOME/.local/bin)
+path=(
+  /opt/local/bin
+  /opt/local/sbin
+  /Applications/MacVim.app/Contents/bin
+  $path
+  $HOME/.local/bin
+)
 
 # Environment Variables
 # ---------------------
