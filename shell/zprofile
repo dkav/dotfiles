@@ -1,6 +1,6 @@
 # PATH
 # ----
-path=($path $HOME/.local/bin)
+path=(/Applications/MacVim.app/Contents/bin $path $HOME/.local/bin)
 export PATH
 
 # Environment Variables
