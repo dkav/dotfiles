@@ -1,24 +1,10 @@
 # PATH
 # ----
 typeset -U path
-eval "$(brew shellenv)" 
-path=(
-  $HOMEBREW_PREFIX/opt/ruby/bin
-  $XDG_DATA_HOME/juliaup/bin
-  $path
-  $HOME/.local/bin
-)
+path=($path $HOME/.local/bin)
 
 # Environment Variables
 # ---------------------
-# Shell
-export MANPAGER="$HOMEBREW_PREFIX/bin/less -s"
-export EDITOR="$HOMEBREW_PREFIX/bin/mvim"
-
-# Homebrew
-[[ -r "$XDG_CONFIG_HOME/homebrew/homebrew_github_api_token" ]] &&
-  export HOMEBREW_GITHUB_API_TOKEN="$(<"$XDG_CONFIG_HOME/homebrew/homebrew_github_api_token")"
-
 # GnuPG
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
