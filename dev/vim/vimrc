@@ -148,6 +148,7 @@ let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 let g:NERDTreeStatusline = ' NERDTree %=%L items '
 
 " Set Gutentag options
+let g:gutentags_ctags_executable="/opt/local/bin/uctags"
 let g:gutentags_ctags_tagfile = ".tags"
 
 " Set Tagbar options
