@@ -7,7 +7,7 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/local/bin/gpg
 [core]
 	editor = mvim -f
 	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
