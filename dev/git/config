@@ -8,7 +8,7 @@
 [tag]
 	gpgSign = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/local/bin/gpg
 [credential]
 	helper = osxkeychain
 
