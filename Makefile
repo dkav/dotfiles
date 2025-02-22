@@ -12,11 +12,12 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: shell brew security git vim python ruby node r db
+all: shell brew security wget git vim python ruby node r db
 
 clean: shell-clean \
     brew-clean \
     security-clean \
+    wget-clean \
     git-clean vim-clean \
     python-clean ruby-clean node-clean r-clean\
     db-clean
@@ -88,6 +89,19 @@ gpg: gpg-clean
 gpg-clean:
 	@echo "GnuPG \c"
 	@${DELETE} ${XDGDATA}/gnupg/gpg-agent.conf
+	@echo "cleaned"
+
+
+# Wget
+wget: wget-clean
+	@echo "Wget \c"
+	@mkdir -p ${XDGCFG}/wget
+	@${LINK} "${DOTFILES}/wget/wgetrc" \
+		${XDGCFG}/wget
+	@echo "configured"
+wget-clean:
+	@echo "Wget \c"
+	@${DELETE} -r ${XDGCFG}/wget
 	@echo "cleaned"
 
 
