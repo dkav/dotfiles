@@ -13,11 +13,8 @@
 	helper = osxkeychain
 
 [core]
-	editor = /opt/homebrew/bin/mvim -f
-	pager = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
-[interactive]
-	diffFilter = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight
-
+	editor = mvim -f
+	pager = diff-highlight | less
 [init]
 	defaultBranch = main
 	defaultRefFormat = reftable
