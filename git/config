@@ -76,8 +76,9 @@
 	cp = cherry-pick
 	gp = grep -I --ignore-case --line-number
 	pl = pull
+	pf = pull --ff-only
 	ph = push
-	pf = push --force-with-lease
+	pu = push --force-with-lease
 	rt = remote
 	rs = reset
 	re = restore
