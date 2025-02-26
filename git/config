@@ -14,7 +14,7 @@
 [init]
 	defaultBranch = main
 [pull]
-	rebase = true
+	ff = only
 [rebase]
 	instructionFormat = %s [%an] [%ai]
 
