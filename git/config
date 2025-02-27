@@ -15,6 +15,8 @@
 	defaultBranch = main
 [pull]
 	ff = only
+[push]
+	useForceIfIncludes = true
 [rebase]
 	instructionFormat = %s [%an] [%ai]
 
