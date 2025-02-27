@@ -13,6 +13,10 @@ path=(
 # ---------------------
 # GnuPG
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GPG_TTY="$(tty)"
+if [[ -n "$SSH_CONNECTION" ]]; then
+    export PINENTRY_USER_DATA="USE_CURSES=1"
+fi
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --type file"
