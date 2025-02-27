@@ -76,16 +76,16 @@
 	br = branch
 	co = checkout
 	cl = clone
-	ci = commit
-	ct = commit --all --message
-	ca = commit --all --amend --no-edit
+	cm = commit
+	cmm = commit --all --message
+	cma = commit --all --amend --no-edit
 	cp = cherry-pick
 	gp = grep -I --ignore-case --line-number
 	pl = pull
-	pf = pull --ff-only
-	pr = pull --rebase
+	plf = pull --ff-only
+	plr = pull --rebase
 	ph = push
-	pu = push --force-with-lease
+	phf = push --force-with-lease
 	rt = remote
 	rs = reset
 	re = restore
@@ -95,21 +95,21 @@
 
 	# Rebase
 	rb = rebase
-	ri = rebase --interactive
-	rc = "-c core.editor=true rebase --continue"
-	rd = rebase --committer-date-is-author-date
-	ra = rebase --reset-author-date
+	rbi = rebase --interactive
+	rbc = "-c core.editor=true rebase --continue"
+	rbd = rebase --committer-date-is-author-date
+	rba = rebase --reset-author-date
 
 	# Diff
 	df = diff
+	dfc = diff --name-only --diff-filter=U # Conflicted files
+	dfs = diff --staged
+	dfw = diff --word-diff=color --unified=1
 	dt = difftool --tool p4merge
-	dc = diff --name-only --diff-filter=U # Conflicted files
-	ds = diff --staged
-	dw = diff --word-diff=color --unified=1
 
 	# Merge
 	mg = merge
-	mn = merge --no-ff
+	mgn = merge --no-ff
 	mt = mergetool --tool p4merge
 
 	# Log
