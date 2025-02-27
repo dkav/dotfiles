@@ -13,6 +13,7 @@
 	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
 [init]
 	defaultBranch = main
+
 [pull]
 	ff = only
 [push]
