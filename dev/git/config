@@ -10,6 +10,7 @@
 	program = /opt/local/bin/gpg
 [core]
 	editor = mvim -f
+	pager = diff-highlight | less
 [init]
 	defaultBranch = main
 
