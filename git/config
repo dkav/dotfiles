@@ -67,6 +67,9 @@
 [blame]
 	date = format:%Y-%m-%d %H:%M
 	coloring = highlightRecent
+[advice]
+	diverging = false
+	pushNonFFCurrent = false
 
 [alias]
 	# Basic
