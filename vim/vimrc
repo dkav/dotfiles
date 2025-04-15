@@ -169,6 +169,8 @@ let g:ale_echo_msg_format = '[%linter%] %s [%code%] [%severity%]'
 " Set GitGutter options
 let g:gitgutter_enabled = 0
 
+" Set Windsurf options
+let g:codeium_enabled = v:false
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
