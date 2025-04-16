@@ -156,6 +156,8 @@ let g:tagbar_compact = 1
 " Set CtrlP options
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn))|(Library|venv)$'
 
 " Set ALE options
 let g:ale_enabled = 0
