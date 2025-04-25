@@ -17,6 +17,9 @@ set shortmess+=I
 " Reduce update time for plugins
 set updatetime=1000
 
+" For sessions do not save empty windows and options
+set sessionoptions-=blank sessionoptions-=options
+
 " Set how many lines of command history to remember
 set history=100
 

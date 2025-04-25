@@ -14,7 +14,9 @@ endfunction
 
 autocmd BufEnter * call WinTitle()
 
-"
+" Automatically source vim sessions
+autocmd BufRead *.vis so %
+
 " Set default window size
 set lines=40
 set columns=100
@@ -49,6 +51,9 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h11
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Save sessions with .vis extension
+nnoremap <leader>ss :mksession!  session.vis<CR>
+
 " Toggle IDE windows
 let s:nerdtree = 0
 function AdjustWindowWidth()
