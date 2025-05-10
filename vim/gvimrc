@@ -40,6 +40,9 @@ set guioptions-=L
 set guicursor=n:blinkon0
 set guicursor+=i-ci:ver10
 
+" Use option as meta key
+set macmeta
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
