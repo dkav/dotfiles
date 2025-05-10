@@ -133,7 +133,7 @@ set noshowmode
 let g:airline_powerline_fonts = 1
 let g:airline_symbols = {}
 let g:airline#extensions#branch#vcs_checks = []
-let g:airline_extensions = ['branch', 'whitespace', 'ale']
+let g:airline_extensions = ['branch', 'whitespace', 'ale', 'codeium']
 let g:airline_exclude_filetypes=['nerdtree', 'qf', 'tagbar']
 let g:airline_skip_empty_sections = 1
 let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
@@ -250,3 +250,6 @@ nmap <C-j> <Plug>(ale_next_wrap)
 " GitGutter mappings
 nnoremap <silent><leader>gg :GitGutterToggle<CR>
 nnoremap <silent><leader>gs :GitGutterSignsToggle<CR>
+
+" Windsurf
+nnoremap <silent><leader>ws :CodeiumToggle<CR>
