@@ -253,3 +253,10 @@ nnoremap <silent><leader>gs :GitGutterSignsToggle<CR>
 
 " Windsurf
 nnoremap <silent><leader>ws :CodeiumToggle<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Abbreviations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Command-line mode abbreviations
+cnoreabbrev <expr> ht getcmdtype() == ":" && getcmdline() == 'ht' ? 'tab help' : 'ht'
