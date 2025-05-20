@@ -12,14 +12,13 @@ LINK	  := ln -fs
 DELETE	  := rm -f
 
 
-all: shell brew security wget git vim python ruby node r db
+all: shell brew security tool dev db
 
 clean: shell-clean \
     brew-clean \
     security-clean \
-    wget-clean \
-    git-clean vim-clean \
-    python-clean ruby-clean node-clean r-clean\
+    tool-clean \
+    dev-clean\
     db-clean
 
 
@@ -92,11 +91,13 @@ gpg-clean:
 	@echo "cleaned"
 
 
-# Wget
+# CLI Tools
+tool: wget
+tool-clean: wget-clean
 wget: wget-clean
 	@echo "Wget \c"
 	@mkdir -p ${XDGCFG}/wget
-	@${LINK} "${DOTFILES}/wget/wgetrc" \
+	@${LINK} "${DOTFILES}/tool/wget/wgetrc" \
 		${XDGCFG}/wget
 	@echo "configured"
 wget-clean:
@@ -105,15 +106,19 @@ wget-clean:
 	@echo "cleaned"
 
 
-# Development Tools
+# Development Environment
+dev: git vim mise python ruby node r
+dev-clean: git-clean vim-clean mise-clean python-clean ruby-clean \
+	node-clean r-clean
+
 git: git-clean
 	@echo "git \c"
 	@mkdir -p ${XDGCFG}/git
-	@${LINK} "${DOTFILES}/git/attributes" \
+	@${LINK} "${DOTFILES}/dev/git/attributes" \
 	    ${XDGCFG}/git/attributes
-	@${LINK} "${DOTFILES}/git/config" \
+	@${LINK} "${DOTFILES}/dev/git/config" \
 		${XDGCFG}/git/config
-	@${LINK} "${DOTFILES}/git/ignore" \
+	@${LINK} "${DOTFILES}/dev/git/ignore" \
 	    	${XDGCFG}/git/ignore
 	@echo "configured"
 git-clean:
@@ -126,12 +131,12 @@ git-clean:
 vim: vim-clean
 	@echo "Vim \c"
 	@mkdir -p ${XDGCFG}/vim
-	@${LINK} "${DOTFILES}/vim/vimrc" ${XDGCFG}/vim/vimrc
-	@${LINK} "${DOTFILES}/vim/gvimrc" ${XDGCFG}/vim/gvimrc
-	@${LINK} "${DOTFILES}/vim/ftdetect" ${XDGCFG}/vim/ftdetect
+	@${LINK} "${DOTFILES}/dev/vim/vimrc" ${XDGCFG}/vim/vimrc
+	@${LINK} "${DOTFILES}/dev/vim/gvimrc" ${XDGCFG}/vim/gvimrc
+	@${LINK} "${DOTFILES}/dev/vim/ftdetect" ${XDGCFG}/vim/ftdetect
 	@mkdir ${XDGCFG}/vim/after
-	@${LINK} "${DOTFILES}/vim/ftplugin" ${XDGCFG}/vim/after/ftplugin
-	@${LINK} "${DOTFILES}/vim/syntax" ${XDGCFG}/vim/after/syntax
+	@${LINK} "${DOTFILES}/dev/vim/ftplugin" ${XDGCFG}/vim/after/ftplugin
+	@${LINK} "${DOTFILES}/dev/vim/syntax" ${XDGCFG}/vim/after/syntax
 	@mkdir -p ${XDGSTATE}/vim
 	@echo "configured"
 vim-clean:
@@ -145,7 +150,7 @@ vim-clean:
 mise: mise-clean
 	@echo "mise \c"
 	@mkdir -p ${XDGCFG}/mise
-	@${LINK} "${DOTFILES}/mise/config.toml" ${XDGCFG}/mise/config.toml
+	@${LINK} "${DOTFILES}/dev/mise/config.toml" ${XDGCFG}/mise/config.toml
 	@echo "configured"
 mise-clean:
 	@echo "mise \c"
@@ -153,7 +158,6 @@ mise-clean:
 	@echo "cleaned"
 
 
-# Programming Environments
 python: pyhist pip pypi \
 	ruff pylint ipython jupyter
 python-clean: pip-clean pypi-clean \
@@ -167,7 +171,7 @@ pyhist:
 pip: pip-clean
 	@echo "pip \c"
 	@mkdir -p ${XDGCFG}/pip
-	@${LINK} "${DOTFILES}/python/pip.conf" ${XDGCFG}/pip/pip.conf
+	@${LINK} "${DOTFILES}/dev/python/pip.conf" ${XDGCFG}/pip/pip.conf
 	@echo "configured"
 pip-clean:
 	@echo "pip \c"
@@ -177,7 +181,7 @@ pip-clean:
 pypi: pypi-clean
 	@echo "pypi \c"
 	@mkdir -p ${XDGCFG}/pypi
-	@${LINK} "${DOTFILES}/python/pypirc" ${HMDIR}/.pypirc
+	@${LINK} "${DOTFILES}/dev/python/pypirc" ${HMDIR}/.pypirc
 	@echo "configured"
 pypi-clean:
 	@echo "pypi \c"
@@ -187,7 +191,7 @@ pypi-clean:
 ruff: ruff-clean
 	@echo "ruff \c"
 	@mkdir -p ${XDGCFG}/ruff
-	@${LINK} "${DOTFILES}/python/ruff.toml" ${XDGCFG}/ruff/ruff.toml
+	@${LINK} "${DOTFILES}/dev/python/ruff.toml" ${XDGCFG}/ruff/ruff.toml
 	@echo "configured"
 ruff-clean:
 	@echo "ruff \c"
@@ -196,18 +200,17 @@ ruff-clean:
 
 pylint: pylint-clean
 	@echo "pylint \c"
-	@${LINK} "${DOTFILES}/python/pylintrc" ${XDGCFG}/pylintrc
+	@${LINK} "${DOTFILES}/dev/python/pylintrc" ${XDGCFG}/pylintrc
 	@echo "configured"
 pylint-clean:
 	@echo "pylint \c"
 	@${DELETE} ${XDGCFG}/pylintrc
 	@echo "cleaned"
 
-
 ipython:ipython-clean
 	@echo "IPython \c"
 	@mkdir -p ${XDGCFG}/ipython/profile_default
-	@${LINK} "${DOTFILES}/python/ipython_config.py" \
+	@${LINK} "${DOTFILES}/dev/python/ipython_config.py" \
 		${XDGCFG}/ipython/profile_default/ipython_config.py
 	@echo "configured"
 ipython-clean:
@@ -218,7 +221,7 @@ ipython-clean:
 jupyter:jupyter-clean
 	@echo "Jupyter \c"
 	@mkdir -p ${XDGCFG}/jupyter
-	@${LINK} "${DOTFILES}/python/jupyter_lab_config.py" \
+	@${LINK} "${DOTFILES}/dev/python/jupyter_lab_config.py" \
 		${XDGCFG}/jupyter/jupyter_lab_config.py
 	@echo "configured"
 jupyter-clean:
@@ -226,10 +229,11 @@ jupyter-clean:
 	@${DELETE} ${XDGCFG}/jupyter/jupyter_lab_config.py
 	@echo "cleaned"
 
+
 ruby:ruby-clean
 	@ echo "Ruby \c"
 	@mkdir -p ${XDGCFG}/gem
-	@${LINK} "${DOTFILES}/ruby/gemrc" ${XDGCFG}/gem/gemrc
+	@${LINK} "${DOTFILES}/dev/ruby/gemrc" ${XDGCFG}/gem/gemrc
 	@echo "configured"
 ruby-clean:
 	@echo "Ruby \c"
@@ -239,7 +243,7 @@ ruby-clean:
 node:node-clean
 	@ echo "Node \c"
 	@mkdir -p ${XDGCFG}/npm
-	@${LINK} "${DOTFILES}/Node/npmrc" ${XDGCFG}/npm/npmrc
+	@${LINK} "${DOTFILES}/dev/node/npmrc" ${XDGCFG}/npm/npmrc
 	@echo "configured"
 node-clean:
 	@echo "Node \c"
@@ -249,7 +253,7 @@ node-clean:
 r:r-clean
 	@ echo "R \c"
 	@mkdir -p ${XDGCFG}/rstudio
-	@${LINK} "${DOTFILES}/r/rstudio-prefs.json" \
+	@${LINK} "${DOTFILES}/dev/r/rstudio-prefs.json" \
 		${XDGCFG}/rstudio/rstudio-prefs.json
 	@echo "configured"
 r-clean:
