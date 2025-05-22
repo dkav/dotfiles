@@ -156,11 +156,24 @@ let g:gutentags_ctags_tagfile = ".tags"
 " Set Tagbar options
 let g:tagbar_compact = 1
 
-" Set CtrlP options
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn))|(Library|venv)$'
+" Set fzf options
+set rtp+=/opt/homebrew/opt/fzf
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['hidden,right,50%,<70(hidden,up,40%)', 'ctrl-/']
 
 " Set ALE options
 let g:ale_enabled = 0
@@ -238,6 +251,9 @@ vnoremap <BS> d
 " Toggle IDE windows
 nnoremap <silent><leader>[ :NERDTreeToggle <BAR> wincmd p<CR>
 nnoremap <silent><leader>] :TagbarToggle<CR>
+
+" fzf mappings
+nnoremap <silent> <C-p> :Files<CR>
 
 " ALE mappings
 nmap <leader>al <Plug>(ale_toggle)
