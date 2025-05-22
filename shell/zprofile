@@ -17,6 +17,11 @@ export HOMEBREW_GITHUB_API_TOKEN=$( cat $XDG_CONFIG_HOME/homebrew/homebrew_githu
 # GnuPG
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type directory"
+
 # Wget
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
