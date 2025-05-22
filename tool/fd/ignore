@@ -1,0 +1,28 @@
+# macOS files
+.CFUserTextEncoding
+.DS_Store
+*.localized
+
+# macOS folders
+.Trash/
+Applications/
+Library/
+
+# macOS application libraries
+*.imovielibrary/
+*.musiclibrary/
+*.photoslibrary/
+*.theater/
+*.tvlibrary/
+
+# Git repos
+.git/
+
+# VS Code
+.vscode/
+
+# ESRI file geodatabase
+*.gdb/
+
+# Misc
+.cache/

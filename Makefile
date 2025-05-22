@@ -92,8 +92,8 @@ gpg-clean:
 
 
 # CLI Tools
-tool: bat wget
-tool-clean: bat-clean wget-clean
+tool: bat fd wget
+tool-clean: bat-clean fd-clean wget-clean
 
 bat: bat-clean
 	@echo "bat \c"
@@ -104,6 +104,17 @@ bat: bat-clean
 bat-clean:
 	@echo "bat \c"
 	@${DELETE} -r ${XDGCFG}/bat
+	@echo "cleaned"
+
+fd: fd-clean
+	@echo "fd \c"
+	@mkdir -p ${XDGCFG}/fd
+	@${LINK} "${DOTFILES}/tool/fd/ignore" \
+		${XDGCFG}/fd/ignore
+	@echo "configured"
+fd-clean:
+	@echo "fd \c"
+	@${DELETE} -r ${XDGCFG}/fd
 	@echo "cleaned"
 
 wget: wget-clean
