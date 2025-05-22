@@ -31,10 +31,10 @@ zstyle ':vcs_info:*' disable-patterns "*/.git"  # Ignore .git folders
 
 setopt PROMPT_SUBST  # Prompt expansion
 
-zstyle ':vcs_info:*' formats '%r [%b] %# '  # Prompt in repos
-zstyle ':vcs_info:*' actionformats '%r [%b|%a] %# '  # During special actions
+zstyle ':vcs_info:*' formats '%r [%b] ▶ '  # Prompt in repos
+zstyle ':vcs_info:*' actionformats '%r [%b|%a] ▶ '  # During special actions
 
-zstyle ':vcs_info:*' nvcsformats '%# '  # Prompt in standard folders
+zstyle ':vcs_info:*' nvcsformats '▶ '  # Prompt in standard folders
 
 PROMPT='${vcs_info_msg_0_}'
 
