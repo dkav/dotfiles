@@ -92,8 +92,20 @@ gpg-clean:
 
 
 # CLI Tools
-tool: wget
-tool-clean: wget-clean
+tool: bat wget
+tool-clean: bat-clean wget-clean
+
+bat: bat-clean
+	@echo "bat \c"
+	@mkdir -p ${XDGCFG}/bat
+	@${LINK} "${DOTFILES}/tool/bat/config" \
+		${XDGCFG}/bat/config
+	@echo "configured"
+bat-clean:
+	@echo "bat \c"
+	@${DELETE} -r ${XDGCFG}/bat
+	@echo "cleaned"
+
 wget: wget-clean
 	@echo "Wget \c"
 	@mkdir -p ${XDGCFG}/wget
