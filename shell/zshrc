@@ -21,21 +21,16 @@ setopt PUSHD_TO_HOME  # pushd with no arguments goes to $Home
 # Prompt
 # ------
 # Detect version control
-precmd() {
-    vcs_info
-}
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' enable git  # Detect git only
 zstyle ':vcs_info:*' disable-patterns "*/.git"  # Ignore .git folders
-
-setopt PROMPT_SUBST  # Prompt expansion
-
 zstyle ':vcs_info:*' formats '%r [%b] ▶ '  # Prompt in repos
 zstyle ':vcs_info:*' actionformats '%r [%b|%a] ▶ '  # During special actions
-
 zstyle ':vcs_info:*' nvcsformats '▶ '  # Prompt in standard folders
 
+precmd() { vcs_info }
+setopt PROMPT_SUBST  # Prompt expansion
 PROMPT='${vcs_info_msg_0_}'
 
 # Completion
