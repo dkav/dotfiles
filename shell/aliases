@@ -54,9 +54,8 @@ alias nws='http-server -o'
 
 # Local scripts
 alias mup='mac-update'
+alias mpc='macports-clean'
+alias mpu='macports-update'
 alias rup='repos-update'
 alias rgh='repos-github'
-alias rpb='repos-push-bitbucket'
-alias rps='repos-push-ssd'
-alias rrw='repos-rebase-worktrees'
 alias rcs='repos-check-stashes'
