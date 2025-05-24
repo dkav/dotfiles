@@ -1,10 +1,6 @@
 # Sync Git repositories 
 rup () {
-  gb sync -q
-  echo
   gb pull
   echo
   gb push
-  echo
-  bb-push
 }
