@@ -66,3 +66,4 @@ alias pws="python3 -m http.server &; sleep 0.1; \
 alias mup=mac-update
 alias bbs=push-to-bb
 alias gfs=sync-forks
+alias rup="pull-all; echo; push-all; echo; push-to-bb; echo; sync-forks -q"
