@@ -38,16 +38,12 @@ alias gtk="gitk --all&"
 
 # Python
 alias python="python3"
-alias python2="mise exec python@2.7.18 -- python"
 alias py="python3"
-alias py2="mise exec python@2.7.18 -- python"
 alias pip="pip3"
-alias pip2="mise exec python@2.7.18 -- pip"
 alias pydata="source $HOME/.local/pyvenvs/pydata/bin/activate"
 
 # IPython & Jupyter
 alias ipy="ipython3"
-alias ipy2="mise exec python@2.7.18 -- ipython2"
 alias jpl="jupyter-lab"
 
 # Node
