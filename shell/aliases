@@ -36,6 +36,9 @@ alias gt="git"
 alias gts="git status -s"
 alias gtk="gitk --all&"
 
+# Mise
+alias ma='eval "$(mise activate zsh)"'
+
 # Python
 alias python="python3"
 alias py="python3"
