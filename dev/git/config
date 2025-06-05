@@ -79,6 +79,7 @@
 	cm = commit
 	cmm = commit --all --message
 	cma = commit --all --amend --no-edit
+	cmd = commit --all --amend --no-edit --date=now
 	cp = cherry-pick
 	gp = grep -I --ignore-case --line-number
 	pl = pull
