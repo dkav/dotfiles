@@ -44,7 +44,8 @@ alias python="python3"
 alias py="python3"
 alias pip="pip3"
 alias pydata="source $HOME/.local/pyvenvs/pydata/bin/activate"
-alias cda="source conda-init-zsh; conda activate"
+alias cda='eval "$(conda shell.zsh hook)"; conda activate'
+alias mba='eval "$(mamba shell hook --shell zsh)"; mamba activate'
 
 # IPython & Jupyter
 alias ipy="ipython3"
