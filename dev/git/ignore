@@ -27,22 +27,23 @@ Temporary Items
 .apdisk
 
 
-# vim #
+# Vim #
 # --- #
-# swap
+# Swap files
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 
-# session
+# Session
 Session.vim
 *.vis
 
-# temporary
+# Temporary
 .netrwhist
 *~
 
-# auto-generated tag files
+# Gutentags
 .tags
+.gutctags
 .notags
 
 
