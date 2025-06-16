@@ -1,4 +1,0 @@
-# https://github.com/koalaman/shellcheck/wiki
-disable=SC2086 # Double quote to prevent globing
-disable=SC2128 # Expanding array without an index
-disable=SC2207 # Unquoted expansion in an array
