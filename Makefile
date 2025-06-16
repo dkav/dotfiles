@@ -23,8 +23,8 @@ clean: shell-clean \
 
 
 # Shell Environments
-shell: zsh shellcheck tmux
-shell-clean: zsh-clean shellcheck-clean tmux-clean
+shell: zsh tmux
+shell-clean: zsh-clean tmux-clean
 
 zsh: zsh-clean
 	@echo "Zsh \c"
@@ -40,15 +40,6 @@ zsh-clean:
 	@echo "Zsh \c"
 	@${DELETE} ${HMDIR}/.zshenv
 	@${DELETE} -r ${XDGCFG}/zsh
-	@echo "cleaned"
-
-shellcheck: shellcheck-clean
-	@echo "ShellCheck \c"
-	@${LINK} "${DOTFILES}/shell/shellcheckrc" ${XDGCFG}/shellcheckrc
-	@echo "configured"
-shellcheck-clean:
-	@echo "ShellCheck \c"
-	@${DELETE} ${XDGCFG}/shellcheckrc
 	@echo "cleaned"
 
 tmux: tmux-clean
