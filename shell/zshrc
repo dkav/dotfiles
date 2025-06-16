@@ -12,6 +12,7 @@ setopt SHARE_HISTORY
 fpath=(
   $XDG_CONFIG_HOME/zsh/functions
   $XDG_DATA_HOME/zsh/site-functions
+  opt/local/share/zsh/site-functions
   $fpath)
 
 # Directory Stack
