@@ -65,6 +65,6 @@ alias pws="python3 -m http.server &; sleep 0.1; \
 
 # Local scripts
 alias mup=mac-update
-alias bbs=push-to-bb
-alias gfs=sync-forks
-alias rup="pull-all; echo; push-all; echo; push-to-bb; echo; sync-forks -q"
+alias bbs=bb-push
+alias gfs="gb sync"
+alias rup="gb pull; echo; gb push; echo; bb-push; echo; gb sync -q"
