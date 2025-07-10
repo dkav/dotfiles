@@ -80,6 +80,7 @@
 	cmm = commit --all --message
 	cma = commit --all --amend --no-edit
 	cmd = commit --all --amend --no-edit --date=now
+	cmp = "!f() { git commit --all --message \"$1\" && git push --quiet; }; f"
 	cp = cherry-pick
 	gp = grep -I --ignore-case --line-number
 	pl = pull
