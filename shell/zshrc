@@ -83,8 +83,3 @@ autoload -Uz "$XDG_CONFIG_HOME/zsh/functions"/*(N:t)
 # Aliases
 # -------
 source $XDG_CONFIG_HOME/zsh/aliases
-
-# Tools
-# -----
-# fzf
-source <(fzf --zsh)
