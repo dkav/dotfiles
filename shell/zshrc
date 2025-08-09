@@ -4,8 +4,6 @@ setopt AUTO_CD # Change to dir automatically
 
 bindkey -v # Use Vi mode
 
-disable r # Disable r builtin
-
 fpath=(
   $XDG_CONFIG_HOME/zsh/functions
   $XDG_DATA_HOME/zsh/site-functions
