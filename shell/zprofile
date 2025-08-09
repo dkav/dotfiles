@@ -4,7 +4,6 @@ typeset -U path
 path=(
   /opt/local/bin
   /opt/local/sbin
-  /Applications/MacVim.app/Contents/bin
   $path
   $HOME/.local/bin
 )
