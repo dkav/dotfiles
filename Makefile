@@ -5,12 +5,11 @@
 
 DOTFILES  := ${PWD}
 HMDIR	  := ${HOME}
-XDGCFG    := ${XDG_CONFIG_HOME}
-XDGDATA   := ${XDG_DATA_HOME}
-XDGSTATE  := ${XDG_STATE_HOME}
+XDGCFG    := ${HOME}/.config
+XDGDATA   := ${HOME}/.local/share
+XDGSTATE  := ${HOME}/.local/state
 LINK	  := ln -fs
 DELETE	  := rm -f
-
 
 all: shell brew security tool dev db
 
