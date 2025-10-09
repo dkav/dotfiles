@@ -94,6 +94,7 @@
 	sa = stash
 	st = status --short
 	sw = switch
+	wt = worktree
 
 	# Rebase
 	rb = rebase
