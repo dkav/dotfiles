@@ -223,14 +223,13 @@ nnoremap <silent><leader>n :set invnumber<CR>
 nnoremap <silent><leader>r :set invnumber invrelativenumber<CR>
 
 " Remove trailing white space
-:nnoremap <Leader>rt :let _save_pos=getpos(".") <Bar>
-    \ :let _s=@/ <Bar>
-    \ :%s/\s\+$//e <Bar>
-    \ :let @/=_s <Bar>
-    \ :nohl <Bar>
-    \ :unlet _s<Bar>
-    \ :call setpos('.', _save_pos)<Bar>
-    \ :unlet _save_pos<CR><CR>
+function! TrimWhitespace()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfunction
+nnoremap <leader>rt :call TrimWhitespace()<CR>
 
 " Toggle highlighting on/off
 nnoremap <silent><leader>h :set hlsearch!<CR>
