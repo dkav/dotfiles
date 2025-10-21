@@ -9,7 +9,7 @@
 set nocompatible
 
 " Save viminfo in XDG state folder
-set viminfofile=$XDG_STATE_HOME/vim/viminfo
+set viminfofile=$XDG_STATE_HOME/vim/viminfo/viminfo
 
 " Get rid of startup screen
 set shortmess+=I
