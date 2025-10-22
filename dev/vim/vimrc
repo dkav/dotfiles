@@ -21,7 +21,7 @@ set updatetime=1000
 set sessionoptions-=blank sessionoptions-=options
 
 " Set how many lines of command history to remember
-set history=100
+set history=250
 
 " Use persistent history
 set undodir=$XDG_STATE_HOME/vim/undo
