@@ -44,10 +44,8 @@ filetype plugin on
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable mouse support
-if &term =~ 'screen'
-  set ttymouse=xterm2
-endif
-set mouse=a
+set mouse=nvi
+set ttymouse=sgr
 
 " In terminal change cursor to I-Beam in insert mode
 if &term =~ "xterm"
