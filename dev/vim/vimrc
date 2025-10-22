@@ -90,9 +90,6 @@ set lazyredraw
 set showmatch
 set matchtime=2
 
-" Remove netrw banner
-let g:netrw_banner = 0
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -154,6 +151,8 @@ let g:airline_section_z = '%-10(ln %l/%L%) %-6(col %c%)'
 set completeopt=longest,menuone
 
 " Set NERDTree options
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 let g:NERDTreeStatusline = ' NERDTree %=%L items '
