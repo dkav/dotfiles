@@ -5,9 +5,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ensure vi compatbility is turned off
-set nocompatible
-
 " Save viminfo in XDG state folder
 set viminfofile=$XDG_STATE_HOME/vim/viminfo/viminfo
 
@@ -65,12 +62,7 @@ set linebreak
 "Always show current position
 set ruler
 
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
-
 " Configure commmand completion
-set wildmenu
 set wildignore+=*~,*.swp,*.tmp
 set wildignore+=.DS_Store
 
