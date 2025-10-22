@@ -161,6 +161,16 @@ vim-clean:
 	@${DELETE} -r ${XDGCFG}/vim/after
 	@echo "cleaned"
 
+nvim: nvim-clean
+	@echo "Neovim \c"
+	@mkdir -p ${XDGCFG}/nvim
+	@${LINK} "${DOTFILES}/dev/nvim/init.vim" ${XDGCFG}/nvim/init.vim
+	@echo "configured"
+nvim-clean:
+	@echo "Neovim \c"
+	@${DELETE} -r ${XDGCFG}/nvim
+	@echo "cleaned"
+
 mise: mise-clean
 	@echo "mise \c"
 	@mkdir -p ${XDGCFG}/mise
