@@ -253,7 +253,7 @@ nnoremap <leader>lp :lprev<CR>
 vnoremap <BS> d
 
 " Toggle IDE windows
-nnoremap <silent><leader>[ :NERDTreeToggle <BAR> wincmd p<CR>
+nnoremap <silent><leader>[ :NERDTreeToggle<CR>
 nnoremap <silent><leader>] :TagbarToggle<CR>
 
 " fzf mappings
