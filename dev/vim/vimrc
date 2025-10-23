@@ -53,7 +53,7 @@ endif
 " Enable smooth scrolling
 set smoothscroll
 
-" Set the nubmer of context lines above and below the cursor
+" Set the number of context lines above and below the cursor
 set scrolloff=7
 
 " Break lines without breaking words
@@ -62,7 +62,7 @@ set linebreak
 "Always show current position
 set ruler
 
-" Configure commmand completion
+" Configure command completion
 set wildignore+=*~,*.swp,*.tmp
 set wildignore+=.DS_Store
 
@@ -228,7 +228,7 @@ nnoremap <silent><leader>h :set hlsearch!<CR>
 " Toggle `set list`
 nnoremap <silent><leader>l :set list!<CR>
 
-" Tooggle cursor line and column
+" Toggle cursor line and column
 nnoremap <silent><leader>c :set cursorcolumn!<Bar>set cursorline!<CR>
 
 " Toggle and untoggle spell checking

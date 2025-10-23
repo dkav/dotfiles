@@ -27,7 +27,7 @@ set backupcopy=yes
 " Enable smooth scrolling
 set smoothscroll
 
-" Set the nubmer of context lines above and below the cursor
+" Set the number of context lines above and below the cursor
 set scrolloff=7
 
 " Break lines without breaking words
@@ -49,7 +49,7 @@ set matchtime=2
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tab and eol display characters
-"set listchars=tab:‣\ ,eol:¬
+set listchars=tab:‣\ ,eol:¬
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -102,7 +102,7 @@ nnoremap <silent><leader>h :set hlsearch!<CR>
 " Toggle `set list`
 nnoremap <silent><leader>l :set list!<CR>
 
-" Tooggle cursor line and column
+" Toggle cursor line and column
 nnoremap <silent><leader>c :set cursorcolumn!<Bar>set cursorline!<CR>
 
 " Toggle and untoggle spell checking
