@@ -20,16 +20,6 @@ alias dir="ls"
 
 # Homebrew
 alias bw="brew"
-alias bwu="brew upgrade"
-alias bwo="brew outdated"
-alias blf="brew list --formula"
-alias blc="brew list --cask"
-alias blp="brew list --pinned"
-alias bdi="brew deps --installed"
-alias bdb="brew deps --installed --include-build"
-alias bui="brew uses --installed"
-alias bud="brew uses --installed --include-build"
-alias bwc="brew cleanup --prune=all"
 
 # Git
 alias gt="git"
