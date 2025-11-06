@@ -1,0 +1,5 @@
+# Open man page in external window
+xman() {
+  [[ -z "$1" ]] && echo "Usage: xman <command>" && return 1
+  open "x-man-page://$1"
+}

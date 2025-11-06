@@ -72,17 +72,8 @@ autoload -Uz "$XDG_CONFIG_HOME/zsh/functions"/*
 # Aliases
 # -------
 source $XDG_CONFIG_HOME/zsh/aliases
-function xman() { open x-man-page://$@ ; }
 
 # Tools
 # -----
 # fzf
 source <(fzf --zsh)
-
-_fzf_compgen_path() {
-  fd --hidden --follow . "$1"
-}
-
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
