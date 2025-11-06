@@ -9,6 +9,11 @@ disable r  # Disable r builtin
 HISTFILE="$XDG_STATE_HOME"/zsh/history
 setopt SHARE_HISTORY
 
+fpath=(
+  $XDG_CONFIG_HOME/zsh/functions
+  $XDG_DATA_HOME/zsh/site-functions
+  $fpath)
+
 # Directory Stack
 # ---------------
 DIRSTACKSIZE=8
@@ -44,10 +49,6 @@ zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '$XDG_CONFIG_HOME/zsh/.zshrc'
 
-fpath=(
-  $fpath
-  $XDG_DATA_HOME/zsh/site-functions)
-
 autoload -Uz compinit
 compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 
@@ -66,7 +67,6 @@ source $XDG_CONFIG_HOME/zsh/nmdirs
 
 # Functions
 # ---------
-fpath=($XDG_CONFIG_HOME/zsh/functions $fpath)
 autoload -Uz "$XDG_CONFIG_HOME/zsh/functions"/*
 
 # Aliases
