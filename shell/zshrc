@@ -67,7 +67,7 @@ source $XDG_CONFIG_HOME/zsh/nmdirs
 
 # Functions
 # ---------
-autoload -Uz "$XDG_CONFIG_HOME/zsh/functions"/*
+autoload -Uz "$XDG_CONFIG_HOME/zsh/functions"/*(:t)
 
 # Aliases
 # -------
