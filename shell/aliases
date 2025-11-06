@@ -2,56 +2,56 @@
 # -------
 
 # Directory listings
-alias ls="ls -G"
-alias ll="ls -lh"
-alias la="ls -lah"
-alias lt="ls -laht"
-alias lh="ls -lad .*"
+alias ls='ls -G'
+alias ll='ls -lh'
+alias la='ls -lah'
+alias lt='ls -laht'
+alias lh='ls -lad .*'
 
 # Directory history
 alias dh='dirs -v'
 
 # Bash shell
-alias bash="bash --rcfile <(echo 'unset HISTFILE')"
+alias bash='bash --rcfile <(echo "unset HISTFILE")'
 
 # DOS commands
-alias cls="clear"
-alias dir="ls"
+alias cls='clear'
+alias dir='ls'
 
 # Homebrew
-alias bw="brew"
+alias bw='brew'
 
 # Git
-alias gt="git"
-alias gts="git status -s"
-alias gtk="gitk --all&"
+alias gt='git'
+alias gts='git status -s'
+alias gtk='gitk --all&'
 
 # Mise
 alias ma='eval "$(mise activate zsh)"'
 
 # Python
-alias python="python3"
-alias py="python3"
-alias pip="pip3"
-alias pydata="source $HOME/.local/pyvenvs/pydata/bin/activate"
+alias python='python3'
+alias py='python3'
+alias pip='pip3'
+alias pydata='source $HOME/.local/pyvenvs/pydata/bin/activate'
 alias cda='eval "$(conda shell.zsh hook)"; conda activate'
 alias mba='eval "$(mamba shell hook --shell zsh)"; mamba activate'
 
 # IPython & Jupyter
-alias ipy="ipython3"
-alias jpl="jupyter-lab"
+alias ipy='ipython3'
+alias jpl='jupyter-lab'
 
 # Node
-alias ng="npm list -g --depth=0"
-alias nl="npm list --depth=0"
+alias ng='npm list -g --depth=0'
+alias nl='npm list --depth=0'
 
 # R
-alias r="r --no-save"
+alias r='r --no-save'
 
 # Web servers
-alias nws="http-server -o"
+alias nws='http-server -o'
 
 # Local scripts
-alias mup=mac-update
-alias bbs=bb-push
-alias gfs="gb sync"
+alias mup='mac-update'
+alias bbs='bb-push'
+alias gfs='gb sync'
