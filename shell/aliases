@@ -50,13 +50,8 @@ alias r="r --no-save"
 
 # Web servers
 alias nws="http-server -o"
-alias pws="python3 -m http.server &; sleep 0.1; \
-  open -g http://localhost:8000; fg"
 
 # Local scripts
 alias mup=mac-update
 alias bbs=bb-push
 alias gfs="gb sync"
-alias rup="gb sync -q; echo; \
-  gb pull; echo; gb push; echo; \
-  bb-push"

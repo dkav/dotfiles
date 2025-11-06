@@ -65,6 +65,11 @@ bindkey "^[[B" down-line-or-beginning-search  # Down
 # -----------------
 source $XDG_CONFIG_HOME/zsh/nmdirs
 
+# Functions
+# ---------
+fpath=($XDG_CONFIG_HOME/zsh/functions $fpath)
+autoload -Uz "$XDG_CONFIG_HOME/zsh/functions"/*
+
 # Aliases
 # -------
 source $XDG_CONFIG_HOME/zsh/aliases
