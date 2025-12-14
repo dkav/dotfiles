@@ -10,9 +10,6 @@ export PATH
 export MANPAGER="$HOMEBREW_PREFIX/bin/less -s"
 export EDITOR=$HOMEBREW_PREFIX/bin/mvim
 
-# Homebrew
-export HOMEBREW_GITHUB_API_TOKEN=$( cat $XDG_CONFIG_HOME/homebrew/homebrew_github_api_token )
-
 # GnuPG
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 
