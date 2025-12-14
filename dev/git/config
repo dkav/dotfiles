@@ -3,10 +3,10 @@
 	email = dkav@users.noreply.github.com
 	signingKey = 1F21C5B891D5E3C66C9CF732A258D1E837E3C689
 [commit]
-	gpgSign = true
+	gpgSign = false
 	verbose = true
 [tag]
-	gpgSign = true
+	gpgSign = false
 [gpg]
 	program = /opt/homebrew/bin/gpg
 [credential]
