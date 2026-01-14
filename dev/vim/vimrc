@@ -155,7 +155,7 @@ let g:gutentags_ctags_tagfile = ".tags"
 let g:tagbar_compact = 1
 
 " Set fzf options
-set rtp+=/opt/homebrew/opt/fzf
+set rtp+=/opt/local/share/fzf/vim
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
