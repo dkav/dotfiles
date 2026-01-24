@@ -9,7 +9,7 @@ let g:pyindent_open_paren = 'shiftwidth()'
 " ALE settings
 let b:ale_linters = ['ruff']
 let b:ale_fix_on_save = 1
-let b:ale_fixers = ['remove_trailing_lines', 'trim_whitespace']
+let b:ale_fixers = ['ruff', 'ruff_format']
 
 if !exists("*TogglePythonLinters")
     function TogglePythonLinters()
