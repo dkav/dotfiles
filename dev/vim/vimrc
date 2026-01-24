@@ -190,7 +190,7 @@ let g:gitgutter_enabled = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Define a custom map leader
 let mapleader = ","
-let g:mapleader = ","
+let maplocalleader = "\\"
 
 " Map colon
 nnoremap ; :
