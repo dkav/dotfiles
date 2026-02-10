@@ -1,4 +1,5 @@
 setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+setlocal number
 let b:is_bash = 1
 
 " ALE settings
