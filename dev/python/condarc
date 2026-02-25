@@ -2,3 +2,6 @@ channels:
   - conda-forge
 
 env_prompt: '({name}) '
+
+pkgs_dirs:
+  - ~/.cache/conda/pkgs
