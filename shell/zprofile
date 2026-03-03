@@ -3,6 +3,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 path=(
   $HOMEBREW_PREFIX/opt/ruby/bin
+  $XDG_DATA_HOME/juliaup/bin
   $path
   $HOME/.local/bin
 )
@@ -47,6 +48,10 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export R_HOME_USER=$XDG_CONFIG_HOME/R
 export R_PROFILE_USER=$XDG_CONFIG_HOME/R/profile
 export R_HISTFILE=$XDG_CONFIG_HOME/R/history
+
+# Julia
+export JULIAUP_DEPOT_PATH=$XDG_DATA_HOME/julia
+export JULIA_DEPOT_PATH=$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH
 
 # PostgreSQL
 export PSQLRC=$XDG_CONFIG_HOME/pg/psqlrc
