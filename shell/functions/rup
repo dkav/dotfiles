@@ -6,5 +6,5 @@ rup () {
   echo
   gb push
   echo
-  bb-push
+  pbb
 }
