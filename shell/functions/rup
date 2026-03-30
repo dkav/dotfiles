@@ -1,4 +1,4 @@
-# Sync Git repositories 
+# Sync Git repositories
 rup () {
   gb sync -q
   echo
