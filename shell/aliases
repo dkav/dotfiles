@@ -53,5 +53,3 @@ alias nws='http-server -o'
 
 # Local scripts
 alias mup='mac-update'
-alias bbs='bb-push'
-alias gfs='gb sync'
