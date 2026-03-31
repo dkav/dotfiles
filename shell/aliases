@@ -54,3 +54,4 @@ alias nws='http-server -o'
 
 # Local scripts
 alias mup='mac-update'
+alias rup='repos-update'
