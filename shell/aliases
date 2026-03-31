@@ -54,4 +54,5 @@ alias nws='node-web'
 
 # Local scripts
 alias mup='mac-update'
+alias rrs='repos-reset-to-ssd'
 alias rcs='repos-check-stashes'
