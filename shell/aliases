@@ -55,3 +55,8 @@ alias nws='http-server -o'
 # Local scripts
 alias mup='mac-update'
 alias rup='repos-update'
+alias gb='ghub'
+alias bbp='bitbucket-push'
+alias sdp='ssd-push'
+alias wrb='worktrees-rebase'
+alias gsc='git-stash-check'
