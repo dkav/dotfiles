@@ -53,6 +53,7 @@ alias pws='py-web-server'
 alias nws='http-server -o'
 
 # Local scripts
+alias bup='backup-chaco'
 alias mup='mac-update'
 alias mpc='macports-clean'
 alias mpu='macports-update'
