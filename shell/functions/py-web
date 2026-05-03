@@ -1,0 +1,7 @@
+# Start a simple Python web server and open the browser
+py-web() {
+  local port="${1:-8000}"
+  sleep 0.5 && open "http://localhost:$port" &
+  [[ $# -gt 0 ]] && shift
+  python3 -m http.server "$port" "$@"
+}

@@ -1,0 +1,6 @@
+# Start a simple  Node web server and open the browser
+node-web() {
+  local path="${1:-.}"
+  [[ $# -gt 0 ]] && shift
+  PATH="/opt/homebrew/bin:/usr/bin:/bin" http-server "$path" -c-1 -o "$@"
+}

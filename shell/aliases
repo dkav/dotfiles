@@ -49,8 +49,8 @@ alias nl='npm list --depth=0'
 alias r='r --no-save'
 
 # Web servers
-alias pws='py-web-server'
-alias nws='http-server -o'
+alias pws='py-web'
+alias nws='node-web'
 
 # Local scripts
 alias mup='mac-update'
