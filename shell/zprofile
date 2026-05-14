@@ -29,6 +29,12 @@ export FZF_ALT_C_COMMAND="fd --type directory"
 # Wget
 export WGETRC=$XDG_CONFIG_HOME/wget/wgetrc
 
+# AI
+export CODEX_HOME="$XDG_CONFIG_HOME"/codex
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME"/claude
+export COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
+export GEMINI_CLI_HOME="$XDG_CONFIG_HOME"/gemini
+
 # Python
 export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
