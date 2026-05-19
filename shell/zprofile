@@ -35,6 +35,11 @@ export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME"/claude
 export COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
 export GEMINI_CLI_HOME="$XDG_CONFIG_HOME"/gemini
 
+# Pixi
+export PIXI_HOME="$XDG_DATA_HOME/pixi"
+export PIXI_CACHE_DIR="$XDG_CACHE_HOME/pixi"
+export RATTLER_AUTH_FILE="$XDG_CONFIG_HOME/rattler/credentials.json"
+
 # Python
 export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
