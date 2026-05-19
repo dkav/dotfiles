@@ -184,9 +184,9 @@ mise-clean:
 
 
 python: pyhist pip pypi \
-	ruff pylint ipython jupyter conda
+	ruff pylint ipython jupyter
 python-clean: pip-clean pypi-clean \
-	ruff-clean pylint-clean ipython-clean jupyter-clean conda-clean
+	ruff-clean pylint-clean ipython-clean jupyter-clean
 
 pyhist:
 	@echo "Python history folder \c"
@@ -252,17 +252,6 @@ jupyter:jupyter-clean
 jupyter-clean:
 	@echo "Jupyter \c"
 	@${DELETE} ${XDGCFG}/jupyter/jupyter_lab_config.py
-	@echo "cleaned"
-
-conda:conda-clean
-	@echo "conda \c"
-	@mkdir -p ${XDGCFG}/conda
-	@${LINK} "${DOTFILES}/dev/python/condarc" \
-		${XDGCFG}/conda/condarc
-	@echo "configured"
-conda-clean:
-	@echo "conda \c"
-	@${DELETE} -r ${XDGCFG}/conda
 	@echo "cleaned"
 
 
