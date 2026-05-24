@@ -11,7 +11,7 @@ XDGSTATE  := ${HOME}/.local/state
 LINK	  := ln -fs
 DELETE	  := rm -f
 
-all: shell brew security tool dev db
+all: shell brew security tool ai dev db
 
 clean: shell-clean \
     brew-clean \
@@ -118,6 +118,15 @@ wget-clean:
 	@echo "Wget \c"
 	@${DELETE} -r ${XDGCFG}/wget
 	@echo "cleaned"
+
+
+# AI Tools
+ai: codex
+
+codex:
+	@echo "Codex \c"
+	@mkdir -p ${XDGCFG}/codex
+	@echo "configured"
 
 
 # Development Environment
