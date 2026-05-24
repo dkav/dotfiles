@@ -33,7 +33,6 @@ export WGETRC=$XDG_CONFIG_HOME/wget/wgetrc
 export CODEX_HOME="$XDG_CONFIG_HOME"/codex
 export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME"/claude
 export COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
-export GEMINI_CLI_HOME="$XDG_CONFIG_HOME"/gemini
 
 # Pixi
 export PIXI_HOME="$XDG_DATA_HOME/pixi"
