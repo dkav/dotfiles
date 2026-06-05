@@ -52,8 +52,3 @@ xcuserdata/
 # ------------------ #
 .vscode/
 *.code-workspace
-
-
-# AI #
-# -- #
-.antigravitycli/
