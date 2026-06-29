@@ -21,6 +21,11 @@ alias dir='ls'
 # Homebrew
 alias bw='brew'
 
+# Container
+alias ct='container'
+alias cm='container machine'
+alias cmr='container machine run'
+
 # Git
 alias gt='git'
 alias gts='git status -s'
