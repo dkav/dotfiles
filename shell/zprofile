@@ -12,6 +12,11 @@ typeset -U PATH
 # Environment Variables
 # ---------------------
 
+# OpenSSH
+if [[ -z "$SSH_CONNECTION" ]]; then
+    export SSH_AUTH_SOCK=/tmp/ssh-agent.macports.sock
+fi
+
 # GnuPG
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export GPG_TTY=$(tty)
