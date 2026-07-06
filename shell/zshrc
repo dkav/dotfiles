@@ -6,13 +6,21 @@ bindkey -v  # Use Vi mode
 
 disable r  # Disable r builtin
 
-HISTFILE="$XDG_STATE_HOME"/zsh/history
-setopt SHARE_HISTORY
 
 fpath=(
   $XDG_CONFIG_HOME/zsh/functions
   $XDG_DATA_HOME/zsh/site-functions
   $fpath)
+
+# Command History
+# ---------------
+HISTFILE="$XDG_STATE_HOME"/zsh/history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt SHARE_HISTORY        # Share between all sessions immediately
+setopt HIST_IGNORE_ALL_DUPS # Delete duplicates, keeping the newest
+setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks
 
 # Directory Stack
 # ---------------
