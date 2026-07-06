@@ -1,11 +1,10 @@
 # Options
 # -------
-setopt AUTO_CD  # Change to dir automatically
+setopt AUTO_CD # Change to dir automatically
 
-bindkey -v  # Use Vi mode
+bindkey -v # Use Vi mode
 
-disable r  # Disable r builtin
-
+disable r # Disable r builtin
 
 fpath=(
   $XDG_CONFIG_HOME/zsh/functions
@@ -25,25 +24,25 @@ setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks
 # Directory Stack
 # ---------------
 DIRSTACKSIZE=8
-setopt AUTO_PUSHD  # Add old dir to dir stack
-setopt PUSHD_IGNORE_DUPS  # Don't add dups to dir stack
-setopt PUSHD_MINUS  # Reverts the +/- operators
-setopt PUSHD_SILENT  # Do not print the dir stack
-setopt PUSHD_TO_HOME  # pushd with no arguments goes to $Home
+setopt AUTO_PUSHD        # Add old dir to dir stack
+setopt PUSHD_IGNORE_DUPS # Don't add dups to dir stack
+setopt PUSHD_MINUS       # Reverts the +/- operators
+setopt PUSHD_SILENT      # Do not print the dir stack
+setopt PUSHD_TO_HOME     # pushd with no arguments goes to $Home
 
 # Prompt
 # ------
 # Detect version control
 autoload -Uz vcs_info
 
-zstyle ':vcs_info:*' enable git  # Detect git only
-zstyle ':vcs_info:*' disable-patterns "*/.git"  # Ignore .git folders
-zstyle ':vcs_info:*' formats '%r [%b] ▶ '  # Prompt in repos
-zstyle ':vcs_info:*' actionformats '%r [%b|%a] ▶ '  # During special actions
-zstyle ':vcs_info:*' nvcsformats '▶ '  # Prompt in standard folders
+zstyle ':vcs_info:*' enable git                    # Detect git only
+zstyle ':vcs_info:*' disable-patterns "*/.git"     # Ignore .git folders
+zstyle ':vcs_info:*' formats '%r [%b] ▶ '          # Prompt in repos
+zstyle ':vcs_info:*' actionformats '%r [%b|%a] ▶ ' # During special actions
+zstyle ':vcs_info:*' nvcsformats '▶ '              # Prompt in standard folders
 
-precmd() { vcs_info }
-setopt PROMPT_SUBST  # Prompt expansion
+precmd() { vcs_info; }
+setopt PROMPT_SUBST # Prompt expansion
 PROMPT='${vcs_info_msg_0_}'
 
 # Completion
@@ -66,8 +65,8 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search  # Up
-bindkey "^[[B" down-line-or-beginning-search  # Down
+bindkey "^[[A" up-line-or-beginning-search   # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Named directories
 # -----------------
