@@ -21,6 +21,9 @@ alias dir='ls'
 # Homebrew
 alias bw='brew'
 
+# MacPorts
+alias pls='sudo port load openssh'
+
 # Container
 alias ct='container'
 alias cm='container machine'
