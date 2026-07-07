@@ -17,9 +17,11 @@ HISTFILE="$XDG_STATE_HOME"/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt SHARE_HISTORY        # Share between all sessions immediately
-setopt HIST_IGNORE_ALL_DUPS # Delete duplicates, keeping the newest
-setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks
+setopt SHARE_HISTORY      # Share between all sessions immediately
+setopt HIST_FIND_NO_DUPS  # Skip dupes only in interactive search/recall, not on save
+setopt HIST_IGNORE_SPACE  # Ignore commands that start with a space
+setopt HIST_REDUCE_BLANKS # Remove superfluous blanks
+setopt EXTENDED_HISTORY   # Save timestamp and duration
 
 # Directory Stack
 # ---------------
