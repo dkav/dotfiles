@@ -47,7 +47,14 @@ zstyle ':vcs_info:*' actionformats '%r/%S [%b|%a] '     # Special actions
 zstyle ':vcs_info:*' nvcsformats '%(4~:%-1~/…/%2~:%~) ' # Standard folders
 
 setopt PROMPT_SUBST
-PROMPT='${vcs_info_msg_0_/\/. / }> '
+
+if [[ -n $SSH_CONNECTION ]]; then
+  host_prefix='%B%F{cyan}%m%f%b '
+else
+  host_prefix=''
+fi
+
+PROMPT='${host_prefix}${vcs_info_msg_0_/\/. / }> '
 
 # Completion
 # ----------
