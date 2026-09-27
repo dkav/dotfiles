@@ -1,0 +1,10 @@
+#compdef cmr
+
+_cmr() {
+    local -a cmr_words=( "${words[@]}" )
+    local -a words=( container machine run "${cmr_words[2,-1]}" )
+    local -i CURRENT=$(( CURRENT + 2 ))
+
+    autoload -Uz _container
+    _container "$@"
+}

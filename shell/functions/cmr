@@ -1,0 +1,3 @@
+cmr() {
+    container machine run --user "$USER" --cwd "/home/$USER" "$@"
+}
