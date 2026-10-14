@@ -3,4 +3,4 @@ line-length = 79
 
 [lint]
 select = ["ALL"]
-ignore = ["T201"]
+ignore = ["CPY001", "T201"]
