@@ -38,7 +38,6 @@ alias python='python3'
 alias py='python3'
 alias pip='pip3'
 alias pydata='source $HOME/.local/pyvenvs/pydata/bin/activate'
-alias mlx='source $HOME/.local/pyvenvs/mlx/bin/activate'
 
 # IPython & Jupyter
 alias ipy='ipython3'
