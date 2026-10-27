@@ -1,7 +1,7 @@
 # Named directories
-hash -d dev=~/Documents/Development
-hash -d gwt=~/Workspace/Git-Worktrees
-hash -d rep=~/Repositories
-hash -d wkt=~/Worktrees
-hash -d wsc=~/Documents/Workspace
-hash -d wsl=~/Workspace
+hash -d dev=~/Development
+hash -d rep=~/Development/repos
+hash -d wkt=~/Development/wktrees
+hash -d doc=~/Documents
+hash -d wks=~/Documents/Workspace
+hash -d dls=~/Downloads
