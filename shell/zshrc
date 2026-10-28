@@ -77,7 +77,7 @@ cdpath=(~ ~/Development ~/Development/repos ~/Documents)
 
 # Functions
 # ---------
-autoload -Uz "$XDG_CONFIG_HOME/zsh/functions"/*(:t)
+autoload -Uz "$XDG_CONFIG_HOME/zsh/functions"/*(N:t)
 
 # Aliases
 # -------
