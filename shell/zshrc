@@ -70,9 +70,9 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search   # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-# Named directories
+# CD search paths
 # -----------------
-source $XDG_CONFIG_HOME/zsh/nmdirs
+cdpath=(~ ~/Development ~/Development/repos ~/Documents)
 
 # Functions
 # ---------

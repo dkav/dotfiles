@@ -33,7 +33,6 @@ zsh: zsh-clean
 	@${LINK} "${DOTFILES}/shell/zprofile" ${XDGCFG}/zsh/.zprofile
 	@${LINK} "${DOTFILES}/shell/zshrc" ${XDGCFG}/zsh/.zshrc
 	@${LINK} "${DOTFILES}/shell/aliases" ${XDGCFG}/zsh/aliases
-	@${LINK} "${DOTFILES}/shell/nmdirs" ${XDGCFG}/zsh/nmdirs
 	@${LINK} "${DOTFILES}/shell/functions" ${XDGCFG}/zsh/functions
 	@echo "configured"
 zsh-clean:
