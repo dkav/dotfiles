@@ -1,7 +1,0 @@
-# Named directories
-hash -d dev=~/Development
-hash -d rep=~/Development/repos
-hash -d wkt=~/Development/wktrees
-hash -d doc=~/Documents
-hash -d wks=~/Documents/Workspace
-hash -d dls=~/Downloads
