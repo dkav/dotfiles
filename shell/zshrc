@@ -18,7 +18,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 setopt SHARE_HISTORY      # Share between all sessions immediately
-setopt HIST_FIND_NO_DUPS  # Skip dupes only in interactive search/recall, not on save
+setopt HIST_FIND_NO_DUPS  # Skip dupes only in interactive search/recall
 setopt HIST_IGNORE_SPACE  # Ignore commands that start with a space
 setopt HIST_REDUCE_BLANKS # Remove superfluous blanks
 setopt EXTENDED_HISTORY   # Save timestamp and duration
