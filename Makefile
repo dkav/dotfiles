@@ -285,12 +285,16 @@ node-clean:
 
 r:r-clean
 	@ echo "R \c"
+	@mkdir -p ${XDGCFG}/r
+	@${LINK} ${DOTFILES}/dev/r/rprofile \
+		${XDGCFG}/r/rprofile
 	@mkdir -p ${XDGCFG}/rstudio
 	@${LINK} "${DOTFILES}/dev/r/rstudio-prefs.json" \
 		${XDGCFG}/rstudio/rstudio-prefs.json
 	@echo "configured"
 r-clean:
 	@echo "R \c"
+	@${DELETE} ${XDGCFG}/r/rprofile
 	@${DELETE} ${XDGCFG}/rstudio/rstudio-prefs.json
 	@echo "cleaned"
 
