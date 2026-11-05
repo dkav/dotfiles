@@ -13,14 +13,14 @@ path=(
 # ---------------------
 # Shell
 export MANPAGER="$HOMEBREW_PREFIX/bin/less -s"
-export EDITOR=$HOMEBREW_PREFIX/bin/mvim
+export EDITOR="$HOMEBREW_PREFIX/bin/mvim"
 
 # Homebrew
 [[ -r "$XDG_CONFIG_HOME/homebrew/homebrew_github_api_token" ]] &&
   export HOMEBREW_GITHUB_API_TOKEN="$(<"$XDG_CONFIG_HOME/homebrew/homebrew_github_api_token")"
 
 # GnuPG
-export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --type file"
@@ -28,12 +28,12 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type directory"
 
 # Wget
-export WGETRC=$XDG_CONFIG_HOME/wget/wgetrc
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # AI
-export CODEX_HOME="$XDG_CONFIG_HOME"/codex
-export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME"/claude
-export COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
+export CODEX_HOME="$XDG_CONFIG_HOME/codex"
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
+export COPILOT_HOME="$XDG_CONFIG_HOME/copilot"
 
 # Pixi
 export PIXI_HOME="$XDG_DATA_HOME/pixi"
@@ -41,31 +41,31 @@ export PIXI_CACHE_DIR="$XDG_CACHE_HOME/pixi"
 export RATTLER_AUTH_FILE="$XDG_CONFIG_HOME/rattler/credentials.json"
 
 # Python
-export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
-export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
-export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
-export KAGGLE_CONFIG_DIR=$XDG_CONFIG_HOME/kaggle
-export SHIV_ROOT=$XDG_CACHE_HOME/shiv
+export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
+export KAGGLE_CONFIG_DIR="$XDG_CONFIG_HOME/kaggle"
+export SHIV_ROOT="$XDG_CACHE_HOME/shiv"
 
 # Ruby
-export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundle/config
-export BUNDLE_USER_PLUGIN=$XDG_DATA_HOME/bundle
-export BUNDLE_USER_CACHE=$XDG_CACHE_HOME/bundle
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle/config"
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
 
 # Node
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 # R
-export R_PROFILE_USER=$XDG_CONFIG_HOME/r/rprofile
-export R_HISTFILE=$XDG_STATE_HOME/r/history
+export R_PROFILE_USER="$XDG_CONFIG_HOME/r/rprofile"
+export R_HISTFILE="$XDG_STATE_HOME/r/history"
 
 # Julia
-export JULIAUP_DEPOT_PATH=$XDG_DATA_HOME/julia
+export JULIAUP_DEPOT_PATH="$XDG_DATA_HOME/julia"
 export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:"
 
 # PostgreSQL
-export PSQLRC=$XDG_CONFIG_HOME/pg/psqlrc
-export PSQL_HISTORY=$XDG_STATE_HOME/psql_history
+export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
+export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 
 # SQLite
-export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
