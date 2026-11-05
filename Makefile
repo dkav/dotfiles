@@ -286,6 +286,7 @@ node-clean:
 r:r-clean
 	@ echo "R \c"
 	@mkdir -p ${XDGCFG}/r
+	@mkdir -p ${XDGSTATE}/r
 	@${LINK} ${DOTFILES}/dev/r/rprofile \
 		${XDGCFG}/r/rprofile
 	@mkdir -p ${XDGCFG}/rstudio
