@@ -1,5 +1,6 @@
 # PATH
 # ----
+typeset -U path
 eval "$(/opt/homebrew/bin/brew shellenv)"
 path=(
   $HOMEBREW_PREFIX/opt/ruby/bin
@@ -7,7 +8,6 @@ path=(
   $path
   $HOME/.local/bin
 )
-export PATH
 
 # Environment Variables
 # ---------------------
