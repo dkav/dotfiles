@@ -264,7 +264,7 @@ jupyter-clean:
 
 
 ruby:ruby-clean
-	@ echo "Ruby \c"
+	@echo "Ruby \c"
 	@mkdir -p ${XDGCFG}/gem
 	@${LINK} "${DOTFILES}/dev/ruby/gemrc" ${XDGCFG}/gem/gemrc
 	@echo "configured"
@@ -274,7 +274,7 @@ ruby-clean:
 	@echo "cleaned"
 
 node:node-clean
-	@ echo "Node \c"
+	@echo "Node \c"
 	@mkdir -p ${XDGCFG}/npm
 	@${LINK} "${DOTFILES}/dev/node/npmrc" ${XDGCFG}/npm/npmrc
 	@echo "configured"
@@ -284,7 +284,7 @@ node-clean:
 	@echo "cleaned"
 
 r:r-clean
-	@ echo "R \c"
+	@echo "R \c"
 	@mkdir -p ${XDGCFG}/r
 	@mkdir -p ${XDGSTATE}/r
 	@${LINK} ${DOTFILES}/dev/r/rprofile \
