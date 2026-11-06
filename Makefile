@@ -295,7 +295,7 @@ r:r-clean
 	@echo "configured"
 r-clean:
 	@echo "R \c"
-	@${DELETE} ${XDGCFG}/r/rprofile
+	@${DELETE} -r ${XDGCFG}/r
 	@${DELETE} ${XDGCFG}/rstudio/rstudio-prefs.json
 	@echo "cleaned"
 
