@@ -72,7 +72,7 @@
 	diverging = false
 	pushNonFFCurrent = false
 	skippedCherryPicks = false
-	mergeConflict = false 
+	mergeConflict = false
 
 [alias]
 	# Basic
