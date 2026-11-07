@@ -21,6 +21,8 @@
 	useForceIfIncludes = true
 [rebase]
 	instructionFormat = %s [%an] [%ai]
+[rerere]
+	enabled = true
 
 [filter "media"]
 	required = true
