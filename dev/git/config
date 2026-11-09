@@ -1,34 +1,46 @@
 [user]
 	name = Darren Kavanagh
 	email = dkav@users.noreply.github.com
-	signingkey = 37E3C689
-[credential]
-	helper = osxkeychain
+	signingKey = 1F21C5B891D5E3C66C9CF732A258D1E837E3C689
 [commit]
-	gpgsign = true
+	gpgSign = true
+	verbose = true
+[tag]
+	gpgSign = true
 [gpg]
 	program = /opt/homebrew/bin/gpg
+[credential]
+	helper = osxkeychain
+
 [core]
-	editor = mvim -f
-	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+	editor = /opt/homebrew/bin/mvim -f
+	pager = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
+[interactive]
+	diffFilter = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight
+
 [init]
 	defaultBranch = main
 	defaultRefFormat = reftable
-
+[branch]
+	sort = -committerdate
+[fetch]
+	prune = true
+	fsckObjects = true
 [pull]
 	ff = only
 [push]
+	autoSetupRemote = true
 	useForceIfIncludes = true
+
 [rebase]
-	instructionFormat = %s [%an] [%ai]
+	autoSquash = true
+	autoStash = true
 	updateRefs = true
+	instructionFormat = %s [%an] [%ai]
 [rerere]
 	enabled = true
+	autoUpdate = true
 
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -36,35 +48,32 @@
 	required = true
 
 [diff]
-	tool = p4merge
+	algorithm = histogram
+	tool = vimdiff
+	guitool = p4merge
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
+	mnemonicPrefix = true
 [diff "textutil"]
 	textconv = textutil -convert txt -stdout
 [difftool]
 	prompt = false
-[difftool "vimdiff"]
-	trustExitCode = true
 [difftool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$REMOTE\"" "\"$LOCAL\""
-[difftool "mvim"]
-	cmd = mvimdiff -f \"$LOCAL\" \"$REMOTE\"
+	cmd = /opt/homebrew/bin/p4merge -nl Old -nr New \"$LOCAL\" \"$REMOTE\"
 
 [merge]
 	tool = vimdiff
 	guitool = p4merge
-	conflictstyle = diff3
+	conflictStyle = zdiff3
 [mergetool]
 	keepBackup = false
-[mergetool "vimdiff"]
-	trustExitCode = true
-[mergetool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\"
-	trustExitCode = false
+	prompt = false
 [mergetool "mvim2"]
-	cmd = mvimdiff -f -M -c '2wincmd w | set modifiable | set write' \"$REMOTE\" \"$MERGED\" \"$LOCAL\"
-	trustExitCode = false
+	cmd = /opt/homebrew/bin/mvimdiff -f -M -c '2wincmd w | set modifiable | set write' \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 [mergetool "mvim3"]
-	cmd = mvimdiff -f -M -c '4wincmd w | wincmd J | set modifiable | set write' \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-	trustExitCode = false
+	cmd = /opt/homebrew/bin/mvimdiff -f -M -c '4wincmd w | wincmd J | set modifiable | set write' \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
+[mergetool "p4merge"]
+	cmd = /opt/homebrew/bin/p4merge -nb Base -nl Local -nr Remote -nm Merged \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 
 [log]
 	date = format:%Y-%m-%d %H:%M
@@ -90,7 +99,6 @@
 	cp = cherry-pick
 	gp = grep -I --ignore-case --line-number
 	pl = pull
-	plf = pull --ff-only
 	plr = pull --rebase
 	ph = push
 	phf = push --force-with-lease
@@ -114,15 +122,15 @@
 	dfc = diff --name-only --diff-filter=U # Conflicted files
 	dfs = diff --staged
 	dfw = diff --word-diff=color --unified=1
-	dt = difftool --tool p4merge
+	dt = difftool --gui
 
 	# Merge
 	mg = merge
 	mgn = merge --no-ff
-	mt = mergetool --tool p4merge
+	mt = mergetool --gui
 
 	# Log
-	ls = log --pretty=format:'%C(yellow)%h %C(white) %<(50,trunc)%s %C(cyan)%<(15,trunc)%an %Cgreen%ad %Cblue%G?'
+	ls = log --pretty=format:'%C(yellow)%h %C(white) %<(50,trunc)%s %C(cyan)%<(15,trunc)%an %Cgreen%ad'
 	ln = log --pretty=format:'%C(yellow)%h %C(white) %<(25,trunc)%s %C(cyan)%<(15,trunc)%an %ad %Cgreen%<(15,trunc)%cn %cd'
 	lg = log --graph --color --pretty=format:'%C(yellow)%h%C(magenta)%d%C(white) %<|(65,trunc)%s %C(cyan)%<(15,trunc)%an %Cgreen%ad'
 	ll = log --stat --pretty=format:'%C(yellow)%h %C(cyan)%an %Cgreen%ad%n %s%n'
@@ -132,4 +140,4 @@
 	ec = config --global --edit
 
 	# Aliases
-	al = "!git config --list | grep alias | cut -c 7- | less -X"
+	al = "!git config --get-regexp '^alias[.]' | cut -c 7- | less -X"
