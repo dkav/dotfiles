@@ -76,7 +76,7 @@ if [[ $? -eq 2 ]]; then
   ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null
 fi
 
-KEY_PATH="$HOME/.ssh/chaco_github_ed25519"
+KEY_PATH="$HOME/.ssh/sawtooth_github_ed25519"
 
 if [[ -t 0 && -f $KEY_PATH ]]; then
   key_fp=${${(z)"$(ssh-keygen -lf "$KEY_PATH" 2>/dev/null)"}[2]}
