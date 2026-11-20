@@ -2,66 +2,88 @@
 #
 # Based on code from Rob Loach -
 # https://github.com/RobLoach/dotfiles/blob/master/Makefile
+#
+# Configure targets are idempotent (ln -sfn replaces existing links).
+# Clean targets remove only the links this Makefile creates, then remove the
+# containing directory if it is left empty. Other files are never deleted.
 
-DOTFILES  := ${PWD}
-HMDIR	  := ${HOME}
-XDGCFG    := ${HOME}/.config
-XDGDATA   := ${HOME}/.local/share
-XDGSTATE  := ${HOME}/.local/state
-LINK	  := ln -fs
-DELETE	  := rm -f
+DOTFILES := $(CURDIR)
+HMDIR    := ${HOME}
+XDGCFG   := ${HOME}/.config
+XDGDATA  := ${HOME}/.local/share
+XDGSTATE := ${HOME}/.local/state
+LINK     := ln -sfn
+DELETE   := rm -f
+RMDIR    := rmdir
 
 all: shell brew security tool ai dev db
 
+.PHONY: all clean shell shell-clean zsh zsh-clean tmux tmux-clean \
+        brew brew-clean security security-clean gpg gpg-clean \
+        tool tool-clean bat bat-clean fd fd-clean wget wget-clean \
+        ai codex \
+        dev dev-clean git git-clean vim vim-clean nvim nvim-clean \
+        mise mise-clean python python-clean pyhist pip pip-clean \
+        pypi pypi-clean ruff ruff-clean pylint pylint-clean \
+        ipython ipython-clean jupyter jupyter-clean ruby ruby-clean \
+        node node-clean r r-clean db db-clean pgsql pgsql-clean \
+        sqlite sqlite-clean
+
 clean: shell-clean \
-    brew-clean \
-    security-clean \
-    tool-clean \
-    dev-clean\
-    db-clean
+	brew-clean \
+	security-clean \
+	tool-clean \
+	dev-clean \
+	db-clean
 
 
 # Shell Environments
 shell: zsh tmux
 shell-clean: zsh-clean tmux-clean
 
-zsh: zsh-clean
-	@echo "Zsh \c"
-	@${LINK} "${DOTFILES}/shell/zshenv" ${HMDIR}/.zshenv
-	@mkdir -p ${XDGCFG}/zsh
-	@mkdir -p ${XDGSTATE}/zsh
-	@${LINK} "${DOTFILES}/shell/zprofile" ${XDGCFG}/zsh/.zprofile
-	@${LINK} "${DOTFILES}/shell/zshrc" ${XDGCFG}/zsh/.zshrc
-	@${LINK} "${DOTFILES}/shell/aliases" ${XDGCFG}/zsh/aliases
-	@${LINK} "${DOTFILES}/shell/functions" ${XDGCFG}/zsh/functions
+zsh:
+	@printf 'Zsh '
+	@${LINK} "${DOTFILES}/shell/zshenv" "${HMDIR}/.zshenv"
+	@mkdir -p "${XDGCFG}/zsh"
+	@mkdir -p "${XDGSTATE}/zsh"
+	@${LINK} "${DOTFILES}/shell/zprofile" "${XDGCFG}/zsh/.zprofile"
+	@${LINK} "${DOTFILES}/shell/zshrc" "${XDGCFG}/zsh/.zshrc"
+	@${LINK} "${DOTFILES}/shell/aliases" "${XDGCFG}/zsh/aliases"
+	@${LINK} "${DOTFILES}/shell/functions" "${XDGCFG}/zsh/functions"
 	@echo "configured"
 zsh-clean:
-	@echo "Zsh \c"
-	@${DELETE} ${HMDIR}/.zshenv
-	@${DELETE} -r ${XDGCFG}/zsh
+	@printf 'Zsh '
+	@${DELETE} "${HMDIR}/.zshenv"
+	@${DELETE} "${XDGCFG}/zsh/.zprofile"
+	@${DELETE} "${XDGCFG}/zsh/.zshrc"
+	@${DELETE} "${XDGCFG}/zsh/aliases"
+	@${DELETE} "${XDGCFG}/zsh/functions"
+	@${RMDIR} "${XDGCFG}/zsh" 2>/dev/null || true
 	@echo "cleaned"
 
-tmux: tmux-clean
-	@echo "tmux \c"
-	@mkdir -p ${XDGCFG}/tmux
-	@${LINK} "${DOTFILES}/shell/tmux.conf" ${XDGCFG}/tmux/tmux.conf
+tmux:
+	@printf 'tmux '
+	@mkdir -p "${XDGCFG}/tmux"
+	@${LINK} "${DOTFILES}/shell/tmux.conf" "${XDGCFG}/tmux/tmux.conf"
 	@echo "configured"
 tmux-clean:
-	@echo "tmux \c"
-	@${DELETE} -r ${XDGCFG}/tmux
+	@printf 'tmux '
+	@${DELETE} "${XDGCFG}/tmux/tmux.conf"
+	@${RMDIR} "${XDGCFG}/tmux" 2>/dev/null || true
 	@echo "cleaned"
 
 
 # Homebrew
-brew: brew-clean
-	@echo "Homebrew \c"
-	@mkdir -p ${XDGCFG}/homebrew
+brew:
+	@printf 'Homebrew '
+	@mkdir -p "${XDGCFG}/homebrew"
 	@${LINK} "${DOTFILES}/homebrew/brew.env" \
-		${XDGCFG}/homebrew/brew.env
+		"${XDGCFG}/homebrew/brew.env"
 	@echo "configured"
 brew-clean:
-	@echo "Homebrew \c"
-	@${DELETE} ${XDGCFG}/homebrew/brew.env
+	@printf 'Homebrew '
+	@${DELETE} "${XDGCFG}/homebrew/brew.env"
+	@${RMDIR} "${XDGCFG}/homebrew" 2>/dev/null || true
 	@echo "cleaned"
 
 
@@ -69,15 +91,15 @@ brew-clean:
 security: gpg
 security-clean: gpg-clean
 
-gpg: gpg-clean
-	@echo "GnuPG \c"
-	@mkdir -m 700 -p ${XDGDATA}/gnupg
+gpg:
+	@printf 'GnuPG '
+	@mkdir -m 700 -p "${XDGDATA}/gnupg"
 	@${LINK} "${DOTFILES}/security/gpg-agent.conf" \
-		${XDGDATA}/gnupg/gpg-agent.conf
+		"${XDGDATA}/gnupg/gpg-agent.conf"
 	@echo "configured"
 gpg-clean:
-	@echo "GnuPG \c"
-	@${DELETE} ${XDGDATA}/gnupg/gpg-agent.conf
+	@printf 'GnuPG '
+	@${DELETE} "${XDGDATA}/gnupg/gpg-agent.conf"
 	@echo "cleaned"
 
 
@@ -85,37 +107,40 @@ gpg-clean:
 tool: bat fd wget
 tool-clean: bat-clean fd-clean wget-clean
 
-bat: bat-clean
-	@echo "bat \c"
-	@mkdir -p ${XDGCFG}/bat
+bat:
+	@printf 'bat '
+	@mkdir -p "${XDGCFG}/bat"
 	@${LINK} "${DOTFILES}/tool/bat/config" \
-		${XDGCFG}/bat/config
+		"${XDGCFG}/bat/config"
 	@echo "configured"
 bat-clean:
-	@echo "bat \c"
-	@${DELETE} -r ${XDGCFG}/bat
+	@printf 'bat '
+	@${DELETE} "${XDGCFG}/bat/config"
+	@${RMDIR} "${XDGCFG}/bat" 2>/dev/null || true
 	@echo "cleaned"
 
-fd: fd-clean
-	@echo "fd \c"
-	@mkdir -p ${XDGCFG}/fd
+fd:
+	@printf 'fd '
+	@mkdir -p "${XDGCFG}/fd"
 	@${LINK} "${DOTFILES}/tool/fd/ignore" \
-		${XDGCFG}/fd/ignore
+		"${XDGCFG}/fd/ignore"
 	@echo "configured"
 fd-clean:
-	@echo "fd \c"
-	@${DELETE} -r ${XDGCFG}/fd
+	@printf 'fd '
+	@${DELETE} "${XDGCFG}/fd/ignore"
+	@${RMDIR} "${XDGCFG}/fd" 2>/dev/null || true
 	@echo "cleaned"
 
-wget: wget-clean
-	@echo "Wget \c"
-	@mkdir -p ${XDGCFG}/wget
+wget:
+	@printf 'Wget '
+	@mkdir -p "${XDGCFG}/wget"
 	@${LINK} "${DOTFILES}/tool/wget/wgetrc" \
-		${XDGCFG}/wget
+		"${XDGCFG}/wget/wgetrc"
 	@echo "configured"
 wget-clean:
-	@echo "Wget \c"
-	@${DELETE} -r ${XDGCFG}/wget
+	@printf 'Wget '
+	@${DELETE} "${XDGCFG}/wget/wgetrc"
+	@${RMDIR} "${XDGCFG}/wget" 2>/dev/null || true
 	@echo "cleaned"
 
 
@@ -123,71 +148,79 @@ wget-clean:
 ai: codex
 
 codex:
-	@echo "Codex \c"
-	@mkdir -p ${XDGCFG}/codex
+	@printf 'Codex '
+	@mkdir -p "${XDGCFG}/codex"
 	@echo "configured"
 
+opencode:
 
 # Development Environment
 dev: git vim mise python ruby node r
 dev-clean: git-clean vim-clean mise-clean python-clean ruby-clean \
 	node-clean r-clean
 
-git: git-clean
-	@echo "git \c"
-	@mkdir -p ${XDGCFG}/git
+git:
+	@printf 'git '
+	@mkdir -p "${XDGCFG}/git"
 	@${LINK} "${DOTFILES}/dev/git/attributes" \
-	    ${XDGCFG}/git/attributes
+		"${XDGCFG}/git/attributes"
 	@${LINK} "${DOTFILES}/dev/git/config" \
-		${XDGCFG}/git/config
+		"${XDGCFG}/git/config"
 	@${LINK} "${DOTFILES}/dev/git/ignore" \
-	    	${XDGCFG}/git/ignore
+		"${XDGCFG}/git/ignore"
 	@echo "configured"
 git-clean:
-	@echo "git \c"
-	@${DELETE} ${XDGCFG}/git/attributes
-	@${DELETE} ${XDGCFG}/git/config
-	@${DELETE} ${XDGCFG}/git/ignore
+	@printf 'git '
+	@${DELETE} "${XDGCFG}/git/attributes"
+	@${DELETE} "${XDGCFG}/git/config"
+	@${DELETE} "${XDGCFG}/git/ignore"
+	@${RMDIR} "${XDGCFG}/git" 2>/dev/null || true
 	@echo "cleaned"
 
-vim: vim-clean
-	@echo "Vim \c"
-	@mkdir -p ${XDGCFG}/vim
-	@${LINK} "${DOTFILES}/dev/vim/vimrc" ${XDGCFG}/vim/vimrc
-	@${LINK} "${DOTFILES}/dev/vim/gvimrc" ${XDGCFG}/vim/gvimrc
-	@${LINK} "${DOTFILES}/dev/vim/ftdetect" ${XDGCFG}/vim/ftdetect
-	@mkdir ${XDGCFG}/vim/after
-	@${LINK} "${DOTFILES}/dev/vim/ftplugin" ${XDGCFG}/vim/after/ftplugin
-	@${LINK} "${DOTFILES}/dev/vim/syntax" ${XDGCFG}/vim/after/syntax
-	@mkdir -p ${XDGSTATE}/vim/viminfo
-	@mkdir -p ${XDGSTATE}/vim/undo
+vim:
+	@printf 'Vim '
+	@mkdir -p "${XDGCFG}/vim"
+	@${LINK} "${DOTFILES}/dev/vim/vimrc" "${XDGCFG}/vim/vimrc"
+	@${LINK} "${DOTFILES}/dev/vim/gvimrc" "${XDGCFG}/vim/gvimrc"
+	@${LINK} "${DOTFILES}/dev/vim/ftdetect" "${XDGCFG}/vim/ftdetect"
+	@mkdir -p "${XDGCFG}/vim/after"
+	@${LINK} "${DOTFILES}/dev/vim/ftplugin" "${XDGCFG}/vim/after/ftplugin"
+	@${LINK} "${DOTFILES}/dev/vim/syntax" "${XDGCFG}/vim/after/syntax"
+	@mkdir -p "${XDGSTATE}/vim/viminfo"
+	@mkdir -p "${XDGSTATE}/vim/undo"
 	@echo "configured"
 vim-clean:
-	@echo "Vim \c"
-	@${DELETE} ${XDGCFG}/vim/vimrc
-	@${DELETE} ${XDGCFG}/vim/gvimrc
-	@${DELETE} ${XDGCFG}/vim/ftdetect
-	@${DELETE} -r ${XDGCFG}/vim/after
+	@printf 'Vim '
+	@${DELETE} "${XDGCFG}/vim/vimrc"
+	@${DELETE} "${XDGCFG}/vim/gvimrc"
+	@${DELETE} "${XDGCFG}/vim/ftdetect"
+	@${DELETE} "${XDGCFG}/vim/after/ftplugin"
+	@${DELETE} "${XDGCFG}/vim/after/syntax"
+	@${RMDIR} "${XDGCFG}/vim/after" 2>/dev/null || true
+	@${RMDIR} "${XDGCFG}/vim" 2>/dev/null || true
 	@echo "cleaned"
 
-nvim: nvim-clean
-	@echo "Neovim \c"
-	@mkdir -p ${XDGCFG}/nvim
-	@${LINK} "${DOTFILES}/dev/nvim/init.vim" ${XDGCFG}/nvim/init.vim
+# Not part of `dev`; run explicitly with `make nvim`.
+nvim:
+	@printf 'Neovim '
+	@mkdir -p "${XDGCFG}/nvim"
+	@${LINK} "${DOTFILES}/dev/nvim/init.vim" "${XDGCFG}/nvim/init.vim"
 	@echo "configured"
 nvim-clean:
-	@echo "Neovim \c"
-	@${DELETE} -r ${XDGCFG}/nvim
+	@printf 'Neovim '
+	@${DELETE} "${XDGCFG}/nvim/init.vim"
+	@${RMDIR} "${XDGCFG}/nvim" 2>/dev/null || true
 	@echo "cleaned"
 
-mise: mise-clean
-	@echo "mise \c"
-	@mkdir -p ${XDGCFG}/mise
-	@${LINK} "${DOTFILES}/dev/mise/config.toml" ${XDGCFG}/mise/config.toml
+mise:
+	@printf 'mise '
+	@mkdir -p "${XDGCFG}/mise"
+	@${LINK} "${DOTFILES}/dev/mise/config.toml" "${XDGCFG}/mise/config.toml"
 	@echo "configured"
 mise-clean:
-	@echo "mise \c"
-	@${DELETE} ${XDGCFG}/mise/config.toml
+	@printf 'mise '
+	@${DELETE} "${XDGCFG}/mise/config.toml"
+	@${RMDIR} "${XDGCFG}/mise" 2>/dev/null || true
 	@echo "cleaned"
 
 
@@ -197,106 +230,114 @@ python-clean: pip-clean pypi-clean \
 	ruff-clean pylint-clean ipython-clean jupyter-clean
 
 pyhist:
-	@echo "Python history folder \c"
-	@mkdir -p ${XDGSTATE}/python
+	@printf 'Python history folder '
+	@mkdir -p "${XDGSTATE}/python"
 	@echo "configured"
 
-pip: pip-clean
-	@echo "pip \c"
-	@mkdir -p ${XDGCFG}/pip
-	@${LINK} "${DOTFILES}/dev/python/pip.conf" ${XDGCFG}/pip/pip.conf
+pip:
+	@printf 'pip '
+	@mkdir -p "${XDGCFG}/pip"
+	@${LINK} "${DOTFILES}/dev/python/pip.conf" "${XDGCFG}/pip/pip.conf"
 	@echo "configured"
 pip-clean:
-	@echo "pip \c"
-	@${DELETE} -r ${XDGCFG}/pip
+	@printf 'pip '
+	@${DELETE} "${XDGCFG}/pip/pip.conf"
+	@${RMDIR} "${XDGCFG}/pip" 2>/dev/null || true
 	@echo "cleaned"
 
-pypi: pypi-clean
-	@echo "pypi \c"
-	@mkdir -p ${XDGCFG}/pypi
-	@${LINK} "${DOTFILES}/dev/python/pypirc" ${HMDIR}/.pypirc
+pypi:
+	@printf 'pypi '
+	@${LINK} "${DOTFILES}/dev/python/pypirc" "${HMDIR}/.pypirc"
 	@echo "configured"
 pypi-clean:
-	@echo "pypi \c"
-	@${DELETE} -r ${HMDIR}/.pypirc
+	@printf 'pypi '
+	@${DELETE} "${HMDIR}/.pypirc"
 	@echo "cleaned"
 
-ruff: ruff-clean
-	@echo "ruff \c"
-	@mkdir -p ${XDGCFG}/ruff
-	@${LINK} "${DOTFILES}/dev/python/ruff.toml" ${XDGCFG}/ruff/ruff.toml
+ruff:
+	@printf 'ruff '
+	@mkdir -p "${XDGCFG}/ruff"
+	@${LINK} "${DOTFILES}/dev/python/ruff.toml" "${XDGCFG}/ruff/ruff.toml"
 	@echo "configured"
 ruff-clean:
-	@echo "ruff \c"
-	@${DELETE} -r ${XDGCFG}/ruff
+	@printf 'ruff '
+	@${DELETE} "${XDGCFG}/ruff/ruff.toml"
+	@${RMDIR} "${XDGCFG}/ruff" 2>/dev/null || true
 	@echo "cleaned"
 
-pylint: pylint-clean
-	@echo "pylint \c"
-	@${LINK} "${DOTFILES}/dev/python/pylintrc" ${XDGCFG}/pylintrc
+pylint:
+	@printf 'pylint '
+	@${LINK} "${DOTFILES}/dev/python/pylintrc" "${XDGCFG}/pylintrc"
 	@echo "configured"
 pylint-clean:
-	@echo "pylint \c"
-	@${DELETE} ${XDGCFG}/pylintrc
+	@printf 'pylint '
+	@${DELETE} "${XDGCFG}/pylintrc"
 	@echo "cleaned"
 
-ipython:ipython-clean
-	@echo "IPython \c"
-	@mkdir -p ${XDGCFG}/ipython/profile_default
+ipython:
+	@printf 'IPython '
+	@mkdir -p "${XDGCFG}/ipython/profile_default"
 	@${LINK} "${DOTFILES}/dev/python/ipython_config.py" \
-		${XDGCFG}/ipython/profile_default/ipython_config.py
+		"${XDGCFG}/ipython/profile_default/ipython_config.py"
 	@echo "configured"
 ipython-clean:
-	@echo "IPython \c"
-	@${DELETE} ${XDGCFG}/ipython/profile_default/ipython_config.py
+	@printf 'IPython '
+	@${DELETE} "${XDGCFG}/ipython/profile_default/ipython_config.py"
+	@${RMDIR} "${XDGCFG}/ipython/profile_default" 2>/dev/null || true
+	@${RMDIR} "${XDGCFG}/ipython" 2>/dev/null || true
 	@echo "cleaned"
 
-jupyter:jupyter-clean
-	@echo "Jupyter \c"
-	@mkdir -p ${XDGCFG}/jupyter
+jupyter:
+	@printf 'Jupyter '
+	@mkdir -p "${XDGCFG}/jupyter"
 	@${LINK} "${DOTFILES}/dev/python/jupyter_lab_config.py" \
-		${XDGCFG}/jupyter/jupyter_lab_config.py
+		"${XDGCFG}/jupyter/jupyter_lab_config.py"
 	@echo "configured"
 jupyter-clean:
-	@echo "Jupyter \c"
-	@${DELETE} ${XDGCFG}/jupyter/jupyter_lab_config.py
+	@printf 'Jupyter '
+	@${DELETE} "${XDGCFG}/jupyter/jupyter_lab_config.py"
+	@${RMDIR} "${XDGCFG}/jupyter" 2>/dev/null || true
 	@echo "cleaned"
 
 
-ruby:ruby-clean
-	@echo "Ruby \c"
-	@mkdir -p ${XDGCFG}/gem
-	@${LINK} "${DOTFILES}/dev/ruby/gemrc" ${XDGCFG}/gem/gemrc
+ruby:
+	@printf 'Ruby '
+	@mkdir -p "${XDGCFG}/gem"
+	@${LINK} "${DOTFILES}/dev/ruby/gemrc" "${XDGCFG}/gem/gemrc"
 	@echo "configured"
 ruby-clean:
-	@echo "Ruby \c"
-	@${DELETE} -r ${XDGCFG}/gem
+	@printf 'Ruby '
+	@${DELETE} "${XDGCFG}/gem/gemrc"
+	@${RMDIR} "${XDGCFG}/gem" 2>/dev/null || true
 	@echo "cleaned"
 
-node:node-clean
-	@echo "Node \c"
-	@mkdir -p ${XDGCFG}/npm
-	@${LINK} "${DOTFILES}/dev/node/npmrc" ${XDGCFG}/npm/npmrc
+node:
+	@printf 'Node '
+	@mkdir -p "${XDGCFG}/npm"
+	@${LINK} "${DOTFILES}/dev/node/npmrc" "${XDGCFG}/npm/npmrc"
 	@echo "configured"
 node-clean:
-	@echo "Node \c"
-	@${DELETE} -r ${XDGCFG}/npm
+	@printf 'Node '
+	@${DELETE} "${XDGCFG}/npm/npmrc"
+	@${RMDIR} "${XDGCFG}/npm" 2>/dev/null || true
 	@echo "cleaned"
 
-r:r-clean
-	@echo "R \c"
-	@mkdir -p ${XDGCFG}/r
-	@mkdir -p ${XDGSTATE}/r
-	@${LINK} ${DOTFILES}/dev/r/rprofile \
-		${XDGCFG}/r/rprofile
-	@mkdir -p ${XDGCFG}/rstudio
+r:
+	@printf 'R '
+	@mkdir -p "${XDGCFG}/r"
+	@mkdir -p "${XDGSTATE}/r"
+	@${LINK} "${DOTFILES}/dev/r/rprofile" \
+		"${XDGCFG}/r/rprofile"
+	@mkdir -p "${XDGCFG}/rstudio"
 	@${LINK} "${DOTFILES}/dev/r/rstudio-prefs.json" \
-		${XDGCFG}/rstudio/rstudio-prefs.json
+		"${XDGCFG}/rstudio/rstudio-prefs.json"
 	@echo "configured"
 r-clean:
-	@echo "R \c"
-	@${DELETE} -r ${XDGCFG}/r
-	@${DELETE} ${XDGCFG}/rstudio/rstudio-prefs.json
+	@printf 'R '
+	@${DELETE} "${XDGCFG}/r/rprofile"
+	@${DELETE} "${XDGCFG}/rstudio/rstudio-prefs.json"
+	@${RMDIR} "${XDGCFG}/r" 2>/dev/null || true
+	@${RMDIR} "${XDGCFG}/rstudio" 2>/dev/null || true
 	@echo "cleaned"
 
 
@@ -304,23 +345,25 @@ r-clean:
 db: pgsql sqlite
 db-clean: pgsql-clean sqlite-clean
 
-pgsql: pgsql-clean
-	@echo "PostgreSQL \c"
-	@mkdir -p ${XDGCFG}/pg
-	@mkdir -p ${XDGSTATE}
-	@${LINK} "${DOTFILES}/db/psqlrc" ${XDGCFG}/pg/psqlrc
+pgsql:
+	@printf 'PostgreSQL '
+	@mkdir -p "${XDGCFG}/pg"
+	@mkdir -p "${XDGSTATE}"
+	@${LINK} "${DOTFILES}/db/psqlrc" "${XDGCFG}/pg/psqlrc"
 	@echo "configured"
 pgsql-clean:
-	@echo "PostgreSQL \c"
-	@${DELETE} -r ${XDGCFG}/pg
+	@printf 'PostgreSQL '
+	@${DELETE} "${XDGCFG}/pg/psqlrc"
+	@${RMDIR} "${XDGCFG}/pg" 2>/dev/null || true
 	@echo "cleaned"
 
-sqlite: sqlite-clean
-	@echo "SQLite \c"
-	@mkdir -p ${XDGCFG}/sqlite3
-	@${LINK} "${DOTFILES}/db/sqliterc" ${XDGCFG}/sqlite3/sqliterc
+sqlite:
+	@printf 'SQLite '
+	@mkdir -p "${XDGCFG}/sqlite3"
+	@${LINK} "${DOTFILES}/db/sqliterc" "${XDGCFG}/sqlite3/sqliterc"
 	@echo "configured"
 sqlite-clean:
-	@echo "SQLite \c"
-	@${DELETE} -r ${XDGCFG}/sqlite3
+	@printf 'SQLite '
+	@${DELETE} "${XDGCFG}/sqlite3/sqliterc"
+	@${RMDIR} "${XDGCFG}/sqlite3" 2>/dev/null || true
 	@echo "cleaned"
