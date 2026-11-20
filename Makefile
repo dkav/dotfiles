@@ -21,7 +21,7 @@ all: shell brew security tool ai dev db
 .PHONY: all clean shell shell-clean zsh zsh-clean tmux tmux-clean \
         brew brew-clean security security-clean gpg gpg-clean \
         tool tool-clean bat bat-clean fd fd-clean wget wget-clean \
-        ai codex \
+        ai ai-clean codex opencode opencode-clean \
         dev dev-clean git git-clean vim vim-clean nvim nvim-clean \
         mise mise-clean python python-clean pyhist pip pip-clean \
         pypi pypi-clean ruff ruff-clean pylint pylint-clean \
@@ -33,6 +33,7 @@ clean: shell-clean \
 	brew-clean \
 	security-clean \
 	tool-clean \
+	ai-clean \
 	dev-clean \
 	db-clean
 
@@ -145,7 +146,8 @@ wget-clean:
 
 
 # AI Tools
-ai: codex
+ai: codex opencode
+ai-clean: opencode-clean
 
 codex:
 	@printf 'Codex '
@@ -153,6 +155,17 @@ codex:
 	@echo "configured"
 
 opencode:
+	@printf 'OpenCode '
+	@mkdir -p "${XDGCFG}/opencode"
+	@${LINK} "${DOTFILES}/ai/opencode.jsonc" \
+		"${XDGCFG}/opencode/opencode.jsonc"
+	@echo "configured"
+opencode-clean:
+	@printf 'OpenCode '
+	@${DELETE} "${XDGCFG}/opencode/opencode.jsonc"
+	@${RMDIR} "${XDGCFG}/opencode" 2>/dev/null || true
+	@echo "cleaned"
+
 
 # Development Environment
 dev: git vim mise python ruby node r
