@@ -72,8 +72,9 @@ bindkey "^[[A" up-line-or-beginning-search   # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
 # CD search paths
-# -----------------
-cdpath=(~ ~/Development ~/Development/repos ~/Documents)
+# ---------------
+zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories'
+cdpath=(. ~/Development/config ~/Development/projects ~/Documents)
 
 # Functions
 # ---------
