@@ -199,7 +199,7 @@ vim:
 	@mkdir -p "${XDGCFG}/vim/after"
 	@${LINK} "${DOTFILES}/dev/vim/ftplugin" "${XDGCFG}/vim/after/ftplugin"
 	@${LINK} "${DOTFILES}/dev/vim/syntax" "${XDGCFG}/vim/after/syntax"
-	@mkdir -p "${XDGSTATE}/vim/viminfo"
+	@mkdir -p "${XDGSTATE}/vim"
 	@mkdir -p "${XDGSTATE}/vim/undo"
 	@echo "configured"
 vim-clean:
